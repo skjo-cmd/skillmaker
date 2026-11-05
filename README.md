@@ -3,7 +3,7 @@
 업무 분야별 AI 프롬프트 스킬 100개를 검색·필터·복사할 수 있는 정적 웹사이트입니다.
 서버 없이 `index.html` 하나로 동작하므로 GitHub Pages 등 무료 호스팅에 그대로 올릴 수 있습니다.
 
-원본 자료: `source/ai_skill_library_100.xlsx` (제작: 강사 김진수 · AICLab · GEO마케팅연구원)
+공개: 닥터J커브·다모아드림 · 원본 자료: `source/ai_skill_library_100.xlsx`
 
 ## 구성
 
@@ -12,6 +12,7 @@
 | `index.html` | 배포용 완성 페이지. 데이터가 안에 포함되어 있어 이 파일만 있어도 동작 |
 | `data/skills.json` | 엑셀에서 추출한 전체 데이터 (다른 서비스에서 재사용 가능) |
 | `site/template.html` | 페이지 템플릿. 디자인·문구를 고칠 때 이 파일을 수정 |
+| `site/config.json` | 크레딧 등 표시 문구 덮어쓰기 (엑셀 원본을 수정하지 않고 바꿀 때) |
 | `scripts/build.py` | 엑셀 → JSON → index.html 생성 스크립트 |
 | `source/*.xlsx` | 원본 엑셀 |
 

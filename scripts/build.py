@@ -15,6 +15,7 @@ import openpyxl
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else next((ROOT / "source").glob("*.xlsx"))
 TEMPLATE = ROOT / "site" / "template.html"
+CONFIG = ROOT / "site" / "config.json"   # 표시 문구 덮어쓰기(크레딧 등). 엑셀 원본은 건드리지 않는다
 OUT_JSON = ROOT / "data" / "skills.json"
 OUT_HTML = ROOT / "index.html"
 
@@ -56,6 +57,8 @@ for ws in wb.worksheets[1:]:
             "id": int(r[0]), "cat": cat_id, "name": str(r[1]).strip(), "level": str(r[2]).strip(),
             "explain": (r[4] or "").strip(), "prompt": prompt, "core": core.strip(), "sections": sections,
         })
+if CONFIG.exists():
+    data["meta"].update(json.loads(CONFIG.read_text(encoding="utf-8")))
 data["skills"].sort(key=lambda s: s["id"])
 data["meta"]["count"] = len(data["skills"])
 data["meta"]["levels"] = dict(collections.Counter(s["level"] for s in data["skills"]))
