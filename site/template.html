@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>AI 스킬 라이브러리 100</title>
+<meta name="description" content="업무 분야별 AI 프롬프트 스킬 100개를 검색하고 복사해서 바로 쓰는 초보자용 대시보드">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Nanum+Myeongjo:wght@800&display=swap">
+<style>
+/* 레이아웃: 왼쪽 카테고리 색인(데스크톱) + 오른쪽 요약·필터·카드 격자. 도서관 카드목록을 닮은 정보 밀도 */
+:root{
+  --bg:#f3f5f8; --surface:#ffffff; --surface-2:#e9edf3; --line:#d5dbe5;
+  --ink:#171c28; --muted:#5b6476; --faint:#8a93a6;
+  --accent:#1d4fd7; --accent-ink:#ffffff; --accent-soft:#e3eafd;
+  --lv1:#1baf7a; --lv2:#2a78d6; --lv3:#eb6834;   /* 기초·중급·고급 (검증된 3슬롯) */
+  --lv1-soft:#dcf5ea; --lv2-soft:#deeafb; --lv3-soft:#fde6db;
+  --shadow:0 1px 2px rgba(23,28,40,.06),0 8px 24px rgba(23,28,40,.08);
+  --f-body:"IBM Plex Sans KR",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --f-display:"Nanum Myeongjo","Apple SD Gothic Neo",Georgia,serif;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1116; --surface:#161a21; --surface-2:#1f2530; --line:#2c3441;
+    --ink:#e7eaf0; --muted:#a2abbd; --faint:#6f7889;
+    --accent:#7a9cf5; --accent-ink:#0e1116; --accent-soft:#1c2740;
+    --lv1:#199e70; --lv2:#3987e5; --lv3:#d95926;
+    --lv1-soft:#153527; --lv2-soft:#17304f; --lv3-soft:#3d2316;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1116; --surface:#161a21; --surface-2:#1f2530; --line:#2c3441;
+  --ink:#e7eaf0; --muted:#a2abbd; --faint:#6f7889;
+  --accent:#7a9cf5; --accent-ink:#0e1116; --accent-soft:#1c2740;
+  --lv1:#199e70; --lv2:#3987e5; --lv3:#d95926;
+  --lv1-soft:#153527; --lv2-soft:#17304f; --lv3-soft:#3d2316;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:var(--accent)}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+.wrap{max-width:1280px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px 48px}
+
+/* 헤더 */
+.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;padding-block:8px 20px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(26px,4vw,38px);line-height:1.15;margin:4px 0 6px;text-wrap:balance;letter-spacing:-.01em}
+.lede{color:var(--muted);max-width:60ch;margin:0}
+.credit{font-size:12.5px;color:var(--faint);text-align:right}
+.credit b{color:var(--muted);font-weight:600}
+
+/* 본문 그리드 */
+.main{display:grid;grid-template-columns:232px minmax(0,1fr);gap:28px;margin-top:20px}
+@media (max-width:860px){.main{grid-template-columns:minmax(0,1fr)}}
+.side{position:sticky;top:calc(12px + env(safe-area-inset-top,0px));align-self:start;display:flex;flex-direction:column;gap:4px}
+.side h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px 10px;font-weight:600}
+.nav{display:flex;flex-direction:column;gap:2px}
+.nav button{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:none;border:0;border-radius:8px;padding:7px 10px;color:var(--ink);font-size:14px}
+.nav button:hover{background:var(--surface-2)}
+.nav button[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent);font-weight:600}
+.nav .n{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--faint);font-size:12.5px}
+.nav button[aria-pressed="true"] .n{color:var(--accent)}
+@media (max-width:860px){
+  .side{position:static}
+  .side h2{display:none}
+  .nav{flex-direction:row;overflow-x:auto;gap:6px;padding-bottom:6px;scrollbar-width:thin}
+  .nav button{flex:0 0 auto;width:auto;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-size:13.5px}
+  .nav .n{margin-left:2px}
+}
+
+/* 요약 타일 */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
+.tile .k{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.04em}
+.tile .v{font-size:28px;font-weight:700;line-height:1.1;margin-top:4px;font-variant-numeric:tabular-nums}
+.tile .v small{font-size:13px;color:var(--muted);font-weight:500;margin-left:4px}
+.tile.mix{grid-column:span 2}
+@media (max-width:480px){.tile.mix{grid-column:span 1}}
+.mixbar{display:flex;gap:2px;height:10px;margin-top:10px;border-radius:5px;overflow:hidden}
+.mixbar span{display:block;height:100%}
+.mixleg{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:12.5px;color:var(--muted)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;vertical-align:-1px;margin-right:5px}
+.lv-기초{--c:var(--lv1);--cs:var(--lv1-soft)}.lv-중급{--c:var(--lv2);--cs:var(--lv2-soft)}.lv-고급{--c:var(--lv3);--cs:var(--lv3-soft)}
+
+/* 차트 */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;margin-top:14px;min-width:0}
+.panel-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px}
+.panel h2{font-size:15.5px;margin:0;font-weight:700}
+.panel .sub{color:var(--muted);font-size:13px;margin:2px 0 0}
+.lnk{background:none;border:0;color:var(--accent);font-size:13px;padding:2px 4px;text-decoration:underline;text-underline-offset:2px}
+.chart{margin-top:10px;overflow-x:auto}
+.chart svg{display:block;width:100%;min-width:420px;height:auto;font-family:var(--f-body)}
+.chart text{fill:var(--ink);font-size:12.5px}
+.chart .lab{fill:var(--ink)}
+.chart .cnt{fill:#fff;font-size:11.5px;font-weight:600}
+.chart .tot{fill:var(--muted);font-variant-numeric:tabular-nums}
+.chart .row{cursor:pointer}
+.chart .row:hover rect{opacity:.85}
+.ctable{width:100%;border-collapse:collapse;margin-top:10px;font-size:13.5px;font-variant-numeric:tabular-nums}
+.ctable th,.ctable td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:right}
+.ctable th:first-child,.ctable td:first-child{text-align:left}
+.tip{position:fixed;z-index:30;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12.5px;padding:6px 9px;border-radius:6px;box-shadow:var(--shadow);transform:translate(-50%,calc(-100% - 10px));white-space:nowrap}
+
+/* 초보자 안내 */
+.guide{margin-top:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.guide summary{cursor:pointer;padding:13px 18px;font-weight:600;display:flex;align-items:center;gap:10px;list-style:none}
+.guide summary::-webkit-details-marker{display:none}
+.guide summary::after{content:"펼치기";margin-left:auto;font-size:12.5px;color:var(--accent);font-weight:500}
+.guide[open] summary::after{content:"접기"}
+.guide .badge{background:var(--accent);color:var(--accent-ink);font-size:11px;border-radius:999px;padding:2px 8px;letter-spacing:.04em}
+.gbody{padding:0 18px 18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.gbody h3{font-size:14px;margin:0 0 8px}
+.gbody ol,.gbody ul{margin:0;padding-left:20px;color:var(--muted);font-size:14px}
+.gbody li{margin-bottom:5px}
+.gbody li b{color:var(--ink);font-weight:600}
+.gbody code{font-family:var(--f-mono);font-size:12.5px;background:var(--surface-2);padding:1px 5px;border-radius:4px}
+
+/* 필터 */
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:18px}
+.search{flex:1 1 240px;min-width:0;display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:0 10px}
+.search input{flex:1;min-width:0;border:0;background:none;padding:9px 0;font:inherit;color:var(--ink)}
+.search input:focus{outline:0}
+.search svg{flex:0 0 auto;color:var(--faint)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-size:13.5px;display:inline-flex;align-items:center;gap:6px}
+.chip[aria-pressed="true"]{border-color:var(--c,var(--accent));background:var(--cs,var(--accent-soft));color:var(--ink);font-weight:600}
+.chip .dot{margin:0}
+select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
+.count{color:var(--muted);font-size:13.5px;margin-left:auto;font-variant-numeric:tabular-nums}
+@media (max-width:600px){.count{margin-left:0;width:100%}}
+
+/* 카드 */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px 12px;text-align:left;display:flex;flex-direction:column;gap:8px;min-width:0;position:relative;transition:transform .12s ease,box-shadow .12s ease}
+.card:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.card .meta{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+.card .no{font-family:var(--f-mono);font-variant-numeric:tabular-nums;color:var(--faint)}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--cs);color:var(--ink)}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c)}
+.card h3{font-size:16px;margin:0;line-height:1.3;font-weight:600}
+.card p{margin:0;color:var(--muted);font-size:13.5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card .foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:6px;font-size:12.5px;color:var(--faint)}
+.star{position:absolute;top:10px;right:10px;background:none;border:0;color:var(--faint);padding:4px;border-radius:6px;line-height:0}
+.star[aria-pressed="true"]{color:#e0a030}
+.star:hover{background:var(--surface-2)}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px 0}
+
+/* 상세 모달 */
+dialog{border:0;padding:0;background:transparent;max-width:min(880px,calc(100vw - 32px));width:100%;max-height:calc(100vh - 32px);margin:auto}
+dialog::backdrop{background:rgba(10,14,22,.55);backdrop-filter:blur(2px)}
+.modal{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);display:flex;flex-direction:column;max-height:calc(100vh - 32px);overflow:hidden}
+.mhead{display:flex;align-items:flex-start;gap:12px;padding:18px 20px 12px;border-bottom:1px solid var(--line)}
+.mhead .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:6px}
+.mhead h2{margin:0;font-size:21px;line-height:1.25;text-wrap:balance}
+.mhead .x{margin-left:auto;flex:0 0 auto;background:var(--surface-2);border:0;border-radius:8px;width:34px;height:34px;display:grid;place-items:center}
+.mbody{overflow:auto;padding:16px 20px 20px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:20px}
+@media (max-width:720px){.mbody{grid-template-columns:minmax(0,1fr)}}
+.explain{background:var(--accent-soft);border-radius:10px;padding:12px 14px;font-size:14.5px;line-height:1.6;grid-column:1/-1}
+.explain b{font-weight:600;display:block;font-size:12px;letter-spacing:.06em;color:var(--accent);margin-bottom:4px}
+.secs{display:flex;flex-direction:column;gap:10px;min-width:0}
+.sec{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.sec .sh{display:flex;align-items:center;gap:8px;padding:7px 12px;background:var(--surface-2);font-size:12px;font-weight:700;letter-spacing:.06em;font-family:var(--f-mono)}
+.sec .sh span{font-family:var(--f-body);font-weight:500;color:var(--muted);letter-spacing:0;font-size:12.5px}
+.sec pre{margin:0;padding:10px 12px;font-family:var(--f-mono);font-size:12.5px;line-height:1.6;white-space:pre-wrap;word-break:break-word}
+.use{display:flex;flex-direction:column;gap:12px;min-width:0}
+.use h3{margin:0;font-size:14px}
+.use p{margin:0;color:var(--muted);font-size:13.5px}
+textarea{width:100%;min-height:92px;resize:vertical;font:inherit;font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:9px 14px;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:7px}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{filter:brightness(.97)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 14px;border-radius:999px;font-size:13.5px;box-shadow:var(--shadow);z-index:50;opacity:0;transition:opacity .2s}
+.toast.on{opacity:1}
+.howto{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px}
+.howto summary{cursor:pointer;font-weight:600}
+.howto ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}
+.howto li{margin-bottom:4px}
+.mfoot{display:flex;justify-content:space-between;gap:8px;padding:10px 20px 14px;border-top:1px solid var(--line)}
+.mfoot button{background:none;border:0;color:var(--accent);font-size:13.5px;padding:4px 6px;max-width:48%;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mfoot button:disabled{color:var(--faint)}
+
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--faint);display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Role · Context · Task · Steps · Output</div>
+      <h1 id="title">AI 스킬 라이브러리 100</h1>
+      <p class="lede">업무 분야별로 정리한 프롬프트 스킬 100개. 골라서 복사하고, 마지막 줄에 내 주제만 적으면 ChatGPT · Claude · Gemini 어디서든 바로 동작합니다.</p>
+    </div>
+    <div class="credit" id="credit"></div>
+  </header>
+
+  <div class="main">
+    <aside class="side">
+      <h2>카테고리</h2>
+      <nav class="nav" id="nav" aria-label="카테고리"></nav>
+    </aside>
+
+    <main>
+      <section class="tiles" aria-label="요약">
+        <div class="tile"><div class="k">전체 스킬</div><div class="v" id="t-total">100<small>개</small></div></div>
+        <div class="tile"><div class="k">카테고리</div><div class="v" id="t-cats">10<small>분야</small></div></div>
+        <div class="tile mix"><div class="k">난이도 구성</div><div class="mixbar" id="mixbar"></div><div class="mixleg" id="mixleg"></div></div>
+        <div class="tile"><div class="k">내 즐겨찾기</div><div class="v" id="t-fav">0<small>개</small></div></div>
+      </section>
+
+      <section class="panel" aria-labelledby="ch-title">
+        <div class="panel-h">
+          <div><h2 id="ch-title">카테고리별 난이도 분포</h2><p class="sub">막대를 누르면 그 카테고리만 보여줍니다. 기초 비중이 높은 분야부터 시작하면 수월합니다.</p></div>
+          <button class="lnk" id="tbl-toggle" aria-pressed="false">표로 보기</button>
+        </div>
+        <div class="chart" id="chart"></div>
+        <table class="ctable" id="ctable" hidden><thead><tr><th>카테고리</th><th>기초</th><th>중급</th><th>고급</th><th>합계</th></tr></thead><tbody></tbody></table>
+      </section>
+
+      <details class="guide" id="guide">
+        <summary><span class="badge">처음이신가요</span> 스킬을 3분 안에 써보는 법</summary>
+        <div class="gbody">
+          <div>
+            <h3>사용 순서</h3>
+            <ol>
+              <li><b>스킬 고르기.</b> 왼쪽 카테고리나 검색창으로 내 업무에 맞는 카드를 찾습니다. 처음엔 <b>기초</b> 표시가 있는 것부터.</li>
+              <li><b>복사하기.</b> 카드를 열고 <b>바로 쓰기용 복사</b>를 누릅니다. 아래 입력칸에 내 주제·자료를 적어두면 함께 복사됩니다.</li>
+              <li><b>붙여넣기.</b> ChatGPT, Claude, Gemini 등 쓰는 AI 채팅창에 붙이고 전송합니다. 결과가 아쉬우면 OUTPUT FORMAT 줄을 고쳐 다시 보내세요.</li>
+            </ol>
+          </div>
+          <div>
+            <h3>프롬프트 구조 읽는 법</h3>
+            <ul>
+              <li><code>ROLE</code> AI가 맡을 전문가 역할. 답의 수준을 정합니다.</li>
+              <li><code>CONTEXT</code> 상황 설명. 여기에 내 사정을 덧붙이면 정확도가 올라갑니다.</li>
+              <li><code>TASK</code> 한 문장으로 된 할 일.</li>
+              <li><code>STEPS</code> AI가 따라갈 작업 순서 5~6단계.</li>
+              <li><code>OUTPUT FORMAT</code> 결과물 형태. 표·목록·분량을 바꾸고 싶으면 이 줄을 수정합니다.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>두 가지 복사 방식</h3>
+            <ul>
+              <li><b>바로 쓰기용</b>: 일반 채팅창에 붙여서 한 번 쓰는 용도. 끝에 INPUT 칸이 붙습니다.</li>
+              <li><b>스킬 원문</b>: 파일의 영문 전문 그대로. 마지막 줄 "create a skill"은 Claude Projects 지침, ChatGPT의 GPT 만들기(Instructions), Gemini Gems처럼 <b>재사용 설정에 등록</b>할 때 쓰는 문장입니다.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <section class="filters" aria-label="필터">
+        <label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="스킬명, 설명, 프롬프트 내용 검색 (예: 회의록, SEO, 제안서)" autocomplete="off"><span class="sr">검색</span></label>
+        <div class="chips" id="lv-chips" role="group" aria-label="난이도">
+          <button class="chip lv-기초" data-lv="기초" aria-pressed="false"><span class="dot" style="background:var(--lv1)"></span>기초</button>
+          <button class="chip lv-중급" data-lv="중급" aria-pressed="false"><span class="dot" style="background:var(--lv2)"></span>중급</button>
+          <button class="chip lv-고급" data-lv="고급" aria-pressed="false"><span class="dot" style="background:var(--lv3)"></span>고급</button>
+          <button class="chip" id="fav-chip" aria-pressed="false">★ 즐겨찾기</button>
+        </div>
+        <select id="sort" aria-label="정렬"><option value="id">번호순</option><option value="level">쉬운 것부터</option><option value="name">이름순</option></select>
+        <div class="count" id="count"></div>
+      </section>
+
+      <section class="grid" id="grid" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <footer>
+    <span id="foot-credit"></span>
+    <span><a id="dl-json" href="data/skills.json" target="_blank" rel="noopener">데이터 JSON</a> · 프롬프트 영문 원문은 파일 그대로 제공합니다 · 무료 공개 자료</span>
+  </footer>
+</div>
+
+<dialog id="dlg" aria-labelledby="m-title">
+  <div class="modal">
+    <div class="mhead">
+      <div style="min-width:0">
+        <div class="meta" id="m-meta"></div>
+        <h2 id="m-title"></h2>
+      </div>
+      <button class="x" id="m-close" aria-label="닫기"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="mbody">
+      <div class="explain" id="m-explain"></div>
+      <div class="secs" id="m-secs"></div>
+      <div class="use">
+        <h3>내 입력 (선택)</h3>
+        <p>주제, 대상, 자료 등을 적어두면 복사할 때 프롬프트 끝에 INPUT 항목으로 함께 들어갑니다.</p>
+        <textarea id="m-input" placeholder="예) 주제: 소상공인을 위한 인스타그램 마케팅 입문 / 대상: 40~50대 자영업자 / 분량: 2시간"></textarea>
+        <div class="btns">
+          <button class="btn primary" id="copy-use">바로 쓰기용 복사</button>
+          <button class="btn" id="copy-raw">스킬 원문 복사</button>
+          <button class="btn" id="m-fav" aria-pressed="false">☆ 즐겨찾기</button>
+        </div>
+        <details class="howto">
+          <summary>어디에 붙여야 하나요?</summary>
+          <ul>
+            <li><b>한 번만 쓸 때</b>: ChatGPT · Claude · Gemini 채팅창에 '바로 쓰기용' 텍스트를 붙이고 전송.</li>
+            <li><b>매번 다시 쓸 때</b>: '스킬 원문'을 ChatGPT의 GPT 만들기 → Instructions, Claude의 Projects → 지침, Gemini의 Gems 지침에 넣어두면 이름만 불러 재사용할 수 있습니다.</li>
+            <li><b>결과가 영어로 나오면</b>: 맨 아래에 "Answer in Korean."을 한 줄 추가하세요.</li>
+          </ul>
+        </details>
+        <pre id="m-preview" class="sr" aria-hidden="true"></pre>
+      </div>
+    </div>
+    <div class="mfoot"><button id="m-prev">‹ 이전</button><button id="m-next">다음 ›</button></div>
+  </div>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script id="skill-data" type="application/json">/*__DATA__*/</script>
+<script>
+(function(){
+  const D = JSON.parse(document.getElementById('skill-data').textContent);
+  const LV = ['기초','중급','고급'];
+  const LVC = {'기초':'var(--lv1)','중급':'var(--lv2)','고급':'var(--lv3)'};
+  const cats = D.categories, skills = D.skills;
+  const byId = Object.fromEntries(skills.map(s=>[s.id,s]));
+  const catOf = Object.fromEntries(cats.map(c=>[c.id,c]));
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+
+  // 상태
+  const state = { cat: 0, lv: new Set(), q: '', sort: 'id', fav: false };
+  let favs = new Set();
+  try { favs = new Set(JSON.parse(localStorage.getItem('skill-favs')||'[]')); } catch(e){}
+  const saveFavs = () => { try { localStorage.setItem('skill-favs', JSON.stringify([...favs])); } catch(e){} };
+
+  // 헤더
+  $('title').textContent = D.meta.title || 'AI 스킬 라이브러리 100';
+  $('credit').innerHTML = D.meta.credit ? D.meta.credit.split('|').map(p=>esc(p.trim())).filter(Boolean).map((p,i)=> i===0 ? '<b>'+p+'</b>' : p).join('<br>') : '';
+  $('foot-credit').textContent = (D.meta.credit||'').split('|')[0].trim();
+  $('t-total').innerHTML = skills.length + '<small>개</small>';
+  $('t-cats').innerHTML = cats.length + '<small>분야</small>';
+  const lvCount = Object.fromEntries(LV.map(l=>[l, skills.filter(s=>s.level===l).length]));
+  $('mixbar').innerHTML = LV.map(l=>`<span style="flex:${lvCount[l]};background:${LVC[l]}" title="${l} ${lvCount[l]}"></span>`).join('');
+  $('mixleg').innerHTML = LV.map(l=>`<span><i class="dot" style="background:${LVC[l]}"></i>${l} ${lvCount[l]}개</span>`).join('');
+
+  // 카테고리 내비
+  function renderNav(){
+    const all = `<button data-cat="0" aria-pressed="${state.cat===0}"><span>전체</span><span class="n">${skills.length}</span></button>`;
+    $('nav').innerHTML = all + cats.map(c=>`<button data-cat="${c.id}" aria-pressed="${state.cat===c.id}"><span>${esc(c.emoji)} ${esc(c.name)}</span><span class="n">${skills.filter(s=>s.cat===c.id).length}</span></button>`).join('');
+  }
+  $('nav').addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return; state.cat = +b.dataset.cat; renderNav(); render(); });
+
+  // 차트 (SVG 누적 가로막대)
+  function renderChart(){
+    const rows = cats.map(c=>({c, n: LV.map(l=>skills.filter(s=>s.cat===c.id && s.level===l).length)}));
+    const W=720, labW=150, rowH=30, pad=8, top=22, H=top+rows.length*rowH+8, barW=W-labW-44;
+    const max = Math.max(...rows.map(r=>r.n.reduce((a,b)=>a+b,0)));
+    let g = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="카테고리별 난이도 분포 누적 막대 차트">`;
+    g += LV.map((l,i)=>`<g><rect x="${labW+i*70}" y="4" width="10" height="10" rx="2" fill="${LVC[l]}"/><text x="${labW+i*70+15}" y="13" class="tot">${l}</text></g>`).join('');
+    rows.forEach((r,ri)=>{
+      const y = top + ri*rowH + 4, h = rowH-pad; let x = labW; const total = r.n.reduce((a,b)=>a+b,0);
+      g += `<g class="row" data-cat="${r.c.id}" tabindex="0" role="button" aria-label="${esc(r.c.name)} 기초 ${r.n[0]} 중급 ${r.n[1]} 고급 ${r.n[2]}">`;
+      g += `<text x="${labW-10}" y="${y+h/2+4}" text-anchor="end" class="lab">${esc(r.c.emoji)} ${esc(r.c.name)}</text>`;
+      r.n.forEach((v,i)=>{ if(!v) return; const w = v/max*barW - 2; const last = r.n.slice(i+1).every(z=>!z);
+        g += `<rect x="${x}" y="${y}" width="${Math.max(w,0)}" height="${h}" fill="${LVC[LV[i]]}" ${last?`rx="4"`:''} data-lv="${LV[i]}" data-v="${v}"/>`;
+        if (w > 18) g += `<text x="${x+w/2}" y="${y+h/2+4}" text-anchor="middle" class="cnt">${v}</text>`;
+        x += w + 2; });
+      g += `<text x="${x+6}" y="${y+h/2+4}" class="tot">${total}</text></g>`;
+    });
+    g += '</svg>';
+    $('chart').innerHTML = g;
+    $('ctable').querySelector('tbody').innerHTML = rows.map(r=>`<tr><td>${esc(r.c.emoji)} ${esc(r.c.name)}</td>${r.n.map(v=>`<td>${v}</td>`).join('')}<td>${r.n.reduce((a,b)=>a+b,0)}</td></tr>`).join('');
+  }
+  $('chart').addEventListener('click', e => { const r = e.target.closest('.row'); if(!r) return; state.cat = +r.dataset.cat; renderNav(); render(); $('grid').scrollIntoView({behavior:'smooth',block:'start'}); });
+  $('chart').addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ const r = e.target.closest('.row'); if(r){ e.preventDefault(); r.click(); } } });
+  const tip = document.createElement('div'); tip.className='tip'; tip.hidden=true; document.body.appendChild(tip);
+  $('chart').addEventListener('mousemove', e => { const r = e.target.closest('rect[data-lv]'); if(!r){ tip.hidden=true; return; } const row = r.closest('.row'); tip.textContent = `${catOf[+row.dataset.cat].name} · ${r.dataset.lv} ${r.dataset.v}개`; tip.hidden=false; tip.style.left=e.clientX+'px'; tip.style.top=e.clientY+'px'; });
+  $('chart').addEventListener('mouseleave', ()=> tip.hidden=true);
+  $('tbl-toggle').addEventListener('click', e => { const on = e.currentTarget.getAttribute('aria-pressed')!=='true'; e.currentTarget.setAttribute('aria-pressed', on); e.currentTarget.textContent = on ? '차트로 보기' : '표로 보기'; $('ctable').hidden = !on; $('chart').hidden = on; });
+
+  // 필터
+  $('q').addEventListener('input', e => { state.q = e.target.value.trim().toLowerCase(); render(); });
+  $('lv-chips').addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return;
+    if (b.id==='fav-chip'){ state.fav = !state.fav; b.setAttribute('aria-pressed', state.fav); }
+    else { const l = b.dataset.lv; state.lv.has(l) ? state.lv.delete(l) : state.lv.add(l); b.setAttribute('aria-pressed', state.lv.has(l)); }
+    render(); });
+  $('sort').addEventListener('change', e => { state.sort = e.target.value; render(); });
+
+  function filtered(){
+    let list = skills.filter(s => (!state.cat || s.cat===state.cat) && (!state.lv.size || state.lv.has(s.level)) && (!state.fav || favs.has(s.id))
+      && (!state.q || (s.name+' '+s.explain+' '+s.prompt+' '+catOf[s.cat].name).toLowerCase().includes(state.q)));
+    if (state.sort==='level') list = [...list].sort((a,b)=> LV.indexOf(a.level)-LV.indexOf(b.level) || a.id-b.id);
+    if (state.sort==='name') list = [...list].sort((a,b)=> a.name.localeCompare(b.name,'ko'));
+    return list;
+  }
+  function render(){
+    const list = filtered();
+    $('count').textContent = `${list.length}개 표시` + (state.cat ? ` · ${catOf[state.cat].name}` : '') + (state.q ? ` · "${state.q}"` : '');
+    $('t-fav').innerHTML = favs.size + '<small>개</small>';
+    $('grid').innerHTML = list.length ? list.map(s => `
+      <article class="card lv-${s.level}" data-id="${s.id}">
+        <button class="star" data-fav="${s.id}" aria-pressed="${favs.has(s.id)}" aria-label="즐겨찾기 ${favs.has(s.id)?'해제':'추가'}"><svg width="18" height="18" viewBox="0 0 24 24" fill="${favs.has(s.id)?'currentColor':'none'}" stroke="currentColor" stroke-width="1.8"><path d="m12 3 2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.4 6.3 20.5l1.2-6.4L2.8 9.7l6.4-.8z"/></svg></button>
+        <div class="meta"><span class="no">#${String(s.id).padStart(3,'0')}</span><span class="pill">${esc(s.level)}</span></div>
+        <h3>${esc(s.name)}</h3>
+        <p>${esc(s.explain)}</p>
+        <div class="foot"><span>${esc(catOf[s.cat].emoji)} ${esc(catOf[s.cat].name)}</span><span>열기 ›</span></div>
+      </article>`).join('') : `<div class="empty">조건에 맞는 스킬이 없습니다. 검색어나 필터를 줄여보세요.</div>`;
+  }
+  $('grid').addEventListener('click', e => {
+    const st = e.target.closest('[data-fav]'); if (st){ toggleFav(+st.dataset.fav); return; }
+    const c = e.target.closest('.card'); if (c) open(+c.dataset.id);
+  });
+  function toggleFav(id){ favs.has(id) ? favs.delete(id) : favs.add(id); saveFavs(); render(); if (cur===id) syncFavBtn(); toast(favs.has(id) ? '즐겨찾기에 추가했습니다' : '즐겨찾기에서 뺐습니다'); }
+
+  // 상세
+  const dlg = $('dlg'); let cur = null;
+  const KR = {ROLE:'역할', CONTEXT:'상황', TASK:'할 일', STEPS:'작업 순서', 'OUTPUT FORMAT':'결과 형식'};
+  function open(id, push=true){
+    const s = byId[id]; if(!s) return; cur = id;
+    $('m-meta').innerHTML = `<span class="no" style="font-family:var(--f-mono)">#${String(s.id).padStart(3,'0')}</span><span class="pill lv-${s.level}">${esc(s.level)}</span><span>${esc(catOf[s.cat].emoji)} ${esc(catOf[s.cat].name)}</span>`;
+    $('m-title').textContent = s.name;
+    $('m-explain').innerHTML = `<b>이 스킬은</b>${esc(s.explain)}`;
+    const keys = Object.keys(s.sections);
+    $('m-secs').innerHTML = keys.length ? keys.map(k=>`<div class="sec"><div class="sh">${esc(k)}<span>${esc(KR[k]||'')}</span></div><pre>${esc(s.sections[k])}</pre></div>`).join('') : `<div class="sec"><pre>${esc(s.prompt)}</pre></div>`;
+    $('m-input').value = '';
+    syncFavBtn();
+    const list = filtered(); const i = list.findIndex(x=>x.id===id);
+    const prev = i>0 ? list[i-1] : null, next = i>=0 && i<list.length-1 ? list[i+1] : null;
+    $('m-prev').disabled = !prev; $('m-prev').textContent = prev ? `‹ ${prev.name}` : '‹ 이전'; $('m-prev').dataset.id = prev ? prev.id : '';
+    $('m-next').disabled = !next; $('m-next').textContent = next ? `${next.name} ›` : '다음 ›'; $('m-next').dataset.id = next ? next.id : '';
+    if (!dlg.open) dlg.showModal();
+    $('m-close').focus();
+    if (push) { try { history.replaceState(null,'','#skill-'+id); } catch(e){} }
+  }
+  function syncFavBtn(){ const on = favs.has(cur); $('m-fav').setAttribute('aria-pressed', on); $('m-fav').textContent = on ? '★ 즐겨찾기 해제' : '☆ 즐겨찾기'; }
+  function close(){ dlg.close(); }
+  dlg.addEventListener('close', ()=>{ cur=null; try { if (location.hash.startsWith('#skill-')) history.replaceState(null,'',location.pathname+location.search); } catch(e){} });
+  dlg.addEventListener('click', e => { if (e.target===dlg) close(); });
+  $('m-close').addEventListener('click', close);
+  $('m-prev').addEventListener('click', e => { if (e.currentTarget.dataset.id) open(+e.currentTarget.dataset.id); });
+  $('m-next').addEventListener('click', e => { if (e.currentTarget.dataset.id) open(+e.currentTarget.dataset.id); });
+  $('m-fav').addEventListener('click', ()=> toggleFav(cur));
+  document.addEventListener('keydown', e => { if(!dlg.open) return; if (e.key==='ArrowLeft' && $('m-prev').dataset.id) open(+$('m-prev').dataset.id); if (e.key==='ArrowRight' && $('m-next').dataset.id) open(+$('m-next').dataset.id); });
+
+  // 복사
+  function useText(s){ const inp = $('m-input').value.trim(); return s.core + '\n\nINPUT\n' + (inp || '[여기에 주제·대상·자료를 적어주세요]') + '\n\nAnswer in Korean.'; }
+  async function copy(text, msg){
+    try { await navigator.clipboard.writeText(text); toast(msg); }
+    catch(e){ const p = $('m-preview'); p.className=''; p.textContent = text; const r = document.createRange(); r.selectNodeContents(p); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); toast('자동 복사가 막혔습니다. 선택된 텍스트를 Ctrl+C로 복사하세요'); }
+  }
+  $('copy-use').addEventListener('click', ()=> copy(useText(byId[cur]), '복사했습니다. AI 채팅창에 붙여넣으세요'));
+  $('copy-raw').addEventListener('click', ()=> copy(byId[cur].prompt, '스킬 원문을 복사했습니다'));
+  let tt; function toast(m){ const t=$('toast'); t.textContent=m; t.classList.add('on'); clearTimeout(tt); tt=setTimeout(()=>t.classList.remove('on'), 2200); }
+
+  // 해시 라우팅: #skill-N, #cat-N, #guide
+  function route(){
+    const h = location.hash.slice(1); let m;
+    if ((m = h.match(/^skill-(\d+)$/))) open(+m[1], false);
+    else if ((m = h.match(/^cat-(\d+)$/))) { state.cat = +m[1]; renderNav(); render(); }
+    else if (h==='guide') { $('guide').open = true; $('guide').scrollIntoView(); }
+  }
+  window.addEventListener('hashchange', route);
+
+  renderNav(); renderChart(); render(); route();
+})();
+</script>
+</body>
+</html>

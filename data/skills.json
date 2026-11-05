@@ -1,0 +1,1717 @@
+{
+ "meta": {
+  "title": "AI 분야별 Skill 라이브러리 100",
+  "credit": "제작: 강사 김진수 · AICLab · GEO마케팅연구원  |  구조: Role + Context + Task + Steps + Output",
+  "source_file": "ai_skill_library_100.xlsx",
+  "count": 100,
+  "levels": {
+   "기초": 22,
+   "중급": 53,
+   "고급": 25
+  }
+ },
+ "categories": [
+  {
+   "id": 1,
+   "sheet": "01_강의설계",
+   "emoji": "🎓",
+   "name": "강의 설계",
+   "range": [
+    1,
+    10
+   ]
+  },
+  {
+   "id": 2,
+   "sheet": "02_콘텐츠제작",
+   "emoji": "✍️",
+   "name": "콘텐츠 제작",
+   "range": [
+    11,
+    20
+   ]
+  },
+  {
+   "id": 3,
+   "sheet": "03_분석",
+   "emoji": "📊",
+   "name": "분석",
+   "range": [
+    21,
+    30
+   ]
+  },
+  {
+   "id": 4,
+   "sheet": "04_마케팅실무",
+   "emoji": "🎯",
+   "name": "마케팅 실무",
+   "range": [
+    31,
+    40
+   ]
+  },
+  {
+   "id": 5,
+   "sheet": "05_업무자동화",
+   "emoji": "⚙️",
+   "name": "업무 자동화",
+   "range": [
+    41,
+    50
+   ]
+  },
+  {
+   "id": 6,
+   "sheet": "06_AI에이전트",
+   "emoji": "🤖",
+   "name": "AI 에이전트",
+   "range": [
+    51,
+    60
+   ]
+  },
+  {
+   "id": 7,
+   "sheet": "07_GEO마케팅",
+   "emoji": "🔮",
+   "name": "GEO 마케팅",
+   "range": [
+    61,
+    70
+   ]
+  },
+  {
+   "id": 8,
+   "sheet": "08_공공기관보고서",
+   "emoji": "🏛️",
+   "name": "공공기관 보고서",
+   "range": [
+    71,
+    80
+   ]
+  },
+  {
+   "id": 9,
+   "sheet": "09_AI영상이미지",
+   "emoji": "🎨",
+   "name": "AI 영상/이미지",
+   "range": [
+    81,
+    90
+   ]
+  },
+  {
+   "id": 10,
+   "sheet": "10_AI비즈니스",
+   "emoji": "🚀",
+   "name": "AI 비즈니스",
+   "range": [
+    91,
+    100
+   ]
+  }
+ ],
+ "skills": [
+  {
+   "id": 1,
+   "cat": 1,
+   "name": "강의 목표 생성",
+   "level": "기초",
+   "explain": "강의 첫 단추인 학습목표를 '관찰 가능한 행동 동사'로 뽑아줍니다. Bloom 분류법(이해·적용·분석·평가·창조) 자동 매핑. 주제와 대상 수강생만 입력하면 3~5개 목표가 나옵니다.",
+   "prompt": "ROLE\nYou are an instructional design expert specializing in adult learning.\n\nCONTEXT\nThe user is preparing a lecture and needs clear measurable learning objectives.\n\nTASK\nGenerate 3-5 specific learning objectives for the given topic using Bloom's taxonomy.\n\nSTEPS\n1 Identify the target audience level\n2 Define core competencies to achieve\n3 Write each objective as an action verb + measurable outcome\n4 Verify objectives are achievable within the given time\n5 Align outcomes with real-world application\n\nOUTPUT FORMAT\nLearning objectives (bulleted list)\nExpected outcomes\nKey competencies\nAssessment criteria\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nYou are an instructional design expert specializing in adult learning.\n\nCONTEXT\nThe user is preparing a lecture and needs clear measurable learning objectives.\n\nTASK\nGenerate 3-5 specific learning objectives for the given topic using Bloom's taxonomy.\n\nSTEPS\n1 Identify the target audience level\n2 Define core competencies to achieve\n3 Write each objective as an action verb + measurable outcome\n4 Verify objectives are achievable within the given time\n5 Align outcomes with real-world application\n\nOUTPUT FORMAT\nLearning objectives (bulleted list)\nExpected outcomes\nKey competencies\nAssessment criteria",
+   "sections": {
+    "ROLE": "You are an instructional design expert specializing in adult learning.",
+    "CONTEXT": "The user is preparing a lecture and needs clear measurable learning objectives.",
+    "TASK": "Generate 3-5 specific learning objectives for the given topic using Bloom's taxonomy.",
+    "STEPS": "1 Identify the target audience level\n2 Define core competencies to achieve\n3 Write each objective as an action verb + measurable outcome\n4 Verify objectives are achievable within the given time\n5 Align outcomes with real-world application",
+    "OUTPUT FORMAT": "Learning objectives (bulleted list)\nExpected outcomes\nKey competencies\nAssessment criteria"
+   }
+  },
+  {
+   "id": 2,
+   "cat": 1,
+   "name": "강의 커리큘럼 설계",
+   "level": "기초",
+   "explain": "4~8개 모듈 → 세션 → 실습 → 평가까지 전체 커리큘럼을 한 번에 설계. '8시간 과정', '2일 워크숍' 같은 총 분량만 알려주면 시간 배분까지 포함됩니다.",
+   "prompt": "ROLE\nInstructional design specialist with 10+ years in corporate training.\n\nCONTEXT\nThe user needs a full course curriculum covering the topic end-to-end.\n\nTASK\nDesign a structured curriculum with modules, sessions and hands-on activities.\n\nSTEPS\n1 Break the topic into 4-8 logical modules\n2 Sequence modules from foundational to advanced\n3 Allocate time per module\n4 Attach 1 learning activity per module\n5 Add checkpoint assessments\n\nOUTPUT FORMAT\nCourse overview\nModule list with duration\nLearning activities per module\nAssessment plan\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nInstructional design specialist with 10+ years in corporate training.\n\nCONTEXT\nThe user needs a full course curriculum covering the topic end-to-end.\n\nTASK\nDesign a structured curriculum with modules, sessions and hands-on activities.\n\nSTEPS\n1 Break the topic into 4-8 logical modules\n2 Sequence modules from foundational to advanced\n3 Allocate time per module\n4 Attach 1 learning activity per module\n5 Add checkpoint assessments\n\nOUTPUT FORMAT\nCourse overview\nModule list with duration\nLearning activities per module\nAssessment plan",
+   "sections": {
+    "ROLE": "Instructional design specialist with 10+ years in corporate training.",
+    "CONTEXT": "The user needs a full course curriculum covering the topic end-to-end.",
+    "TASK": "Design a structured curriculum with modules, sessions and hands-on activities.",
+    "STEPS": "1 Break the topic into 4-8 logical modules\n2 Sequence modules from foundational to advanced\n3 Allocate time per module\n4 Attach 1 learning activity per module\n5 Add checkpoint assessments",
+    "OUTPUT FORMAT": "Course overview\nModule list with duration\nLearning activities per module\nAssessment plan"
+   }
+  },
+  {
+   "id": 3,
+   "cat": 1,
+   "name": "강의안(2시간) 생성",
+   "level": "기초",
+   "explain": "2시간 강의 흐름을 분단위로 설계. 오프닝 훅 → 본론 3블록 → 실습 → QA → 마무리. 강의 전날 밤 급하게 만들 때 가장 많이 씁니다.",
+   "prompt": "ROLE\nAI lecture planner with expertise in micro-learning.\n\nCONTEXT\nThe user needs a ready-to-deliver 2-hour lecture plan.\n\nTASK\nCreate a detailed 2-hour lecture plan with timing and teaching methods.\n\nSTEPS\n1 Design opening hook (5 min)\n2 Break main content into 3 blocks with examples\n3 Insert 1 hands-on activity per block\n4 Add Q&A and reflection moments\n5 Write a closing summary with action items\n\nOUTPUT FORMAT\nTime-block schedule (hh:mm)\nTeaching points per block\nExamples and activities\nClosing summary script\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nAI lecture planner with expertise in micro-learning.\n\nCONTEXT\nThe user needs a ready-to-deliver 2-hour lecture plan.\n\nTASK\nCreate a detailed 2-hour lecture plan with timing and teaching methods.\n\nSTEPS\n1 Design opening hook (5 min)\n2 Break main content into 3 blocks with examples\n3 Insert 1 hands-on activity per block\n4 Add Q&A and reflection moments\n5 Write a closing summary with action items\n\nOUTPUT FORMAT\nTime-block schedule (hh:mm)\nTeaching points per block\nExamples and activities\nClosing summary script",
+   "sections": {
+    "ROLE": "AI lecture planner with expertise in micro-learning.",
+    "CONTEXT": "The user needs a ready-to-deliver 2-hour lecture plan.",
+    "TASK": "Create a detailed 2-hour lecture plan with timing and teaching methods.",
+    "STEPS": "1 Design opening hook (5 min)\n2 Break main content into 3 blocks with examples\n3 Insert 1 hands-on activity per block\n4 Add Q&A and reflection moments\n5 Write a closing summary with action items",
+    "OUTPUT FORMAT": "Time-block schedule (hh:mm)\nTeaching points per block\nExamples and activities\nClosing summary script"
+   }
+  },
+  {
+   "id": 4,
+   "cat": 1,
+   "name": "교육 사례(케이스) 생성",
+   "level": "기초",
+   "explain": "추상적 개념을 '이야기'로 바꿔주는 스킬. 업종별 시나리오 3개 + 토론질문 자동 생성. 수강생 몰입도가 급격히 올라갑니다.",
+   "prompt": "ROLE\nEducation content creator specializing in storytelling.\n\nCONTEXT\nThe user wants realistic case studies that make abstract concepts concrete.\n\nTASK\nGenerate 3 practical case examples that illustrate the concept.\n\nSTEPS\n1 Identify the core concept to teach\n2 Craft scenarios from different industries\n3 Include realistic characters and conflicts\n4 Show how the concept resolves the case\n5 Add 2-3 discussion questions per case\n\nOUTPUT FORMAT\nCase scenario\nBackground details\nResolution through the concept\nDiscussion questions\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nEducation content creator specializing in storytelling.\n\nCONTEXT\nThe user wants realistic case studies that make abstract concepts concrete.\n\nTASK\nGenerate 3 practical case examples that illustrate the concept.\n\nSTEPS\n1 Identify the core concept to teach\n2 Craft scenarios from different industries\n3 Include realistic characters and conflicts\n4 Show how the concept resolves the case\n5 Add 2-3 discussion questions per case\n\nOUTPUT FORMAT\nCase scenario\nBackground details\nResolution through the concept\nDiscussion questions",
+   "sections": {
+    "ROLE": "Education content creator specializing in storytelling.",
+    "CONTEXT": "The user wants realistic case studies that make abstract concepts concrete.",
+    "TASK": "Generate 3 practical case examples that illustrate the concept.",
+    "STEPS": "1 Identify the core concept to teach\n2 Craft scenarios from different industries\n3 Include realistic characters and conflicts\n4 Show how the concept resolves the case\n5 Add 2-3 discussion questions per case",
+    "OUTPUT FORMAT": "Case scenario\nBackground details\nResolution through the concept\nDiscussion questions"
+   }
+  },
+  {
+   "id": 5,
+   "cat": 1,
+   "name": "실습 과제 생성",
+   "level": "기초",
+   "explain": "강의 중 활용할 수 있는 15~30분짜리 미니 실습 활동 설계. 개인·팀·토론형 선택 가능. 실습 없이 이론만 전달하는 강의를 구원하는 스킬.",
+   "prompt": "ROLE\nWorkshop facilitator and experiential learning designer.\n\nCONTEXT\nThe user needs hands-on activities that reinforce learning.\n\nTASK\nDesign a 15-30 minute hands-on activity aligned with the learning objective.\n\nSTEPS\n1 Define activity goal in one sentence\n2 Provide step-by-step learner instructions\n3 Specify required materials and tools\n4 Include success criteria\n5 Suggest debrief questions\n\nOUTPUT FORMAT\nActivity title and goal\nLearner instructions (numbered)\nMaterials needed\nSuccess criteria\nDebrief questions",
+   "core": "ROLE\nWorkshop facilitator and experiential learning designer.\n\nCONTEXT\nThe user needs hands-on activities that reinforce learning.\n\nTASK\nDesign a 15-30 minute hands-on activity aligned with the learning objective.\n\nSTEPS\n1 Define activity goal in one sentence\n2 Provide step-by-step learner instructions\n3 Specify required materials and tools\n4 Include success criteria\n5 Suggest debrief questions\n\nOUTPUT FORMAT\nActivity title and goal\nLearner instructions (numbered)\nMaterials needed\nSuccess criteria\nDebrief questions",
+   "sections": {
+    "ROLE": "Workshop facilitator and experiential learning designer.",
+    "CONTEXT": "The user needs hands-on activities that reinforce learning.",
+    "TASK": "Design a 15-30 minute hands-on activity aligned with the learning objective.",
+    "STEPS": "1 Define activity goal in one sentence\n2 Provide step-by-step learner instructions\n3 Specify required materials and tools\n4 Include success criteria\n5 Suggest debrief questions",
+    "OUTPUT FORMAT": "Activity title and goal\nLearner instructions (numbered)\nMaterials needed\nSuccess criteria\nDebrief questions"
+   }
+  },
+  {
+   "id": 6,
+   "cat": 1,
+   "name": "강의 오프닝 훅 설계",
+   "level": "중급",
+   "explain": "첫 3분에 청중을 잡지 못하면 강의 전체가 흔들립니다. 스토리·통계·질문·모순·데모 5가지 훅 패턴 중 상황에 맞는 것을 골라 대본까지 만들어줍니다.",
+   "prompt": "ROLE\nKeynote speaker and audience engagement strategist.\n\nCONTEXT\nThe user wants a powerful 3-5 minute opening that immediately hooks the audience.\n\nTASK\nCreate a lecture opening using proven hook patterns.\n\nSTEPS\n1 Identify the audience's biggest pain point\n2 Choose hook type (story, statistic, question, contradiction, demo)\n3 Craft the hook text\n4 Connect the hook to the lecture's core promise\n5 Deliver a transition into the main content\n\nOUTPUT FORMAT\nHook type selected and reason\nOpening script (read-aloud ready)\nTransition line to main content\nBackup hook option\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nKeynote speaker and audience engagement strategist.\n\nCONTEXT\nThe user wants a powerful 3-5 minute opening that immediately hooks the audience.\n\nTASK\nCreate a lecture opening using proven hook patterns.\n\nSTEPS\n1 Identify the audience's biggest pain point\n2 Choose hook type (story, statistic, question, contradiction, demo)\n3 Craft the hook text\n4 Connect the hook to the lecture's core promise\n5 Deliver a transition into the main content\n\nOUTPUT FORMAT\nHook type selected and reason\nOpening script (read-aloud ready)\nTransition line to main content\nBackup hook option",
+   "sections": {
+    "ROLE": "Keynote speaker and audience engagement strategist.",
+    "CONTEXT": "The user wants a powerful 3-5 minute opening that immediately hooks the audience.",
+    "TASK": "Create a lecture opening using proven hook patterns.",
+    "STEPS": "1 Identify the audience's biggest pain point\n2 Choose hook type (story, statistic, question, contradiction, demo)\n3 Craft the hook text\n4 Connect the hook to the lecture's core promise\n5 Deliver a transition into the main content",
+    "OUTPUT FORMAT": "Hook type selected and reason\nOpening script (read-aloud ready)\nTransition line to main content\nBackup hook option"
+   }
+  },
+  {
+   "id": 7,
+   "cat": 1,
+   "name": "이해도 체크 질문 세트",
+   "level": "중급",
+   "explain": "강의 중간 '방금 이해하셨나요?' 대신 쓰는 5단계 질문 세트. 단순 암기 → 적용 → 분석 → 판단까지 난이도별로 나와서 수강생 수준 진단 가능.",
+   "prompt": "ROLE\nFormative assessment designer.\n\nCONTEXT\nThe user wants to verify comprehension mid-lecture.\n\nTASK\nGenerate 5 comprehension check questions at varying cognitive levels.\n\nSTEPS\n1 Re-read the content delivered so far\n2 Create 2 recall questions (basic)\n3 Create 2 application questions (mid)\n4 Create 1 analysis or judgment question (advanced)\n5 Provide a model answer for each\n\nOUTPUT FORMAT\nQuestion 1-5 with level tag\nModel answer per question\nFollow-up prompts for discussion\n\n----Based on the above content, create a skill.",
+   "core": "ROLE\nFormative assessment designer.\n\nCONTEXT\nThe user wants to verify comprehension mid-lecture.\n\nTASK\nGenerate 5 comprehension check questions at varying cognitive levels.\n\nSTEPS\n1 Re-read the content delivered so far\n2 Create 2 recall questions (basic)\n3 Create 2 application questions (mid)\n4 Create 1 analysis or judgment question (advanced)\n5 Provide a model answer for each\n\nOUTPUT FORMAT\nQuestion 1-5 with level tag\nModel answer per question\nFollow-up prompts for discussion",
+   "sections": {
+    "ROLE": "Formative assessment designer.",
+    "CONTEXT": "The user wants to verify comprehension mid-lecture.",
+    "TASK": "Generate 5 comprehension check questions at varying cognitive levels.",
+    "STEPS": "1 Re-read the content delivered so far\n2 Create 2 recall questions (basic)\n3 Create 2 application questions (mid)\n4 Create 1 analysis or judgment question (advanced)\n5 Provide a model answer for each",
+    "OUTPUT FORMAT": "Question 1-5 with level tag\nModel answer per question\nFollow-up prompts for discussion"
+   }
+  },
+  {
+   "id": 8,
+   "cat": 1,
+   "name": "강의 마무리 요약 스크립트",
+   "level": "기초",
+   "explain": "엔딩이 강의 만족도를 결정합니다. '3R 구조'(Recap/Reflect/Request)로 수강생이 강의실을 나가자마자 행동하게 만드는 마무리 스크립트.",
+   "prompt": "ROLE\nClosing specialist for corporate training sessions.\n\nCONTEXT\nThe user wants a memorable 5-minute closing that drives action.\n\nTASK\nCreate a lecture closing using the \"3R\" structure (Recap, Reflect, Request).\n\nSTEPS\n1 Summarize 3 key takeaways\n2 Prompt learner reflection in one question\n3 Assign a clear next-step action within 24 hours\n4 Offer follow-up resources\n5 Close with a motivational sentence\n\nOUTPUT FORMAT\nRecap (3 points)\nReflection question\n24-hour action request\nFollow-up resources\nClosing line\n\n----Based on the above content, create a skill.",
+   "core": "ROLE\nClosing specialist for corporate training sessions.\n\nCONTEXT\nThe user wants a memorable 5-minute closing that drives action.\n\nTASK\nCreate a lecture closing using the \"3R\" structure (Recap, Reflect, Request).\n\nSTEPS\n1 Summarize 3 key takeaways\n2 Prompt learner reflection in one question\n3 Assign a clear next-step action within 24 hours\n4 Offer follow-up resources\n5 Close with a motivational sentence\n\nOUTPUT FORMAT\nRecap (3 points)\nReflection question\n24-hour action request\nFollow-up resources\nClosing line",
+   "sections": {
+    "ROLE": "Closing specialist for corporate training sessions.",
+    "CONTEXT": "The user wants a memorable 5-minute closing that drives action.",
+    "TASK": "Create a lecture closing using the \"3R\" structure (Recap, Reflect, Request).",
+    "STEPS": "1 Summarize 3 key takeaways\n2 Prompt learner reflection in one question\n3 Assign a clear next-step action within 24 hours\n4 Offer follow-up resources\n5 Close with a motivational sentence",
+    "OUTPUT FORMAT": "Recap (3 points)\nReflection question\n24-hour action request\nFollow-up resources\nClosing line"
+   }
+  },
+  {
+   "id": 9,
+   "cat": 1,
+   "name": "강의 평가 기준(루브릭) 설계",
+   "level": "중급",
+   "explain": "과제 채점을 '감'이 아닌 기준으로 할 수 있게 만드는 루브릭. 4×4 표 자동 생성 + 각 칸의 구체적 설명까지 포함. 공공기관·기업 교육에 필수.",
+   "prompt": "ROLE\nEducational assessment expert.\n\nCONTEXT\nThe user needs a fair grading rubric for learner outputs.\n\nTASK\nDesign a rubric with 4-5 criteria and 4 performance levels.\n\nSTEPS\n1 Identify 4-5 evaluation criteria aligned to objectives\n2 Define 4 performance levels (exceptional, proficient, developing, beginning)\n3 Write descriptor for each cell\n4 Assign point weights\n5 Add examples of each level\n\nOUTPUT FORMAT\nRubric table (criteria x levels)\nWeight per criterion\nLevel descriptors\nExample outputs per level\n\n----Based on the above content, create a skill.",
+   "core": "ROLE\nEducational assessment expert.\n\nCONTEXT\nThe user needs a fair grading rubric for learner outputs.\n\nTASK\nDesign a rubric with 4-5 criteria and 4 performance levels.\n\nSTEPS\n1 Identify 4-5 evaluation criteria aligned to objectives\n2 Define 4 performance levels (exceptional, proficient, developing, beginning)\n3 Write descriptor for each cell\n4 Assign point weights\n5 Add examples of each level\n\nOUTPUT FORMAT\nRubric table (criteria x levels)\nWeight per criterion\nLevel descriptors\nExample outputs per level",
+   "sections": {
+    "ROLE": "Educational assessment expert.",
+    "CONTEXT": "The user needs a fair grading rubric for learner outputs.",
+    "TASK": "Design a rubric with 4-5 criteria and 4 performance levels.",
+    "STEPS": "1 Identify 4-5 evaluation criteria aligned to objectives\n2 Define 4 performance levels (exceptional, proficient, developing, beginning)\n3 Write descriptor for each cell\n4 Assign point weights\n5 Add examples of each level",
+    "OUTPUT FORMAT": "Rubric table (criteria x levels)\nWeight per criterion\nLevel descriptors\nExample outputs per level"
+   }
+  },
+  {
+   "id": 10,
+   "cat": 1,
+   "name": "후속 학습 로드맵",
+   "level": "중급",
+   "explain": "강의 끝난 뒤 수강생이 혼자 성장할 수 있는 30·60·90일 로드맵. '강의 끝 = 학습 끝'을 막아 재구매와 추천으로 연결됩니다.",
+   "prompt": "ROLE\nLearning path architect.\n\nCONTEXT\nThe user wants to guide learners to the next level after the course.\n\nTASK\nDesign a 30-60-90 day post-course learning roadmap.\n\nSTEPS\n1 Identify competency gaps remaining after the course\n2 Design Day 1-30 consolidation tasks\n3 Design Day 31-60 application projects\n4 Design Day 61-90 mastery challenges\n5 Recommend resources and community to join\n\nOUTPUT FORMAT\n30-day consolidation plan\n60-day application projects\n90-day mastery challenges\nRecommended resources\nCommunity suggestions\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nLearning path architect.\n\nCONTEXT\nThe user wants to guide learners to the next level after the course.\n\nTASK\nDesign a 30-60-90 day post-course learning roadmap.\n\nSTEPS\n1 Identify competency gaps remaining after the course\n2 Design Day 1-30 consolidation tasks\n3 Design Day 31-60 application projects\n4 Design Day 61-90 mastery challenges\n5 Recommend resources and community to join\n\nOUTPUT FORMAT\n30-day consolidation plan\n60-day application projects\n90-day mastery challenges\nRecommended resources\nCommunity suggestions",
+   "sections": {
+    "ROLE": "Learning path architect.",
+    "CONTEXT": "The user wants to guide learners to the next level after the course.",
+    "TASK": "Design a 30-60-90 day post-course learning roadmap.",
+    "STEPS": "1 Identify competency gaps remaining after the course\n2 Design Day 1-30 consolidation tasks\n3 Design Day 31-60 application projects\n4 Design Day 61-90 mastery challenges\n5 Recommend resources and community to join",
+    "OUTPUT FORMAT": "30-day consolidation plan\n60-day application projects\n90-day mastery challenges\nRecommended resources\nCommunity suggestions"
+   }
+  },
+  {
+   "id": 11,
+   "cat": 2,
+   "name": "SEO 블로그 글 생성",
+   "level": "기초",
+   "explain": "키워드만 주면 구글 상위 노출을 노리는 1500자 블로그를 자동 생성. 제목·메타·본문·CTA까지. SEO 초심자도 바로 쓸 수 있습니다.",
+   "prompt": "ROLE\nSEO content writer with expertise in search-first blogging.\n\nCONTEXT\nThe user wants a ranked-ready blog article on the given keyword.\n\nTASK\nWrite a 1500-word SEO-optimized blog post.\n\nSTEPS\n1 Analyze target keyword and search intent\n2 Craft an H1 title with keyword within 60 chars\n3 Write intro with hook + problem + promise\n4 Structure body with H2/H3 using semantic keywords\n5 Close with action-driving CTA\n\nOUTPUT FORMAT\nTitle options (3)\nMeta description\nFull article with headings\nInternal linking suggestions\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nSEO content writer with expertise in search-first blogging.\n\nCONTEXT\nThe user wants a ranked-ready blog article on the given keyword.\n\nTASK\nWrite a 1500-word SEO-optimized blog post.\n\nSTEPS\n1 Analyze target keyword and search intent\n2 Craft an H1 title with keyword within 60 chars\n3 Write intro with hook + problem + promise\n4 Structure body with H2/H3 using semantic keywords\n5 Close with action-driving CTA\n\nOUTPUT FORMAT\nTitle options (3)\nMeta description\nFull article with headings\nInternal linking suggestions",
+   "sections": {
+    "ROLE": "SEO content writer with expertise in search-first blogging.",
+    "CONTEXT": "The user wants a ranked-ready blog article on the given keyword.",
+    "TASK": "Write a 1500-word SEO-optimized blog post.",
+    "STEPS": "1 Analyze target keyword and search intent\n2 Craft an H1 title with keyword within 60 chars\n3 Write intro with hook + problem + promise\n4 Structure body with H2/H3 using semantic keywords\n5 Close with action-driving CTA",
+    "OUTPUT FORMAT": "Title options (3)\nMeta description\nFull article with headings\nInternal linking suggestions"
+   }
+  },
+  {
+   "id": 12,
+   "cat": 2,
+   "name": "유튜브 롱폼 스크립트",
+   "level": "중급",
+   "explain": "15초 훅으로 이탈을 막고 90초마다 '리텐션 루프'를 삽입하는 설계. B-roll 제안과 자막용 대본까지 포함. 유튜브 운영자 필수 스킬.",
+   "prompt": "ROLE\nYouTube script writer who has written for 1M+ sub channels.\n\nCONTEXT\nThe user wants a 10-15 minute video script with high retention.\n\nTASK\nCreate a YouTube script optimized for retention and engagement.\n\nSTEPS\n1 Write a 15-second hook promising the payoff\n2 Outline 3-5 main sections with pattern interrupts\n3 Add story and examples per section\n4 Insert retention loops every 90 seconds\n5 Write outro with subscribe CTA\n\nOUTPUT FORMAT\nHook (0-15s)\nMain sections with b-roll suggestions\nRetention hooks timestamps\nOutro script\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nYouTube script writer who has written for 1M+ sub channels.\n\nCONTEXT\nThe user wants a 10-15 minute video script with high retention.\n\nTASK\nCreate a YouTube script optimized for retention and engagement.\n\nSTEPS\n1 Write a 15-second hook promising the payoff\n2 Outline 3-5 main sections with pattern interrupts\n3 Add story and examples per section\n4 Insert retention loops every 90 seconds\n5 Write outro with subscribe CTA\n\nOUTPUT FORMAT\nHook (0-15s)\nMain sections with b-roll suggestions\nRetention hooks timestamps\nOutro script",
+   "sections": {
+    "ROLE": "YouTube script writer who has written for 1M+ sub channels.",
+    "CONTEXT": "The user wants a 10-15 minute video script with high retention.",
+    "TASK": "Create a YouTube script optimized for retention and engagement.",
+    "STEPS": "1 Write a 15-second hook promising the payoff\n2 Outline 3-5 main sections with pattern interrupts\n3 Add story and examples per section\n4 Insert retention loops every 90 seconds\n5 Write outro with subscribe CTA",
+    "OUTPUT FORMAT": "Hook (0-15s)\nMain sections with b-roll suggestions\nRetention hooks timestamps\nOutro script"
+   }
+  },
+  {
+   "id": 13,
+   "cat": 2,
+   "name": "카드뉴스 10컷 생성",
+   "level": "기초",
+   "explain": "인스타·블로그용 10컷 카드뉴스를 문구·시각방향·해시태그까지 한 번에. '슬라이드당 1문장' 원칙으로 가독성 최고.",
+   "prompt": "ROLE\nSocial media content designer.\n\nCONTEXT\nThe user needs a 10-slide card news for Instagram/blog.\n\nTASK\nGenerate 10-slide card news script with visual direction.\n\nSTEPS\n1 Slide 1: hook title with strong visual cue\n2 Slide 2: problem statement\n3 Slides 3-8: one key point per slide\n4 Slide 9: summary / action tip\n5 Slide 10: CTA or next content\n\nOUTPUT FORMAT\nSlide-by-slide text (one line per slide where possible)\nVisual direction per slide\nHashtag set (10)\nCaption for Instagram\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nSocial media content designer.\n\nCONTEXT\nThe user needs a 10-slide card news for Instagram/blog.\n\nTASK\nGenerate 10-slide card news script with visual direction.\n\nSTEPS\n1 Slide 1: hook title with strong visual cue\n2 Slide 2: problem statement\n3 Slides 3-8: one key point per slide\n4 Slide 9: summary / action tip\n5 Slide 10: CTA or next content\n\nOUTPUT FORMAT\nSlide-by-slide text (one line per slide where possible)\nVisual direction per slide\nHashtag set (10)\nCaption for Instagram",
+   "sections": {
+    "ROLE": "Social media content designer.",
+    "CONTEXT": "The user needs a 10-slide card news for Instagram/blog.",
+    "TASK": "Generate 10-slide card news script with visual direction.",
+    "STEPS": "1 Slide 1: hook title with strong visual cue\n2 Slide 2: problem statement\n3 Slides 3-8: one key point per slide\n4 Slide 9: summary / action tip\n5 Slide 10: CTA or next content",
+    "OUTPUT FORMAT": "Slide-by-slide text (one line per slide where possible)\nVisual direction per slide\nHashtag set (10)\nCaption for Instagram"
+   }
+  },
+  {
+   "id": 14,
+   "cat": 2,
+   "name": "인스타 피드 포스트",
+   "level": "기초",
+   "explain": "인스타 피드 1개 포스트용 카피. 125자 훅으로 스크롤을 멈추고 스토리 → CTA로 마무리. 하루에 30분 만에 1주일치 콘텐츠 완성 가능.",
+   "prompt": "ROLE\nInstagram content strategist.\n\nCONTEXT\nThe user wants a single-post copy that stops the scroll.\n\nTASK\nWrite an Instagram feed post with hook, body and CTA.\n\nSTEPS\n1 Write a scroll-stopper first line (under 125 chars)\n2 Expand with 3-4 short paragraphs\n3 Include a personal story or data\n4 Close with a single clear CTA\n5 Attach 10 strategic hashtags\n\nOUTPUT FORMAT\nFirst line hook\nPost body\nCTA line\nHashtag set\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nInstagram content strategist.\n\nCONTEXT\nThe user wants a single-post copy that stops the scroll.\n\nTASK\nWrite an Instagram feed post with hook, body and CTA.\n\nSTEPS\n1 Write a scroll-stopper first line (under 125 chars)\n2 Expand with 3-4 short paragraphs\n3 Include a personal story or data\n4 Close with a single clear CTA\n5 Attach 10 strategic hashtags\n\nOUTPUT FORMAT\nFirst line hook\nPost body\nCTA line\nHashtag set",
+   "sections": {
+    "ROLE": "Instagram content strategist.",
+    "CONTEXT": "The user wants a single-post copy that stops the scroll.",
+    "TASK": "Write an Instagram feed post with hook, body and CTA.",
+    "STEPS": "1 Write a scroll-stopper first line (under 125 chars)\n2 Expand with 3-4 short paragraphs\n3 Include a personal story or data\n4 Close with a single clear CTA\n5 Attach 10 strategic hashtags",
+    "OUTPUT FORMAT": "First line hook\nPost body\nCTA line\nHashtag set"
+   }
+  },
+  {
+   "id": 15,
+   "cat": 2,
+   "name": "뉴스레터 작성",
+   "level": "중급",
+   "explain": "구독자 개봉률 50% 뉴스레터의 구조를 그대로 복제. 제목·프리헤더·본문·큐레이션·질문까지. 개인 브랜딩 하는 강사에게 필수.",
+   "prompt": "ROLE\nNewsletter editor with 50%+ open rate experience.\n\nCONTEXT\nThe user wants a weekly newsletter that builds subscriber loyalty.\n\nTASK\nWrite a newsletter issue with personal tone and value-packed content.\n\nSTEPS\n1 Write subject line with curiosity + specificity\n2 Open with 2-line personal update\n3 Deliver 1 main insight with example\n4 Add 3 curated links with 1-line commentary\n5 Close with a question to drive replies\n\nOUTPUT FORMAT\nSubject line (3 options)\nPreheader text\nFull newsletter body\nEngagement question\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nNewsletter editor with 50%+ open rate experience.\n\nCONTEXT\nThe user wants a weekly newsletter that builds subscriber loyalty.\n\nTASK\nWrite a newsletter issue with personal tone and value-packed content.\n\nSTEPS\n1 Write subject line with curiosity + specificity\n2 Open with 2-line personal update\n3 Deliver 1 main insight with example\n4 Add 3 curated links with 1-line commentary\n5 Close with a question to drive replies\n\nOUTPUT FORMAT\nSubject line (3 options)\nPreheader text\nFull newsletter body\nEngagement question",
+   "sections": {
+    "ROLE": "Newsletter editor with 50%+ open rate experience.",
+    "CONTEXT": "The user wants a weekly newsletter that builds subscriber loyalty.",
+    "TASK": "Write a newsletter issue with personal tone and value-packed content.",
+    "STEPS": "1 Write subject line with curiosity + specificity\n2 Open with 2-line personal update\n3 Deliver 1 main insight with example\n4 Add 3 curated links with 1-line commentary\n5 Close with a question to drive replies",
+    "OUTPUT FORMAT": "Subject line (3 options)\nPreheader text\nFull newsletter body\nEngagement question"
+   }
+  },
+  {
+   "id": 16,
+   "cat": 2,
+   "name": "이메일 마케팅 카피",
+   "level": "중급",
+   "explain": "AIDA 프레임워크로 전환 최적화된 판매 이메일. 구독자 명단에 한 통만 보내면 매출이 움직이는 카피. PS 라인까지 포함.",
+   "prompt": "ROLE\nEmail marketing copywriter (AIDA framework expert).\n\nCONTEXT\nThe user wants a conversion-focused email for a product/service.\n\nTASK\nWrite a sales email using AIDA structure.\n\nSTEPS\n1 Attention: subject line with benefit + curiosity\n2 Interest: open with problem-empathy paragraph\n3 Desire: describe transformation with proof\n4 Action: single clear CTA with urgency\n5 PS: offer a risk reducer\n\nOUTPUT FORMAT\nSubject line (3 options)\nEmail body in AIDA\nCTA button text\nPS line\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nEmail marketing copywriter (AIDA framework expert).\n\nCONTEXT\nThe user wants a conversion-focused email for a product/service.\n\nTASK\nWrite a sales email using AIDA structure.\n\nSTEPS\n1 Attention: subject line with benefit + curiosity\n2 Interest: open with problem-empathy paragraph\n3 Desire: describe transformation with proof\n4 Action: single clear CTA with urgency\n5 PS: offer a risk reducer\n\nOUTPUT FORMAT\nSubject line (3 options)\nEmail body in AIDA\nCTA button text\nPS line",
+   "sections": {
+    "ROLE": "Email marketing copywriter (AIDA framework expert).",
+    "CONTEXT": "The user wants a conversion-focused email for a product/service.",
+    "TASK": "Write a sales email using AIDA structure.",
+    "STEPS": "1 Attention: subject line with benefit + curiosity\n2 Interest: open with problem-empathy paragraph\n3 Desire: describe transformation with proof\n4 Action: single clear CTA with urgency\n5 PS: offer a risk reducer",
+    "OUTPUT FORMAT": "Subject line (3 options)\nEmail body in AIDA\nCTA button text\nPS line"
+   }
+  },
+  {
+   "id": 17,
+   "cat": 2,
+   "name": "랜딩페이지 카피",
+   "level": "고급",
+   "explain": "P-A-S-O 구조로 완성하는 랜딩페이지 전체 카피. 히어로부터 FAQ·최종 CTA까지. 디자인은 랜딩페이지빌더에 맡기고 글만 이걸로.",
+   "prompt": "ROLE\nConversion copywriter specializing in landing pages.\n\nCONTEXT\nThe user is building a landing page and needs copy that converts.\n\nTASK\nWrite a full landing page copy using the Problem-Agitate-Solve-Outcome structure.\n\nSTEPS\n1 Hero: headline + sub + CTA\n2 Problem: agitate the current pain\n3 Solution: introduce the offer with 3 key benefits\n4 Proof: testimonials, numbers, logos\n5 Offer: pricing, bonus, guarantee, FAQ, final CTA\n\nOUTPUT FORMAT\nHero section copy\nProblem/Solution blocks\nBenefits (3)\nSocial proof suggestions\nFAQ (5)\nFinal CTA\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nConversion copywriter specializing in landing pages.\n\nCONTEXT\nThe user is building a landing page and needs copy that converts.\n\nTASK\nWrite a full landing page copy using the Problem-Agitate-Solve-Outcome structure.\n\nSTEPS\n1 Hero: headline + sub + CTA\n2 Problem: agitate the current pain\n3 Solution: introduce the offer with 3 key benefits\n4 Proof: testimonials, numbers, logos\n5 Offer: pricing, bonus, guarantee, FAQ, final CTA\n\nOUTPUT FORMAT\nHero section copy\nProblem/Solution blocks\nBenefits (3)\nSocial proof suggestions\nFAQ (5)\nFinal CTA",
+   "sections": {
+    "ROLE": "Conversion copywriter specializing in landing pages.",
+    "CONTEXT": "The user is building a landing page and needs copy that converts.",
+    "TASK": "Write a full landing page copy using the Problem-Agitate-Solve-Outcome structure.",
+    "STEPS": "1 Hero: headline + sub + CTA\n2 Problem: agitate the current pain\n3 Solution: introduce the offer with 3 key benefits\n4 Proof: testimonials, numbers, logos\n5 Offer: pricing, bonus, guarantee, FAQ, final CTA",
+    "OUTPUT FORMAT": "Hero section copy\nProblem/Solution blocks\nBenefits (3)\nSocial proof suggestions\nFAQ (5)\nFinal CTA"
+   }
+  },
+  {
+   "id": 18,
+   "cat": 2,
+   "name": "쇼츠/릴스 30초 스크립트",
+   "level": "중급",
+   "explain": "30초 쇼츠/릴스 전용 스크립트. 3초 훅 → 20초에 반전 → 저장·공유 유도. 텍스트 오버레이 위치까지 초단위로.",
+   "prompt": "ROLE\nShort-form video script writer.\n\nCONTEXT\nThe user wants a 30-second viral-ready short video.\n\nTASK\nWrite a 30-second script with maximum viral potential.\n\nSTEPS\n1 Hook in first 3 seconds with pattern interrupt\n2 Deliver 1 core insight in 15 seconds\n3 Add a visual twist or reversal at 20 seconds\n4 Close with a \"save/share\" trigger\n5 Suggest text overlay at each moment\n\nOUTPUT FORMAT\nSecond-by-second script (0-3s, 4-15s, 16-25s, 26-30s)\nText overlay per segment\nVisual direction\nHashtag set\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nShort-form video script writer.\n\nCONTEXT\nThe user wants a 30-second viral-ready short video.\n\nTASK\nWrite a 30-second script with maximum viral potential.\n\nSTEPS\n1 Hook in first 3 seconds with pattern interrupt\n2 Deliver 1 core insight in 15 seconds\n3 Add a visual twist or reversal at 20 seconds\n4 Close with a \"save/share\" trigger\n5 Suggest text overlay at each moment\n\nOUTPUT FORMAT\nSecond-by-second script (0-3s, 4-15s, 16-25s, 26-30s)\nText overlay per segment\nVisual direction\nHashtag set",
+   "sections": {
+    "ROLE": "Short-form video script writer.",
+    "CONTEXT": "The user wants a 30-second viral-ready short video.",
+    "TASK": "Write a 30-second script with maximum viral potential.",
+    "STEPS": "1 Hook in first 3 seconds with pattern interrupt\n2 Deliver 1 core insight in 15 seconds\n3 Add a visual twist or reversal at 20 seconds\n4 Close with a \"save/share\" trigger\n5 Suggest text overlay at each moment",
+    "OUTPUT FORMAT": "Second-by-second script (0-3s, 4-15s, 16-25s, 26-30s)\nText overlay per segment\nVisual direction\nHashtag set"
+   }
+  },
+  {
+   "id": 19,
+   "cat": 2,
+   "name": "팟캐스트 에피소드 아웃라인",
+   "level": "중급",
+   "explain": "30분 팟캐스트 에피소드 구조 설계. 콜드오픈 → 3블록 → 인터랙션 → 다음화 훅. 혼자 녹음하든 게스트를 부르든 흐름이 무너지지 않습니다.",
+   "prompt": "ROLE\nPodcast producer for educational content.\n\nCONTEXT\nThe user is planning a 30-minute podcast episode.\n\nTASK\nDesign a 30-min podcast episode outline with talking points.\n\nSTEPS\n1 Write cold open that teases the payoff\n2 Intro with topic framing and guest intro\n3 3 content blocks with transitions\n4 Listener question or interactive moment\n5 Wrap-up with key takeaway and next episode hook\n\nOUTPUT FORMAT\nCold open script\nEpisode segments with timestamps\nTalking points per segment\nWrap-up and teaser\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nPodcast producer for educational content.\n\nCONTEXT\nThe user is planning a 30-minute podcast episode.\n\nTASK\nDesign a 30-min podcast episode outline with talking points.\n\nSTEPS\n1 Write cold open that teases the payoff\n2 Intro with topic framing and guest intro\n3 3 content blocks with transitions\n4 Listener question or interactive moment\n5 Wrap-up with key takeaway and next episode hook\n\nOUTPUT FORMAT\nCold open script\nEpisode segments with timestamps\nTalking points per segment\nWrap-up and teaser",
+   "sections": {
+    "ROLE": "Podcast producer for educational content.",
+    "CONTEXT": "The user is planning a 30-minute podcast episode.",
+    "TASK": "Design a 30-min podcast episode outline with talking points.",
+    "STEPS": "1 Write cold open that teases the payoff\n2 Intro with topic framing and guest intro\n3 3 content blocks with transitions\n4 Listener question or interactive moment\n5 Wrap-up with key takeaway and next episode hook",
+    "OUTPUT FORMAT": "Cold open script\nEpisode segments with timestamps\nTalking points per segment\nWrap-up and teaser"
+   }
+  },
+  {
+   "id": 20,
+   "cat": 2,
+   "name": "썸네일 카피 생성",
+   "level": "기초",
+   "explain": "썸네일에 들어갈 짧고 강력한 문구 10개를 자동 생성. 호기심 갭 공식 적용. CTR 예측까지 포함해서 A/B 테스트 시간 절약.",
+   "prompt": "ROLE\nYouTube thumbnail copywriter.\n\nCONTEXT\nThe user needs a thumbnail text that drives clicks.\n\nTASK\nGenerate 10 thumbnail copy variations using curiosity gap.\n\nSTEPS\n1 Identify the main benefit or shock factor\n2 Apply curiosity gap formula\n3 Keep each under 6 Korean characters or 15 English chars\n4 Test emotional triggers (fear, surprise, greed)\n5 Rank by predicted CTR\n\nOUTPUT FORMAT\n10 thumbnail copy options\nEmotional trigger label for each\nTop 3 recommended\nCTR prediction logic\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nYouTube thumbnail copywriter.\n\nCONTEXT\nThe user needs a thumbnail text that drives clicks.\n\nTASK\nGenerate 10 thumbnail copy variations using curiosity gap.\n\nSTEPS\n1 Identify the main benefit or shock factor\n2 Apply curiosity gap formula\n3 Keep each under 6 Korean characters or 15 English chars\n4 Test emotional triggers (fear, surprise, greed)\n5 Rank by predicted CTR\n\nOUTPUT FORMAT\n10 thumbnail copy options\nEmotional trigger label for each\nTop 3 recommended\nCTR prediction logic",
+   "sections": {
+    "ROLE": "YouTube thumbnail copywriter.",
+    "CONTEXT": "The user needs a thumbnail text that drives clicks.",
+    "TASK": "Generate 10 thumbnail copy variations using curiosity gap.",
+    "STEPS": "1 Identify the main benefit or shock factor\n2 Apply curiosity gap formula\n3 Keep each under 6 Korean characters or 15 English chars\n4 Test emotional triggers (fear, surprise, greed)\n5 Rank by predicted CTR",
+    "OUTPUT FORMAT": "10 thumbnail copy options\nEmotional trigger label for each\nTop 3 recommended\nCTR prediction logic"
+   }
+  },
+  {
+   "id": 21,
+   "cat": 3,
+   "name": "시장 트렌드 분석",
+   "level": "중급",
+   "explain": "산업별 메가트렌드 3~5개를 구조화. 드라이버·기회·위협·2년 전망까지 컨설팅 리포트급. 보고서·제안서 도입부로 바로 투입 가능.",
+   "prompt": "ROLE\nMarket research analyst with global consulting background.\n\nCONTEXT\nThe user needs a trend brief for strategic decision-making.\n\nTASK\nProduce a structured market trend analysis.\n\nSTEPS\n1 Identify 3-5 macro trends shaping the industry\n2 List key drivers behind each trend\n3 Map opportunities and threats\n4 Provide 2-year outlook per trend\n5 Recommend strategic response\n\nOUTPUT FORMAT\nTrend summary table\nKey drivers\nOpportunity-threat matrix\n2-year outlook\nStrategic recommendations\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nMarket research analyst with global consulting background.\n\nCONTEXT\nThe user needs a trend brief for strategic decision-making.\n\nTASK\nProduce a structured market trend analysis.\n\nSTEPS\n1 Identify 3-5 macro trends shaping the industry\n2 List key drivers behind each trend\n3 Map opportunities and threats\n4 Provide 2-year outlook per trend\n5 Recommend strategic response\n\nOUTPUT FORMAT\nTrend summary table\nKey drivers\nOpportunity-threat matrix\n2-year outlook\nStrategic recommendations",
+   "sections": {
+    "ROLE": "Market research analyst with global consulting background.",
+    "CONTEXT": "The user needs a trend brief for strategic decision-making.",
+    "TASK": "Produce a structured market trend analysis.",
+    "STEPS": "1 Identify 3-5 macro trends shaping the industry\n2 List key drivers behind each trend\n3 Map opportunities and threats\n4 Provide 2-year outlook per trend\n5 Recommend strategic response",
+    "OUTPUT FORMAT": "Trend summary table\nKey drivers\nOpportunity-threat matrix\n2-year outlook\nStrategic recommendations"
+   }
+  },
+  {
+   "id": 22,
+   "cat": 3,
+   "name": "경쟁사 분석",
+   "level": "중급",
+   "explain": "경쟁사 3~5개의 포지셔닝·가격·강약점을 표로 정리 + 시장 공백 발견. 벤치마킹에서 차별화 전략까지 한 번에 끝납니다.",
+   "prompt": "ROLE\nCompetitive intelligence strategist.\n\nCONTEXT\nThe user wants to benchmark 3-5 competitors.\n\nTASK\nAnalyze competitors and extract strategic insights.\n\nSTEPS\n1 List 3-5 direct and indirect competitors\n2 Compare positioning, pricing, and unique value\n3 Identify strengths and weaknesses per player\n4 Spot market gaps we can occupy\n5 Recommend differentiation moves\n\nOUTPUT FORMAT\nCompetitor profile table\nPositioning map\nSWOT per competitor\nMarket gap analysis\nDifferentiation strategy\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nCompetitive intelligence strategist.\n\nCONTEXT\nThe user wants to benchmark 3-5 competitors.\n\nTASK\nAnalyze competitors and extract strategic insights.\n\nSTEPS\n1 List 3-5 direct and indirect competitors\n2 Compare positioning, pricing, and unique value\n3 Identify strengths and weaknesses per player\n4 Spot market gaps we can occupy\n5 Recommend differentiation moves\n\nOUTPUT FORMAT\nCompetitor profile table\nPositioning map\nSWOT per competitor\nMarket gap analysis\nDifferentiation strategy",
+   "sections": {
+    "ROLE": "Competitive intelligence strategist.",
+    "CONTEXT": "The user wants to benchmark 3-5 competitors.",
+    "TASK": "Analyze competitors and extract strategic insights.",
+    "STEPS": "1 List 3-5 direct and indirect competitors\n2 Compare positioning, pricing, and unique value\n3 Identify strengths and weaknesses per player\n4 Spot market gaps we can occupy\n5 Recommend differentiation moves",
+    "OUTPUT FORMAT": "Competitor profile table\nPositioning map\nSWOT per competitor\nMarket gap analysis\nDifferentiation strategy"
+   }
+  },
+  {
+   "id": 23,
+   "cat": 3,
+   "name": "고객 페르소나 생성",
+   "level": "기초",
+   "explain": "마케팅·제품 설계의 출발점인 페르소나 2~3개. 이름·사진 묘사·고통·목표·채널·메시지 각도까지. 'A/B 2명' 페르소나 표준 포맷.",
+   "prompt": "ROLE\nCustomer research specialist.\n\nCONTEXT\nThe user needs actionable buyer personas.\n\nTASK\nCreate 2-3 detailed customer personas with pain points and goals.\n\nSTEPS\n1 Define demographic and psychographic profiles\n2 Map daily routines and key channels\n3 Identify pain points with emotional weight\n4 List goals and motivations\n5 Draft messaging angles per persona\n\nOUTPUT FORMAT\nPersona name and photo description\nDemographics and psychographics\nPain points and goals\nPreferred channels\nMessaging angles\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nCustomer research specialist.\n\nCONTEXT\nThe user needs actionable buyer personas.\n\nTASK\nCreate 2-3 detailed customer personas with pain points and goals.\n\nSTEPS\n1 Define demographic and psychographic profiles\n2 Map daily routines and key channels\n3 Identify pain points with emotional weight\n4 List goals and motivations\n5 Draft messaging angles per persona\n\nOUTPUT FORMAT\nPersona name and photo description\nDemographics and psychographics\nPain points and goals\nPreferred channels\nMessaging angles",
+   "sections": {
+    "ROLE": "Customer research specialist.",
+    "CONTEXT": "The user needs actionable buyer personas.",
+    "TASK": "Create 2-3 detailed customer personas with pain points and goals.",
+    "STEPS": "1 Define demographic and psychographic profiles\n2 Map daily routines and key channels\n3 Identify pain points with emotional weight\n4 List goals and motivations\n5 Draft messaging angles per persona",
+    "OUTPUT FORMAT": "Persona name and photo description\nDemographics and psychographics\nPain points and goals\nPreferred channels\nMessaging angles"
+   }
+  },
+  {
+   "id": 24,
+   "cat": 3,
+   "name": "SWOT 분석",
+   "level": "기초",
+   "explain": "일반 SWOT에서 한발 더 — SO/WO/ST/WT 교차전략까지 포함. 분석이 아닌 '실행계획'으로 연결되는 SWOT. 공공기관·대기업 보고서 표준.",
+   "prompt": "ROLE\nStrategic planning consultant.\n\nCONTEXT\nThe user wants a rigorous SWOT analysis for decision support.\n\nTASK\nGenerate a complete SWOT analysis with cross-strategies.\n\nSTEPS\n1 List 4-5 internal Strengths\n2 List 4-5 internal Weaknesses\n3 List 4-5 external Opportunities\n4 List 4-5 external Threats\n5 Generate SO, WO, ST, WT cross-strategies\n\nOUTPUT FORMAT\nSWOT 2x2 matrix\nCross-strategy table (SO, WO, ST, WT)\nPriority ranking\nImmediate action items\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nStrategic planning consultant.\n\nCONTEXT\nThe user wants a rigorous SWOT analysis for decision support.\n\nTASK\nGenerate a complete SWOT analysis with cross-strategies.\n\nSTEPS\n1 List 4-5 internal Strengths\n2 List 4-5 internal Weaknesses\n3 List 4-5 external Opportunities\n4 List 4-5 external Threats\n5 Generate SO, WO, ST, WT cross-strategies\n\nOUTPUT FORMAT\nSWOT 2x2 matrix\nCross-strategy table (SO, WO, ST, WT)\nPriority ranking\nImmediate action items",
+   "sections": {
+    "ROLE": "Strategic planning consultant.",
+    "CONTEXT": "The user wants a rigorous SWOT analysis for decision support.",
+    "TASK": "Generate a complete SWOT analysis with cross-strategies.",
+    "STEPS": "1 List 4-5 internal Strengths\n2 List 4-5 internal Weaknesses\n3 List 4-5 external Opportunities\n4 List 4-5 external Threats\n5 Generate SO, WO, ST, WT cross-strategies",
+    "OUTPUT FORMAT": "SWOT 2x2 matrix\nCross-strategy table (SO, WO, ST, WT)\nPriority ranking\nImmediate action items"
+   }
+  },
+  {
+   "id": 25,
+   "cat": 3,
+   "name": "PESTEL 분석",
+   "level": "중급",
+   "explain": "거시환경 6개 축(정치·경제·사회·기술·환경·법)을 표로 정리. 교차 영향까지 분석. 신사업 진출·해외 시장 분석에 필수.",
+   "prompt": "ROLE\nMacro-environment analyst.\n\nCONTEXT\nThe user needs an external environment scan.\n\nTASK\nPerform a PESTEL analysis.\n\nSTEPS\n1 Political factors affecting the business\n2 Economic factors and trends\n3 Social and cultural shifts\n4 Technological disruptions\n5 Environmental and Legal considerations\n\nOUTPUT FORMAT\nPESTEL summary table\nKey insight per factor\nCross-factor interactions\nStrategic implications\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nMacro-environment analyst.\n\nCONTEXT\nThe user needs an external environment scan.\n\nTASK\nPerform a PESTEL analysis.\n\nSTEPS\n1 Political factors affecting the business\n2 Economic factors and trends\n3 Social and cultural shifts\n4 Technological disruptions\n5 Environmental and Legal considerations\n\nOUTPUT FORMAT\nPESTEL summary table\nKey insight per factor\nCross-factor interactions\nStrategic implications",
+   "sections": {
+    "ROLE": "Macro-environment analyst.",
+    "CONTEXT": "The user needs an external environment scan.",
+    "TASK": "Perform a PESTEL analysis.",
+    "STEPS": "1 Political factors affecting the business\n2 Economic factors and trends\n3 Social and cultural shifts\n4 Technological disruptions\n5 Environmental and Legal considerations",
+    "OUTPUT FORMAT": "PESTEL summary table\nKey insight per factor\nCross-factor interactions\nStrategic implications"
+   }
+  },
+  {
+   "id": 26,
+   "cat": 3,
+   "name": "고객 여정 지도",
+   "level": "중급",
+   "explain": "인지→구매→옹호까지 5단계 여정을 표로 정리. 감정 곡선과 'Moment of Truth'까지 찾아내서 CX 개선 포인트를 시각화.",
+   "prompt": "ROLE\nUX researcher specializing in customer journey mapping.\n\nCONTEXT\nThe user wants to visualize the full customer experience.\n\nTASK\nMap the customer journey from awareness to advocacy.\n\nSTEPS\n1 Define 5 journey stages (Awareness, Consideration, Purchase, Retention, Advocacy)\n2 List touchpoints per stage\n3 Capture thoughts, feelings, actions\n4 Identify pain points and moments of truth\n5 Propose opportunities at each stage\n\nOUTPUT FORMAT\nJourney map table (stages x dimensions)\nEmotion curve\nPain points flagged\nOpportunity list\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nUX researcher specializing in customer journey mapping.\n\nCONTEXT\nThe user wants to visualize the full customer experience.\n\nTASK\nMap the customer journey from awareness to advocacy.\n\nSTEPS\n1 Define 5 journey stages (Awareness, Consideration, Purchase, Retention, Advocacy)\n2 List touchpoints per stage\n3 Capture thoughts, feelings, actions\n4 Identify pain points and moments of truth\n5 Propose opportunities at each stage\n\nOUTPUT FORMAT\nJourney map table (stages x dimensions)\nEmotion curve\nPain points flagged\nOpportunity list",
+   "sections": {
+    "ROLE": "UX researcher specializing in customer journey mapping.",
+    "CONTEXT": "The user wants to visualize the full customer experience.",
+    "TASK": "Map the customer journey from awareness to advocacy.",
+    "STEPS": "1 Define 5 journey stages (Awareness, Consideration, Purchase, Retention, Advocacy)\n2 List touchpoints per stage\n3 Capture thoughts, feelings, actions\n4 Identify pain points and moments of truth\n5 Propose opportunities at each stage",
+    "OUTPUT FORMAT": "Journey map table (stages x dimensions)\nEmotion curve\nPain points flagged\nOpportunity list"
+   }
+  },
+  {
+   "id": 27,
+   "cat": 3,
+   "name": "설문 결과 분석",
+   "level": "중급",
+   "explain": "설문 raw 데이터를 '임원 1장 요약'으로 변환. 정량(top 5) + 정성(테마 클러스터링) + 예상외 인사이트. CS·HR·교육 담당자에게 유용.",
+   "prompt": "ROLE\nQuantitative and qualitative research analyst.\n\nCONTEXT\nThe user has raw survey results and needs insight extraction.\n\nTASK\nAnalyze survey data and produce an executive summary.\n\nSTEPS\n1 Identify top 5 quantitative findings with percentages\n2 Cluster open-ended responses into themes\n3 Highlight unexpected patterns\n4 Note demographic differences\n5 Recommend 3 actions\n\nOUTPUT FORMAT\nExecutive summary\nQuantitative highlights\nQualitative themes\nSurprising insights\nAction recommendations\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nQuantitative and qualitative research analyst.\n\nCONTEXT\nThe user has raw survey results and needs insight extraction.\n\nTASK\nAnalyze survey data and produce an executive summary.\n\nSTEPS\n1 Identify top 5 quantitative findings with percentages\n2 Cluster open-ended responses into themes\n3 Highlight unexpected patterns\n4 Note demographic differences\n5 Recommend 3 actions\n\nOUTPUT FORMAT\nExecutive summary\nQuantitative highlights\nQualitative themes\nSurprising insights\nAction recommendations",
+   "sections": {
+    "ROLE": "Quantitative and qualitative research analyst.",
+    "CONTEXT": "The user has raw survey results and needs insight extraction.",
+    "TASK": "Analyze survey data and produce an executive summary.",
+    "STEPS": "1 Identify top 5 quantitative findings with percentages\n2 Cluster open-ended responses into themes\n3 Highlight unexpected patterns\n4 Note demographic differences\n5 Recommend 3 actions",
+    "OUTPUT FORMAT": "Executive summary\nQuantitative highlights\nQualitative themes\nSurprising insights\nAction recommendations"
+   }
+  },
+  {
+   "id": 28,
+   "cat": 3,
+   "name": "키워드 분석",
+   "level": "기초",
+   "explain": "주 키워드 1개 → 롱테일 10개 → 검색 의도·난이도 자동 분류 → 콘텐츠 포맷 추천. SEO·GEO 콘텐츠 설계의 출발점.",
+   "prompt": "ROLE\nSEO and content strategist.\n\nCONTEXT\nThe user is planning content and needs a keyword strategy.\n\nTASK\nAnalyze keywords and propose a content map.\n\nSTEPS\n1 Identify 1 primary keyword\n2 List 10 long-tail variations\n3 Classify by search intent (info, nav, trans, commercial)\n4 Estimate difficulty and traffic potential\n5 Suggest content format per keyword\n\nOUTPUT FORMAT\nPrimary keyword\nLong-tail keyword table (intent, difficulty, volume)\nContent type per keyword\nPillar-cluster content map\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nSEO and content strategist.\n\nCONTEXT\nThe user is planning content and needs a keyword strategy.\n\nTASK\nAnalyze keywords and propose a content map.\n\nSTEPS\n1 Identify 1 primary keyword\n2 List 10 long-tail variations\n3 Classify by search intent (info, nav, trans, commercial)\n4 Estimate difficulty and traffic potential\n5 Suggest content format per keyword\n\nOUTPUT FORMAT\nPrimary keyword\nLong-tail keyword table (intent, difficulty, volume)\nContent type per keyword\nPillar-cluster content map",
+   "sections": {
+    "ROLE": "SEO and content strategist.",
+    "CONTEXT": "The user is planning content and needs a keyword strategy.",
+    "TASK": "Analyze keywords and propose a content map.",
+    "STEPS": "1 Identify 1 primary keyword\n2 List 10 long-tail variations\n3 Classify by search intent (info, nav, trans, commercial)\n4 Estimate difficulty and traffic potential\n5 Suggest content format per keyword",
+    "OUTPUT FORMAT": "Primary keyword\nLong-tail keyword table (intent, difficulty, volume)\nContent type per keyword\nPillar-cluster content map"
+   }
+  },
+  {
+   "id": 29,
+   "cat": 3,
+   "name": "콘텐츠 성과 분석",
+   "level": "중급",
+   "explain": "조회수·좋아요·전환 등 데이터로 '왜 이 글은 뜨고 저 글은 안 뜨는지' 패턴을 추출. 다음 콘텐츠 5개 아이디어와 리퍼포징 계획까지.",
+   "prompt": "ROLE\nContent performance analyst.\n\nCONTEXT\nThe user has published content and wants to optimize based on data.\n\nTASK\nAnalyze content performance and recommend improvements.\n\nSTEPS\n1 Identify top 3 and bottom 3 performers\n2 Spot patterns in winners (format, topic, length)\n3 Diagnose why losers underperformed\n4 Generate 5 next-content ideas based on winning pattern\n5 Suggest repurposing of winners into other formats\n\nOUTPUT FORMAT\nTop/Bottom performer analysis\nWinning pattern summary\nDiagnosis of losers\nNext 5 content ideas\nRepurposing plan\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nContent performance analyst.\n\nCONTEXT\nThe user has published content and wants to optimize based on data.\n\nTASK\nAnalyze content performance and recommend improvements.\n\nSTEPS\n1 Identify top 3 and bottom 3 performers\n2 Spot patterns in winners (format, topic, length)\n3 Diagnose why losers underperformed\n4 Generate 5 next-content ideas based on winning pattern\n5 Suggest repurposing of winners into other formats\n\nOUTPUT FORMAT\nTop/Bottom performer analysis\nWinning pattern summary\nDiagnosis of losers\nNext 5 content ideas\nRepurposing plan",
+   "sections": {
+    "ROLE": "Content performance analyst.",
+    "CONTEXT": "The user has published content and wants to optimize based on data.",
+    "TASK": "Analyze content performance and recommend improvements.",
+    "STEPS": "1 Identify top 3 and bottom 3 performers\n2 Spot patterns in winners (format, topic, length)\n3 Diagnose why losers underperformed\n4 Generate 5 next-content ideas based on winning pattern\n5 Suggest repurposing of winners into other formats",
+    "OUTPUT FORMAT": "Top/Bottom performer analysis\nWinning pattern summary\nDiagnosis of losers\nNext 5 content ideas\nRepurposing plan"
+   }
+  },
+  {
+   "id": 30,
+   "cat": 3,
+   "name": "가격 전략 분석",
+   "level": "고급",
+   "explain": "가격 결정을 '감'이 아닌 데이터로. 경쟁사 벤치마크 + WTP 분석 + 3개 모델 비교 + 수익 예측. 가격 재책정·신제품 출시에 필수.",
+   "prompt": "ROLE\nPricing strategy consultant.\n\nCONTEXT\nThe user is setting or revising product/service pricing.\n\nTASK\nPropose an optimal pricing strategy.\n\nSTEPS\n1 Benchmark 3-5 competitor prices\n2 Analyze customer willingness-to-pay signals\n3 Test 3 pricing models (value, cost-plus, tiered, freemium)\n4 Calculate projected revenue per model\n5 Recommend final pricing with rationale\n\nOUTPUT FORMAT\nCompetitor price benchmark\nWTP analysis\n3 pricing model comparison\nRevenue projection\nFinal recommendation\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nPricing strategy consultant.\n\nCONTEXT\nThe user is setting or revising product/service pricing.\n\nTASK\nPropose an optimal pricing strategy.\n\nSTEPS\n1 Benchmark 3-5 competitor prices\n2 Analyze customer willingness-to-pay signals\n3 Test 3 pricing models (value, cost-plus, tiered, freemium)\n4 Calculate projected revenue per model\n5 Recommend final pricing with rationale\n\nOUTPUT FORMAT\nCompetitor price benchmark\nWTP analysis\n3 pricing model comparison\nRevenue projection\nFinal recommendation",
+   "sections": {
+    "ROLE": "Pricing strategy consultant.",
+    "CONTEXT": "The user is setting or revising product/service pricing.",
+    "TASK": "Propose an optimal pricing strategy.",
+    "STEPS": "1 Benchmark 3-5 competitor prices\n2 Analyze customer willingness-to-pay signals\n3 Test 3 pricing models (value, cost-plus, tiered, freemium)\n4 Calculate projected revenue per model\n5 Recommend final pricing with rationale",
+    "OUTPUT FORMAT": "Competitor price benchmark\nWTP analysis\n3 pricing model comparison\nRevenue projection\nFinal recommendation"
+   }
+  },
+  {
+   "id": 31,
+   "cat": 4,
+   "name": "마케팅 퍼널 설계",
+   "level": "중급",
+   "explain": "AARRR(획득·활성·유지·매출·추천) 전체 퍼널 설계. 단계별 채널·전술·KPI + 30일 액션 플랜. 스타트업·1인기업 필수.",
+   "prompt": "ROLE\nGrowth marketing strategist (AARRR expert).\n\nCONTEXT\nThe user needs a full-funnel marketing strategy.\n\nTASK\nDesign an AARRR funnel with tactics per stage.\n\nSTEPS\n1 Acquisition: 3 channels with KPI\n2 Activation: onboarding flow and activation event\n3 Retention: engagement loops and email cadence\n4 Revenue: monetization moments\n5 Referral: advocacy triggers and incentives\n\nOUTPUT FORMAT\nAARRR funnel table\nTactics per stage\nKPIs per stage\n30-day action plan\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nGrowth marketing strategist (AARRR expert).\n\nCONTEXT\nThe user needs a full-funnel marketing strategy.\n\nTASK\nDesign an AARRR funnel with tactics per stage.\n\nSTEPS\n1 Acquisition: 3 channels with KPI\n2 Activation: onboarding flow and activation event\n3 Retention: engagement loops and email cadence\n4 Revenue: monetization moments\n5 Referral: advocacy triggers and incentives\n\nOUTPUT FORMAT\nAARRR funnel table\nTactics per stage\nKPIs per stage\n30-day action plan",
+   "sections": {
+    "ROLE": "Growth marketing strategist (AARRR expert).",
+    "CONTEXT": "The user needs a full-funnel marketing strategy.",
+    "TASK": "Design an AARRR funnel with tactics per stage.",
+    "STEPS": "1 Acquisition: 3 channels with KPI\n2 Activation: onboarding flow and activation event\n3 Retention: engagement loops and email cadence\n4 Revenue: monetization moments\n5 Referral: advocacy triggers and incentives",
+    "OUTPUT FORMAT": "AARRR funnel table\nTactics per stage\nKPIs per stage\n30-day action plan"
+   }
+  },
+  {
+   "id": 32,
+   "cat": 4,
+   "name": "브랜드 메시징 프레임워크",
+   "level": "고급",
+   "explain": "브랜드가 모든 채널에서 같은 목소리를 내도록 하는 메시징 프레임. 목적문 → 포지셔닝 → 3개 필러 → 톤앤매너까지. 브랜드북 핵심.",
+   "prompt": "ROLE\nBrand strategist and messaging architect.\n\nCONTEXT\nThe user wants a coherent messaging system across all touchpoints.\n\nTASK\nBuild a brand messaging framework.\n\nSTEPS\n1 Define brand purpose in one sentence\n2 Craft positioning statement (for X who need Y, we are Z)\n3 List 3 pillar messages\n4 Write proof points per pillar\n5 Generate tone of voice guidelines\n\nOUTPUT FORMAT\nBrand purpose\nPositioning statement\n3 message pillars\nProof points\nTone of voice guide\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nBrand strategist and messaging architect.\n\nCONTEXT\nThe user wants a coherent messaging system across all touchpoints.\n\nTASK\nBuild a brand messaging framework.\n\nSTEPS\n1 Define brand purpose in one sentence\n2 Craft positioning statement (for X who need Y, we are Z)\n3 List 3 pillar messages\n4 Write proof points per pillar\n5 Generate tone of voice guidelines\n\nOUTPUT FORMAT\nBrand purpose\nPositioning statement\n3 message pillars\nProof points\nTone of voice guide",
+   "sections": {
+    "ROLE": "Brand strategist and messaging architect.",
+    "CONTEXT": "The user wants a coherent messaging system across all touchpoints.",
+    "TASK": "Build a brand messaging framework.",
+    "STEPS": "1 Define brand purpose in one sentence\n2 Craft positioning statement (for X who need Y, we are Z)\n3 List 3 pillar messages\n4 Write proof points per pillar\n5 Generate tone of voice guidelines",
+    "OUTPUT FORMAT": "Brand purpose\nPositioning statement\n3 message pillars\nProof points\nTone of voice guide"
+   }
+  },
+  {
+   "id": 33,
+   "cat": 4,
+   "name": "포지셔닝 전략",
+   "level": "고급",
+   "explain": "April Dunford 방법론 기반 포지셔닝. 경쟁 대안 → 차별 속성 → 카테고리 선점 → 내러티브. '그래서 뭐가 다른데?' 질문에 1분 답변 가능.",
+   "prompt": "ROLE\nPositioning strategist (April Dunford-style).\n\nCONTEXT\nThe user needs sharp market positioning to stand out.\n\nTASK\nDevelop a differentiated positioning strategy.\n\nSTEPS\n1 List competitive alternatives\n2 Identify unique attributes and their value\n3 Define best-fit customer\n4 Choose a market category to own\n5 Craft positioning narrative\n\nOUTPUT FORMAT\nCompetitive alternatives\nUnique attributes and value\nIdeal customer profile\nCategory to own\nPositioning narrative\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nPositioning strategist (April Dunford-style).\n\nCONTEXT\nThe user needs sharp market positioning to stand out.\n\nTASK\nDevelop a differentiated positioning strategy.\n\nSTEPS\n1 List competitive alternatives\n2 Identify unique attributes and their value\n3 Define best-fit customer\n4 Choose a market category to own\n5 Craft positioning narrative\n\nOUTPUT FORMAT\nCompetitive alternatives\nUnique attributes and value\nIdeal customer profile\nCategory to own\nPositioning narrative",
+   "sections": {
+    "ROLE": "Positioning strategist (April Dunford-style).",
+    "CONTEXT": "The user needs sharp market positioning to stand out.",
+    "TASK": "Develop a differentiated positioning strategy.",
+    "STEPS": "1 List competitive alternatives\n2 Identify unique attributes and their value\n3 Define best-fit customer\n4 Choose a market category to own\n5 Craft positioning narrative",
+    "OUTPUT FORMAT": "Competitive alternatives\nUnique attributes and value\nIdeal customer profile\nCategory to own\nPositioning narrative"
+   }
+  },
+  {
+   "id": 34,
+   "cat": 4,
+   "name": "광고 카피 (페북/구글)",
+   "level": "중급",
+   "explain": "페북·구글 광고용 카피 5세트. 헤드라인 + 본문 + CTA + A/B 가설까지. 광고비 지출 전 반드시 이 스킬 한 번 돌려보세요.",
+   "prompt": "ROLE\nPerformance marketing copywriter.\n\nCONTEXT\nThe user needs ad copy that converts on paid channels.\n\nTASK\nWrite 5 ad copy variations for Facebook or Google Ads.\n\nSTEPS\n1 Identify target audience pain\n2 Write headline with benefit or curiosity\n3 Write primary text with social proof\n4 Add specific CTA\n5 Create 5 variations for A/B testing\n\nOUTPUT FORMAT\nAd set structure\nHeadlines (5)\nPrimary texts (5)\nCTA buttons\nA/B test hypothesis\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nPerformance marketing copywriter.\n\nCONTEXT\nThe user needs ad copy that converts on paid channels.\n\nTASK\nWrite 5 ad copy variations for Facebook or Google Ads.\n\nSTEPS\n1 Identify target audience pain\n2 Write headline with benefit or curiosity\n3 Write primary text with social proof\n4 Add specific CTA\n5 Create 5 variations for A/B testing\n\nOUTPUT FORMAT\nAd set structure\nHeadlines (5)\nPrimary texts (5)\nCTA buttons\nA/B test hypothesis",
+   "sections": {
+    "ROLE": "Performance marketing copywriter.",
+    "CONTEXT": "The user needs ad copy that converts on paid channels.",
+    "TASK": "Write 5 ad copy variations for Facebook or Google Ads.",
+    "STEPS": "1 Identify target audience pain\n2 Write headline with benefit or curiosity\n3 Write primary text with social proof\n4 Add specific CTA\n5 Create 5 variations for A/B testing",
+    "OUTPUT FORMAT": "Ad set structure\nHeadlines (5)\nPrimary texts (5)\nCTA buttons\nA/B test hypothesis"
+   }
+  },
+  {
+   "id": 35,
+   "cat": 4,
+   "name": "세일즈 퍼널 이메일 시퀀스",
+   "level": "고급",
+   "explain": "리드를 구매자로 전환시키는 7일 이메일 시퀀스. 환영 → 스토리 → 가치 → 증거 → 제안 → 긴급성 → 라스트콜. 정보성 상품 판매에 강력.",
+   "prompt": "ROLE\nEmail sequence strategist.\n\nCONTEXT\nThe user is building a 7-day nurture sequence.\n\nTASK\nWrite a 7-email sequence leading from lead to purchase.\n\nSTEPS\n1 Day 1: welcome + valuable free gift\n2 Day 2: story that builds trust\n3 Day 3: educational value (top tip)\n4 Day 4: case study or testimonial\n5 Day 5-7: offer reveal, urgency, last call\n\nOUTPUT FORMAT\nSubject line per email\nBody text per email\nCTA per email\nSend schedule\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nEmail sequence strategist.\n\nCONTEXT\nThe user is building a 7-day nurture sequence.\n\nTASK\nWrite a 7-email sequence leading from lead to purchase.\n\nSTEPS\n1 Day 1: welcome + valuable free gift\n2 Day 2: story that builds trust\n3 Day 3: educational value (top tip)\n4 Day 4: case study or testimonial\n5 Day 5-7: offer reveal, urgency, last call\n\nOUTPUT FORMAT\nSubject line per email\nBody text per email\nCTA per email\nSend schedule",
+   "sections": {
+    "ROLE": "Email sequence strategist.",
+    "CONTEXT": "The user is building a 7-day nurture sequence.",
+    "TASK": "Write a 7-email sequence leading from lead to purchase.",
+    "STEPS": "1 Day 1: welcome + valuable free gift\n2 Day 2: story that builds trust\n3 Day 3: educational value (top tip)\n4 Day 4: case study or testimonial\n5 Day 5-7: offer reveal, urgency, last call",
+    "OUTPUT FORMAT": "Subject line per email\nBody text per email\nCTA per email\nSend schedule"
+   }
+  },
+  {
+   "id": 36,
+   "cat": 4,
+   "name": "고객 후기 리라이팅",
+   "level": "기초",
+   "explain": "고객이 보내준 막연한 후기를 '전환율 올리는 사회적 증거'로 리라이팅. Before-After + 구체 숫자 + 헤드라인 공식 적용.",
+   "prompt": "ROLE\nSocial proof copy specialist.\n\nCONTEXT\nThe user has raw customer testimonials and wants them to convert better.\n\nTASK\nRewrite testimonials into high-converting social proof.\n\nSTEPS\n1 Keep the customer's voice authentic\n2 Surface the before-after transformation\n3 Include specific numbers or outcomes\n4 Remove fluff and generic praise\n5 Add headline that captures the transformation\n\nOUTPUT FORMAT\nHeadline (5-7 words)\nRewritten testimonial\nSpecific outcome\nCustomer credit info\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nSocial proof copy specialist.\n\nCONTEXT\nThe user has raw customer testimonials and wants them to convert better.\n\nTASK\nRewrite testimonials into high-converting social proof.\n\nSTEPS\n1 Keep the customer's voice authentic\n2 Surface the before-after transformation\n3 Include specific numbers or outcomes\n4 Remove fluff and generic praise\n5 Add headline that captures the transformation\n\nOUTPUT FORMAT\nHeadline (5-7 words)\nRewritten testimonial\nSpecific outcome\nCustomer credit info",
+   "sections": {
+    "ROLE": "Social proof copy specialist.",
+    "CONTEXT": "The user has raw customer testimonials and wants them to convert better.",
+    "TASK": "Rewrite testimonials into high-converting social proof.",
+    "STEPS": "1 Keep the customer's voice authentic\n2 Surface the before-after transformation\n3 Include specific numbers or outcomes\n4 Remove fluff and generic praise\n5 Add headline that captures the transformation",
+    "OUTPUT FORMAT": "Headline (5-7 words)\nRewritten testimonial\nSpecific outcome\nCustomer credit info"
+   }
+  },
+  {
+   "id": 37,
+   "cat": 4,
+   "name": "프로모션 기획안",
+   "level": "중급",
+   "explain": "특정 기간 프로모션 기획. 목표 → 할인 구조 → 긴급성 → 채널 → 측정. 시즌 세일·런칭 이벤트·재고 정리 프로모션에 바로.",
+   "prompt": "ROLE\nPromotion campaign planner.\n\nCONTEXT\nThe user is planning a limited-time promotion.\n\nTASK\nDesign a complete promotion campaign plan.\n\nSTEPS\n1 Define campaign goal and KPI\n2 Set promo mechanics (discount, bundle, gift)\n3 Create urgency and scarcity elements\n4 Plan channel mix and timeline\n5 Prepare success measurement\n\nOUTPUT FORMAT\nCampaign concept and theme\nPromo mechanics\nChannel and timeline\nCreative assets list\nKPI measurement plan\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nPromotion campaign planner.\n\nCONTEXT\nThe user is planning a limited-time promotion.\n\nTASK\nDesign a complete promotion campaign plan.\n\nSTEPS\n1 Define campaign goal and KPI\n2 Set promo mechanics (discount, bundle, gift)\n3 Create urgency and scarcity elements\n4 Plan channel mix and timeline\n5 Prepare success measurement\n\nOUTPUT FORMAT\nCampaign concept and theme\nPromo mechanics\nChannel and timeline\nCreative assets list\nKPI measurement plan",
+   "sections": {
+    "ROLE": "Promotion campaign planner.",
+    "CONTEXT": "The user is planning a limited-time promotion.",
+    "TASK": "Design a complete promotion campaign plan.",
+    "STEPS": "1 Define campaign goal and KPI\n2 Set promo mechanics (discount, bundle, gift)\n3 Create urgency and scarcity elements\n4 Plan channel mix and timeline\n5 Prepare success measurement",
+    "OUTPUT FORMAT": "Campaign concept and theme\nPromo mechanics\nChannel and timeline\nCreative assets list\nKPI measurement plan"
+   }
+  },
+  {
+   "id": 38,
+   "cat": 4,
+   "name": "인플루언서 협업 제안서",
+   "level": "중급",
+   "explain": "인플루언서 DM/이메일 협업 제안. 개인화 오프닝 + 상호 가치 + 포맷 2-3개 + 보상안. 답장 오는 제안서 공식.",
+   "prompt": "ROLE\nInfluencer partnership manager.\n\nCONTEXT\nThe user wants to pitch an influencer for collaboration.\n\nTASK\nWrite a collaboration pitch that influencers actually open.\n\nSTEPS\n1 Personalize opening with specific compliment\n2 State mutual value clearly\n3 Propose 2-3 collab formats\n4 Include compensation range\n5 Call for reply with clear next step\n\nOUTPUT FORMAT\nSubject line\nPersonalized opener\nValue proposition\nCollab formats\nCompensation and next step\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nInfluencer partnership manager.\n\nCONTEXT\nThe user wants to pitch an influencer for collaboration.\n\nTASK\nWrite a collaboration pitch that influencers actually open.\n\nSTEPS\n1 Personalize opening with specific compliment\n2 State mutual value clearly\n3 Propose 2-3 collab formats\n4 Include compensation range\n5 Call for reply with clear next step\n\nOUTPUT FORMAT\nSubject line\nPersonalized opener\nValue proposition\nCollab formats\nCompensation and next step",
+   "sections": {
+    "ROLE": "Influencer partnership manager.",
+    "CONTEXT": "The user wants to pitch an influencer for collaboration.",
+    "TASK": "Write a collaboration pitch that influencers actually open.",
+    "STEPS": "1 Personalize opening with specific compliment\n2 State mutual value clearly\n3 Propose 2-3 collab formats\n4 Include compensation range\n5 Call for reply with clear next step",
+    "OUTPUT FORMAT": "Subject line\nPersonalized opener\nValue proposition\nCollab formats\nCompensation and next step"
+   }
+  },
+  {
+   "id": 39,
+   "cat": 4,
+   "name": "USP 도출",
+   "level": "중급",
+   "explain": "'왜 우리를 사야 하는가'를 한 문장 15단어 이내로. 기능 → 혜택 → 경쟁 비교 → 유일함 포착. 랜딩·광고·IR에 동일하게 씁니다.",
+   "prompt": "ROLE\nUnique Selling Proposition strategist.\n\nCONTEXT\nThe user wants to articulate what makes their offer unique.\n\nTASK\nExtract a sharp USP.\n\nSTEPS\n1 List all product features\n2 Translate features into customer benefits\n3 Compare benefits with competitors\n4 Identify the single most unique benefit\n5 Write USP in one sentence under 15 words\n\nOUTPUT FORMAT\nFeature-benefit table\nCompetitor comparison\nUnique benefit identified\nUSP in one sentence (3 variations)\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nUnique Selling Proposition strategist.\n\nCONTEXT\nThe user wants to articulate what makes their offer unique.\n\nTASK\nExtract a sharp USP.\n\nSTEPS\n1 List all product features\n2 Translate features into customer benefits\n3 Compare benefits with competitors\n4 Identify the single most unique benefit\n5 Write USP in one sentence under 15 words\n\nOUTPUT FORMAT\nFeature-benefit table\nCompetitor comparison\nUnique benefit identified\nUSP in one sentence (3 variations)",
+   "sections": {
+    "ROLE": "Unique Selling Proposition strategist.",
+    "CONTEXT": "The user wants to articulate what makes their offer unique.",
+    "TASK": "Extract a sharp USP.",
+    "STEPS": "1 List all product features\n2 Translate features into customer benefits\n3 Compare benefits with competitors\n4 Identify the single most unique benefit\n5 Write USP in one sentence under 15 words",
+    "OUTPUT FORMAT": "Feature-benefit table\nCompetitor comparison\nUnique benefit identified\nUSP in one sentence (3 variations)"
+   }
+  },
+  {
+   "id": 40,
+   "cat": 4,
+   "name": "마케팅 KPI 설계",
+   "level": "중급",
+   "explain": "North Star Metric + 후행(매출) + 선행(트래픽) KPI 체계 설계. 마케팅을 '느낌'이 아니라 '숫자'로 운영하는 기반.",
+   "prompt": "ROLE\nMarketing analytics lead.\n\nCONTEXT\nThe user needs a measurable KPI framework for marketing.\n\nTASK\nDesign a KPI dashboard with leading and lagging indicators.\n\nSTEPS\n1 Set 1 North Star Metric\n2 Define 3-5 lagging KPIs (revenue, CAC, LTV)\n3 Define 5-7 leading KPIs (traffic, signups, activation)\n4 Set current baseline and target\n5 Suggest reporting cadence\n\nOUTPUT FORMAT\nNorth Star Metric\nLagging KPIs table\nLeading KPIs table\nBaseline vs target\nReporting cadence\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nMarketing analytics lead.\n\nCONTEXT\nThe user needs a measurable KPI framework for marketing.\n\nTASK\nDesign a KPI dashboard with leading and lagging indicators.\n\nSTEPS\n1 Set 1 North Star Metric\n2 Define 3-5 lagging KPIs (revenue, CAC, LTV)\n3 Define 5-7 leading KPIs (traffic, signups, activation)\n4 Set current baseline and target\n5 Suggest reporting cadence\n\nOUTPUT FORMAT\nNorth Star Metric\nLagging KPIs table\nLeading KPIs table\nBaseline vs target\nReporting cadence",
+   "sections": {
+    "ROLE": "Marketing analytics lead.",
+    "CONTEXT": "The user needs a measurable KPI framework for marketing.",
+    "TASK": "Design a KPI dashboard with leading and lagging indicators.",
+    "STEPS": "1 Set 1 North Star Metric\n2 Define 3-5 lagging KPIs (revenue, CAC, LTV)\n3 Define 5-7 leading KPIs (traffic, signups, activation)\n4 Set current baseline and target\n5 Suggest reporting cadence",
+    "OUTPUT FORMAT": "North Star Metric\nLagging KPIs table\nLeading KPIs table\nBaseline vs target\nReporting cadence"
+   }
+  },
+  {
+   "id": 41,
+   "cat": 5,
+   "name": "이메일 답장 템플릿 생성",
+   "level": "기초",
+   "explain": "반복되는 이메일 유형에 대한 3톤 템플릿(격식/따뜻함/간결). {{이름}} 같은 변수로 맞춤형 발송. 비서 없어도 하루 이메일 2시간 절약.",
+   "prompt": "ROLE\nProfessional email assistant.\n\nCONTEXT\nThe user receives similar emails and wants standardized responses.\n\nTASK\nGenerate 3 email reply templates for recurring situations.\n\nSTEPS\n1 Identify the email type and sender intent\n2 Match tone to sender relationship\n3 Write a polite, clear, actionable reply\n4 Include variables in {{ }} for customization\n5 Create 3 tone variations (formal, warm, brief)\n\nOUTPUT FORMAT\nTemplate 1 (formal)\nTemplate 2 (warm)\nTemplate 3 (brief)\nVariable list\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nProfessional email assistant.\n\nCONTEXT\nThe user receives similar emails and wants standardized responses.\n\nTASK\nGenerate 3 email reply templates for recurring situations.\n\nSTEPS\n1 Identify the email type and sender intent\n2 Match tone to sender relationship\n3 Write a polite, clear, actionable reply\n4 Include variables in {{ }} for customization\n5 Create 3 tone variations (formal, warm, brief)\n\nOUTPUT FORMAT\nTemplate 1 (formal)\nTemplate 2 (warm)\nTemplate 3 (brief)\nVariable list",
+   "sections": {
+    "ROLE": "Professional email assistant.",
+    "CONTEXT": "The user receives similar emails and wants standardized responses.",
+    "TASK": "Generate 3 email reply templates for recurring situations.",
+    "STEPS": "1 Identify the email type and sender intent\n2 Match tone to sender relationship\n3 Write a polite, clear, actionable reply\n4 Include variables in {{ }} for customization\n5 Create 3 tone variations (formal, warm, brief)",
+    "OUTPUT FORMAT": "Template 1 (formal)\nTemplate 2 (warm)\nTemplate 3 (brief)\nVariable list"
+   }
+  },
+  {
+   "id": 42,
+   "cat": 5,
+   "name": "회의록 자동 요약",
+   "level": "기초",
+   "explain": "회의록 녹취/메모를 1페이지 요약으로. 결정사항 + 액션 아이템(담당·마감) + 미결 이슈. 회의 끝나자마자 슬랙에 붙여넣기 가능.",
+   "prompt": "ROLE\nMeeting minutes specialist.\n\nCONTEXT\nThe user has a raw meeting transcript and needs actionable notes.\n\nTASK\nSummarize the meeting into a one-page brief.\n\nSTEPS\n1 Extract 5 key decisions made\n2 List action items with owner and due date\n3 Capture unresolved questions\n4 Summarize next steps\n5 Flag risks or blockers\n\nOUTPUT FORMAT\nMeeting purpose and attendees\nKey decisions (5)\nAction items (owner, due)\nOpen questions\nNext steps and risks\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nMeeting minutes specialist.\n\nCONTEXT\nThe user has a raw meeting transcript and needs actionable notes.\n\nTASK\nSummarize the meeting into a one-page brief.\n\nSTEPS\n1 Extract 5 key decisions made\n2 List action items with owner and due date\n3 Capture unresolved questions\n4 Summarize next steps\n5 Flag risks or blockers\n\nOUTPUT FORMAT\nMeeting purpose and attendees\nKey decisions (5)\nAction items (owner, due)\nOpen questions\nNext steps and risks",
+   "sections": {
+    "ROLE": "Meeting minutes specialist.",
+    "CONTEXT": "The user has a raw meeting transcript and needs actionable notes.",
+    "TASK": "Summarize the meeting into a one-page brief.",
+    "STEPS": "1 Extract 5 key decisions made\n2 List action items with owner and due date\n3 Capture unresolved questions\n4 Summarize next steps\n5 Flag risks or blockers",
+    "OUTPUT FORMAT": "Meeting purpose and attendees\nKey decisions (5)\nAction items (owner, due)\nOpen questions\nNext steps and risks"
+   }
+  },
+  {
+   "id": 43,
+   "cat": 5,
+   "name": "업무 우선순위 정리 (Eisenhower)",
+   "level": "기초",
+   "explain": "할 일 리스트를 아이젠하워 매트릭스로 자동 분류. 지금 할 것/계획할 것/위임할 것/버릴 것. 오늘의 TOP 3까지 선정해줌.",
+   "prompt": "ROLE\nProductivity coach using Eisenhower Matrix.\n\nCONTEXT\nThe user has a long task list and feels overwhelmed.\n\nTASK\nOrganize tasks into Eisenhower 2x2 matrix.\n\nSTEPS\n1 Classify each task by urgency and importance\n2 Place in Do, Schedule, Delegate, Delete quadrants\n3 Suggest specific delegation targets\n4 Flag tasks to remove entirely\n5 Rank today's top 3\n\nOUTPUT FORMAT\nEisenhower 2x2 matrix\nDelegation suggestions\nTasks to delete\nToday's top 3\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nProductivity coach using Eisenhower Matrix.\n\nCONTEXT\nThe user has a long task list and feels overwhelmed.\n\nTASK\nOrganize tasks into Eisenhower 2x2 matrix.\n\nSTEPS\n1 Classify each task by urgency and importance\n2 Place in Do, Schedule, Delegate, Delete quadrants\n3 Suggest specific delegation targets\n4 Flag tasks to remove entirely\n5 Rank today's top 3\n\nOUTPUT FORMAT\nEisenhower 2x2 matrix\nDelegation suggestions\nTasks to delete\nToday's top 3",
+   "sections": {
+    "ROLE": "Productivity coach using Eisenhower Matrix.",
+    "CONTEXT": "The user has a long task list and feels overwhelmed.",
+    "TASK": "Organize tasks into Eisenhower 2x2 matrix.",
+    "STEPS": "1 Classify each task by urgency and importance\n2 Place in Do, Schedule, Delegate, Delete quadrants\n3 Suggest specific delegation targets\n4 Flag tasks to remove entirely\n5 Rank today's top 3",
+    "OUTPUT FORMAT": "Eisenhower 2x2 matrix\nDelegation suggestions\nTasks to delete\nToday's top 3"
+   }
+  },
+  {
+   "id": 44,
+   "cat": 5,
+   "name": "반복 작업 SOP 작성",
+   "level": "중급",
+   "explain": "반복 업무를 '다른 사람도 할 수 있게' 문서화하는 SOP. 위임·인수인계·온보딩에 필수. 한 번 만들면 반영구적.",
+   "prompt": "ROLE\nOperations documentation specialist.\n\nCONTEXT\nThe user wants to document a recurring work process.\n\nTASK\nCreate a Standard Operating Procedure that anyone can follow.\n\nSTEPS\n1 Define the SOP purpose and trigger\n2 List prerequisites and tools\n3 Write numbered action steps\n4 Add quality checks per step\n5 Include edge cases and escalation path\n\nOUTPUT FORMAT\nSOP title and purpose\nPrerequisites\nNumbered steps\nQuality checks\nEdge cases and escalation\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nOperations documentation specialist.\n\nCONTEXT\nThe user wants to document a recurring work process.\n\nTASK\nCreate a Standard Operating Procedure that anyone can follow.\n\nSTEPS\n1 Define the SOP purpose and trigger\n2 List prerequisites and tools\n3 Write numbered action steps\n4 Add quality checks per step\n5 Include edge cases and escalation path\n\nOUTPUT FORMAT\nSOP title and purpose\nPrerequisites\nNumbered steps\nQuality checks\nEdge cases and escalation",
+   "sections": {
+    "ROLE": "Operations documentation specialist.",
+    "CONTEXT": "The user wants to document a recurring work process.",
+    "TASK": "Create a Standard Operating Procedure that anyone can follow.",
+    "STEPS": "1 Define the SOP purpose and trigger\n2 List prerequisites and tools\n3 Write numbered action steps\n4 Add quality checks per step\n5 Include edge cases and escalation path",
+    "OUTPUT FORMAT": "SOP title and purpose\nPrerequisites\nNumbered steps\nQuality checks\nEdge cases and escalation"
+   }
+  },
+  {
+   "id": 45,
+   "cat": 5,
+   "name": "Excel 수식 생성",
+   "level": "기초",
+   "explain": "엑셀 수식을 자연어로 설명하면 VLOOKUP·SUMIFS 같은 정확한 수식을 생성. 한글 설명 + 대안 수식까지. 엑셀 초보 탈출용.",
+   "prompt": "ROLE\nExcel formula expert.\n\nCONTEXT\nThe user describes what they want to calculate in plain language.\n\nTASK\nGenerate the exact Excel formula with explanation.\n\nSTEPS\n1 Parse the user's goal\n2 Identify the best formula (LOOKUP, IF, SUMIFS, etc.)\n3 Write the formula with sample cell references\n4 Explain each part in Korean\n5 Provide an alternative approach if possible\n\nOUTPUT FORMAT\nPrimary formula\nCell-by-cell explanation\nAlternative approach\nCommon error warning\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nExcel formula expert.\n\nCONTEXT\nThe user describes what they want to calculate in plain language.\n\nTASK\nGenerate the exact Excel formula with explanation.\n\nSTEPS\n1 Parse the user's goal\n2 Identify the best formula (LOOKUP, IF, SUMIFS, etc.)\n3 Write the formula with sample cell references\n4 Explain each part in Korean\n5 Provide an alternative approach if possible\n\nOUTPUT FORMAT\nPrimary formula\nCell-by-cell explanation\nAlternative approach\nCommon error warning",
+   "sections": {
+    "ROLE": "Excel formula expert.",
+    "CONTEXT": "The user describes what they want to calculate in plain language.",
+    "TASK": "Generate the exact Excel formula with explanation.",
+    "STEPS": "1 Parse the user's goal\n2 Identify the best formula (LOOKUP, IF, SUMIFS, etc.)\n3 Write the formula with sample cell references\n4 Explain each part in Korean\n5 Provide an alternative approach if possible",
+    "OUTPUT FORMAT": "Primary formula\nCell-by-cell explanation\nAlternative approach\nCommon error warning"
+   }
+  },
+  {
+   "id": 46,
+   "cat": 5,
+   "name": "데이터 정리 프롬프트",
+   "level": "중급",
+   "explain": "엉망진창 raw 데이터를 표준 형식으로 정리. 중복 제거, 날짜·전화번호 표준화, 누락값 플래깅. 고객 DB 정리에 필수.",
+   "prompt": "ROLE\nData cleaning specialist.\n\nCONTEXT\nThe user has messy raw data needing standardization.\n\nTASK\nClean and structure raw data.\n\nSTEPS\n1 Detect inconsistent formats (date, phone, name)\n2 Standardize each field\n3 Remove duplicates\n4 Flag missing or suspicious values\n5 Output clean table format\n\nOUTPUT FORMAT\nCleaning rules applied\nClean data table\nDuplicate count\nFlagged rows\nData quality score\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nData cleaning specialist.\n\nCONTEXT\nThe user has messy raw data needing standardization.\n\nTASK\nClean and structure raw data.\n\nSTEPS\n1 Detect inconsistent formats (date, phone, name)\n2 Standardize each field\n3 Remove duplicates\n4 Flag missing or suspicious values\n5 Output clean table format\n\nOUTPUT FORMAT\nCleaning rules applied\nClean data table\nDuplicate count\nFlagged rows\nData quality score",
+   "sections": {
+    "ROLE": "Data cleaning specialist.",
+    "CONTEXT": "The user has messy raw data needing standardization.",
+    "TASK": "Clean and structure raw data.",
+    "STEPS": "1 Detect inconsistent formats (date, phone, name)\n2 Standardize each field\n3 Remove duplicates\n4 Flag missing or suspicious values\n5 Output clean table format",
+    "OUTPUT FORMAT": "Cleaning rules applied\nClean data table\nDuplicate count\nFlagged rows\nData quality score"
+   }
+  },
+  {
+   "id": 47,
+   "cat": 5,
+   "name": "업무 자동화 아이디어 진단",
+   "level": "중급",
+   "explain": "현재 업무 흐름을 설명하면 자동화 포인트 5개 + 도구 추천(Zapier/Make/n8n) + 월 절약 시간 계산. 1인기업·소기업 필수 진단.",
+   "prompt": "ROLE\nAutomation consultant.\n\nCONTEXT\nThe user describes their daily workflow and wants automation ideas.\n\nTASK\nIdentify automation opportunities and tools.\n\nSTEPS\n1 Map the current manual workflow\n2 Spot repetitive, rule-based tasks\n3 Recommend tools (Zapier, Make, GAS, n8n)\n4 Estimate time saved per month\n5 Prioritize quick wins\n\nOUTPUT FORMAT\nCurrent workflow map\nAutomation opportunities (5)\nTool recommendations\nTime saved estimate\nQuick win roadmap\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nAutomation consultant.\n\nCONTEXT\nThe user describes their daily workflow and wants automation ideas.\n\nTASK\nIdentify automation opportunities and tools.\n\nSTEPS\n1 Map the current manual workflow\n2 Spot repetitive, rule-based tasks\n3 Recommend tools (Zapier, Make, GAS, n8n)\n4 Estimate time saved per month\n5 Prioritize quick wins\n\nOUTPUT FORMAT\nCurrent workflow map\nAutomation opportunities (5)\nTool recommendations\nTime saved estimate\nQuick win roadmap",
+   "sections": {
+    "ROLE": "Automation consultant.",
+    "CONTEXT": "The user describes their daily workflow and wants automation ideas.",
+    "TASK": "Identify automation opportunities and tools.",
+    "STEPS": "1 Map the current manual workflow\n2 Spot repetitive, rule-based tasks\n3 Recommend tools (Zapier, Make, GAS, n8n)\n4 Estimate time saved per month\n5 Prioritize quick wins",
+    "OUTPUT FORMAT": "Current workflow map\nAutomation opportunities (5)\nTool recommendations\nTime saved estimate\nQuick win roadmap"
+   }
+  },
+  {
+   "id": 48,
+   "cat": 5,
+   "name": "Zapier/Make 시나리오 설계",
+   "level": "중급",
+   "explain": "Zapier/Make용 자동화 플로우 설계도. 트리거 → 필터 → 액션 → 데이터 매핑 → 에러 처리까지. 자동화 도구 만들기 직전 단계.",
+   "prompt": "ROLE\nNo-code automation architect.\n\nCONTEXT\nThe user wants to build a specific automation flow.\n\nTASK\nDesign a Zapier or Make scenario with exact triggers and actions.\n\nSTEPS\n1 Define trigger app and event\n2 Outline filter/formatter steps\n3 Specify action apps and events\n4 Map data between steps\n5 Add error handling\n\nOUTPUT FORMAT\nTrigger (app, event, sample data)\nFilter/transform steps\nAction sequence\nData mapping\nError handling plan\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nNo-code automation architect.\n\nCONTEXT\nThe user wants to build a specific automation flow.\n\nTASK\nDesign a Zapier or Make scenario with exact triggers and actions.\n\nSTEPS\n1 Define trigger app and event\n2 Outline filter/formatter steps\n3 Specify action apps and events\n4 Map data between steps\n5 Add error handling\n\nOUTPUT FORMAT\nTrigger (app, event, sample data)\nFilter/transform steps\nAction sequence\nData mapping\nError handling plan",
+   "sections": {
+    "ROLE": "No-code automation architect.",
+    "CONTEXT": "The user wants to build a specific automation flow.",
+    "TASK": "Design a Zapier or Make scenario with exact triggers and actions.",
+    "STEPS": "1 Define trigger app and event\n2 Outline filter/formatter steps\n3 Specify action apps and events\n4 Map data between steps\n5 Add error handling",
+    "OUTPUT FORMAT": "Trigger (app, event, sample data)\nFilter/transform steps\nAction sequence\nData mapping\nError handling plan"
+   }
+  },
+  {
+   "id": 49,
+   "cat": 5,
+   "name": "체크리스트 생성",
+   "level": "기초",
+   "explain": "아툴 가완디의 체크리스트 선언 방식. DO-CONFIRM 타입 구분 + Pause Point. 실수 많은 업무·런칭·출장 준비에 절대 강력.",
+   "prompt": "ROLE\nChecklist designer following Gawande's Checklist Manifesto.\n\nCONTEXT\nThe user wants a fail-safe checklist for a task.\n\nTASK\nGenerate a killer checklist that prevents mistakes.\n\nSTEPS\n1 List all critical steps\n2 Organize by sequence\n3 Mark DO-CONFIRM vs READ-DO items\n4 Keep items short (under 10 words each)\n5 Include \"pause point\" for review\n\nOUTPUT FORMAT\nChecklist title and context\nNumbered items\nType per item (do-confirm / read-do)\nPause points\nReview criteria\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nChecklist designer following Gawande's Checklist Manifesto.\n\nCONTEXT\nThe user wants a fail-safe checklist for a task.\n\nTASK\nGenerate a killer checklist that prevents mistakes.\n\nSTEPS\n1 List all critical steps\n2 Organize by sequence\n3 Mark DO-CONFIRM vs READ-DO items\n4 Keep items short (under 10 words each)\n5 Include \"pause point\" for review\n\nOUTPUT FORMAT\nChecklist title and context\nNumbered items\nType per item (do-confirm / read-do)\nPause points\nReview criteria",
+   "sections": {
+    "ROLE": "Checklist designer following Gawande's Checklist Manifesto.",
+    "CONTEXT": "The user wants a fail-safe checklist for a task.",
+    "TASK": "Generate a killer checklist that prevents mistakes.",
+    "STEPS": "1 List all critical steps\n2 Organize by sequence\n3 Mark DO-CONFIRM vs READ-DO items\n4 Keep items short (under 10 words each)\n5 Include \"pause point\" for review",
+    "OUTPUT FORMAT": "Checklist title and context\nNumbered items\nType per item (do-confirm / read-do)\nPause points\nReview criteria"
+   }
+  },
+  {
+   "id": 50,
+   "cat": 5,
+   "name": "주간 보고서 템플릿",
+   "level": "기초",
+   "explain": "주간 보고를 '5분 작성 / 1분 읽기'로 압축하는 템플릿. 한 문장 요약 + Win/Challenge/Next. 상사도 직원도 살리는 포맷.",
+   "prompt": "ROLE\nExecutive reporting specialist.\n\nCONTEXT\nThe user needs a weekly status report format.\n\nTASK\nCreate a concise weekly report template with sample content.\n\nSTEPS\n1 One-sentence week summary\n2 Key wins (max 3)\n3 Key challenges and ask\n4 Next week priorities (max 3)\n5 Metrics snapshot\n\nOUTPUT FORMAT\nWeek headline\nWins\nChallenges and asks\nNext week priorities\nMetrics table\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nExecutive reporting specialist.\n\nCONTEXT\nThe user needs a weekly status report format.\n\nTASK\nCreate a concise weekly report template with sample content.\n\nSTEPS\n1 One-sentence week summary\n2 Key wins (max 3)\n3 Key challenges and ask\n4 Next week priorities (max 3)\n5 Metrics snapshot\n\nOUTPUT FORMAT\nWeek headline\nWins\nChallenges and asks\nNext week priorities\nMetrics table",
+   "sections": {
+    "ROLE": "Executive reporting specialist.",
+    "CONTEXT": "The user needs a weekly status report format.",
+    "TASK": "Create a concise weekly report template with sample content.",
+    "STEPS": "1 One-sentence week summary\n2 Key wins (max 3)\n3 Key challenges and ask\n4 Next week priorities (max 3)\n5 Metrics snapshot",
+    "OUTPUT FORMAT": "Week headline\nWins\nChallenges and asks\nNext week priorities\nMetrics table"
+   }
+  },
+  {
+   "id": 51,
+   "cat": 6,
+   "name": "AI 에이전트 역할 정의",
+   "level": "중급",
+   "explain": "AI 에이전트 '직무 설명서'. 이름·목적·책임·경계·성공기준. Custom GPT·Claude Project·커스텀 에이전트 설계의 핵심 1단계.",
+   "prompt": "ROLE\nAI agent architect (Claude/GPT Agents expert).\n\nCONTEXT\nThe user wants to build a custom AI agent for a specific job.\n\nTASK\nDefine the agent's role with clear boundaries.\n\nSTEPS\n1 Name the agent and one-line purpose\n2 List 3-5 core responsibilities\n3 Define what the agent will NOT do\n4 Specify tone and communication style\n5 Define success criteria\n\nOUTPUT FORMAT\nAgent name and purpose\nCore responsibilities\nExplicit boundaries (what NOT to do)\nTone and style\nSuccess criteria\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nAI agent architect (Claude/GPT Agents expert).\n\nCONTEXT\nThe user wants to build a custom AI agent for a specific job.\n\nTASK\nDefine the agent's role with clear boundaries.\n\nSTEPS\n1 Name the agent and one-line purpose\n2 List 3-5 core responsibilities\n3 Define what the agent will NOT do\n4 Specify tone and communication style\n5 Define success criteria\n\nOUTPUT FORMAT\nAgent name and purpose\nCore responsibilities\nExplicit boundaries (what NOT to do)\nTone and style\nSuccess criteria",
+   "sections": {
+    "ROLE": "AI agent architect (Claude/GPT Agents expert).",
+    "CONTEXT": "The user wants to build a custom AI agent for a specific job.",
+    "TASK": "Define the agent's role with clear boundaries.",
+    "STEPS": "1 Name the agent and one-line purpose\n2 List 3-5 core responsibilities\n3 Define what the agent will NOT do\n4 Specify tone and communication style\n5 Define success criteria",
+    "OUTPUT FORMAT": "Agent name and purpose\nCore responsibilities\nExplicit boundaries (what NOT to do)\nTone and style\nSuccess criteria"
+   }
+  },
+  {
+   "id": 52,
+   "cat": 6,
+   "name": "멀티 에이전트 협업 설계",
+   "level": "고급",
+   "explain": "연구자·작성자·검토자·실행자로 나눈 멀티 에이전트 시스템 설계. 핸드오프 프로토콜과 오케스트레이터 로직. AI 팀 빌딩.",
+   "prompt": "ROLE\nMulti-agent system designer.\n\nCONTEXT\nThe user wants multiple AI agents working together on complex tasks.\n\nTASK\nDesign a multi-agent workflow.\n\nSTEPS\n1 Identify subtasks requiring specialization\n2 Define 3-5 agent roles (researcher, writer, critic, etc.)\n3 Design handoff protocol between agents\n4 Set orchestrator logic\n5 Add quality checkpoint\n\nOUTPUT FORMAT\nAgent roster\nHandoff protocol\nOrchestrator design\nQuality checkpoint\nExpected output flow\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nMulti-agent system designer.\n\nCONTEXT\nThe user wants multiple AI agents working together on complex tasks.\n\nTASK\nDesign a multi-agent workflow.\n\nSTEPS\n1 Identify subtasks requiring specialization\n2 Define 3-5 agent roles (researcher, writer, critic, etc.)\n3 Design handoff protocol between agents\n4 Set orchestrator logic\n5 Add quality checkpoint\n\nOUTPUT FORMAT\nAgent roster\nHandoff protocol\nOrchestrator design\nQuality checkpoint\nExpected output flow",
+   "sections": {
+    "ROLE": "Multi-agent system designer.",
+    "CONTEXT": "The user wants multiple AI agents working together on complex tasks.",
+    "TASK": "Design a multi-agent workflow.",
+    "STEPS": "1 Identify subtasks requiring specialization\n2 Define 3-5 agent roles (researcher, writer, critic, etc.)\n3 Design handoff protocol between agents\n4 Set orchestrator logic\n5 Add quality checkpoint",
+    "OUTPUT FORMAT": "Agent roster\nHandoff protocol\nOrchestrator design\nQuality checkpoint\nExpected output flow"
+   }
+  },
+  {
+   "id": 53,
+   "cat": 6,
+   "name": "에이전트 프롬프트 체인",
+   "level": "중급",
+   "explain": "복잡한 작업을 3-5단계 프롬프트 체인으로. 한 번에 안 되는 작업도 단계를 나누면 정확도 급상승. LangChain·n8n에 그대로 투입.",
+   "prompt": "ROLE\nPrompt chaining engineer.\n\nCONTEXT\nThe user wants to break a complex task into sequential prompts.\n\nTASK\nDesign a prompt chain with output-to-input bridging.\n\nSTEPS\n1 Break the complex task into 3-5 subtasks\n2 Write prompt per subtask\n3 Define how output feeds into next input\n4 Add validation between steps\n5 Specify final consolidation\n\nOUTPUT FORMAT\nChain overview\nPrompts per step\nInput-output mapping\nValidation rules\nFinal consolidation step\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nPrompt chaining engineer.\n\nCONTEXT\nThe user wants to break a complex task into sequential prompts.\n\nTASK\nDesign a prompt chain with output-to-input bridging.\n\nSTEPS\n1 Break the complex task into 3-5 subtasks\n2 Write prompt per subtask\n3 Define how output feeds into next input\n4 Add validation between steps\n5 Specify final consolidation\n\nOUTPUT FORMAT\nChain overview\nPrompts per step\nInput-output mapping\nValidation rules\nFinal consolidation step",
+   "sections": {
+    "ROLE": "Prompt chaining engineer.",
+    "CONTEXT": "The user wants to break a complex task into sequential prompts.",
+    "TASK": "Design a prompt chain with output-to-input bridging.",
+    "STEPS": "1 Break the complex task into 3-5 subtasks\n2 Write prompt per subtask\n3 Define how output feeds into next input\n4 Add validation between steps\n5 Specify final consolidation",
+    "OUTPUT FORMAT": "Chain overview\nPrompts per step\nInput-output mapping\nValidation rules\nFinal consolidation step"
+   }
+  },
+  {
+   "id": 54,
+   "cat": 6,
+   "name": "RAG 지식 소스 설계",
+   "level": "고급",
+   "explain": "회사 문서나 강의 자료를 근거로 답하는 RAG 시스템 설계도. 청킹·메타데이터·검색 품질 테스트까지. Claude Project·NotebookLM 실무.",
+   "prompt": "ROLE\nRAG (Retrieval-Augmented Generation) architect.\n\nCONTEXT\nThe user wants their AI to answer from specific knowledge, not general LLM.\n\nTASK\nDesign knowledge sources and retrieval strategy.\n\nSTEPS\n1 List required knowledge domains\n2 Identify source documents (PDF, web, DB)\n3 Propose chunking strategy\n4 Design metadata and filters\n5 Specify retrieval quality test\n\nOUTPUT FORMAT\nKnowledge domain map\nSource list\nChunking strategy\nMetadata schema\nQuality test plan\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nRAG (Retrieval-Augmented Generation) architect.\n\nCONTEXT\nThe user wants their AI to answer from specific knowledge, not general LLM.\n\nTASK\nDesign knowledge sources and retrieval strategy.\n\nSTEPS\n1 List required knowledge domains\n2 Identify source documents (PDF, web, DB)\n3 Propose chunking strategy\n4 Design metadata and filters\n5 Specify retrieval quality test\n\nOUTPUT FORMAT\nKnowledge domain map\nSource list\nChunking strategy\nMetadata schema\nQuality test plan",
+   "sections": {
+    "ROLE": "RAG (Retrieval-Augmented Generation) architect.",
+    "CONTEXT": "The user wants their AI to answer from specific knowledge, not general LLM.",
+    "TASK": "Design knowledge sources and retrieval strategy.",
+    "STEPS": "1 List required knowledge domains\n2 Identify source documents (PDF, web, DB)\n3 Propose chunking strategy\n4 Design metadata and filters\n5 Specify retrieval quality test",
+    "OUTPUT FORMAT": "Knowledge domain map\nSource list\nChunking strategy\nMetadata schema\nQuality test plan"
+   }
+  },
+  {
+   "id": 55,
+   "cat": 6,
+   "name": "AI 비서 퍼소나 설계",
+   "level": "중급",
+   "explain": "회사 브랜드에 맞는 AI 비서 인격 설계. 이름·배경스토리·말투·감정 범위·시그니처 문구. 챗봇·보이스 UI에 필수.",
+   "prompt": "ROLE\nAI persona designer for conversational products.\n\nCONTEXT\nThe user is creating a branded AI assistant.\n\nTASK\nDesign an AI persona with consistent character.\n\nSTEPS\n1 Give the AI a name and backstory\n2 Define personality traits (5 adjectives)\n3 Set speech patterns and vocabulary\n4 Define emotional range\n5 Add signature phrases\n\nOUTPUT FORMAT\nName and backstory\nPersonality traits\nSpeech patterns\nEmotional range\nSignature phrases\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nAI persona designer for conversational products.\n\nCONTEXT\nThe user is creating a branded AI assistant.\n\nTASK\nDesign an AI persona with consistent character.\n\nSTEPS\n1 Give the AI a name and backstory\n2 Define personality traits (5 adjectives)\n3 Set speech patterns and vocabulary\n4 Define emotional range\n5 Add signature phrases\n\nOUTPUT FORMAT\nName and backstory\nPersonality traits\nSpeech patterns\nEmotional range\nSignature phrases",
+   "sections": {
+    "ROLE": "AI persona designer for conversational products.",
+    "CONTEXT": "The user is creating a branded AI assistant.",
+    "TASK": "Design an AI persona with consistent character.",
+    "STEPS": "1 Give the AI a name and backstory\n2 Define personality traits (5 adjectives)\n3 Set speech patterns and vocabulary\n4 Define emotional range\n5 Add signature phrases",
+    "OUTPUT FORMAT": "Name and backstory\nPersonality traits\nSpeech patterns\nEmotional range\nSignature phrases"
+   }
+  },
+  {
+   "id": 56,
+   "cat": 6,
+   "name": "에이전트 가드레일 설정",
+   "level": "고급",
+   "explain": "에이전트가 하면 안 되는 것을 명시적으로 막는 가드레일. 개인정보·법적·공격적 답변 금지 + 거절 스크립트 + 사람 에스컬레이션.",
+   "prompt": "ROLE\nAI safety and guardrail engineer.\n\nCONTEXT\nThe user wants to prevent the agent from making dangerous outputs.\n\nTASK\nDesign guardrails for the agent.\n\nSTEPS\n1 List risk categories (privacy, legal, offensive, etc.)\n2 Define prohibited outputs per category\n3 Write refusal script for edge cases\n4 Design input validation rules\n5 Set escalation to human\n\nOUTPUT FORMAT\nRisk categories\nProhibited outputs\nRefusal scripts\nInput validation\nHuman escalation triggers\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nAI safety and guardrail engineer.\n\nCONTEXT\nThe user wants to prevent the agent from making dangerous outputs.\n\nTASK\nDesign guardrails for the agent.\n\nSTEPS\n1 List risk categories (privacy, legal, offensive, etc.)\n2 Define prohibited outputs per category\n3 Write refusal script for edge cases\n4 Design input validation rules\n5 Set escalation to human\n\nOUTPUT FORMAT\nRisk categories\nProhibited outputs\nRefusal scripts\nInput validation\nHuman escalation triggers",
+   "sections": {
+    "ROLE": "AI safety and guardrail engineer.",
+    "CONTEXT": "The user wants to prevent the agent from making dangerous outputs.",
+    "TASK": "Design guardrails for the agent.",
+    "STEPS": "1 List risk categories (privacy, legal, offensive, etc.)\n2 Define prohibited outputs per category\n3 Write refusal script for edge cases\n4 Design input validation rules\n5 Set escalation to human",
+    "OUTPUT FORMAT": "Risk categories\nProhibited outputs\nRefusal scripts\nInput validation\nHuman escalation triggers"
+   }
+  },
+  {
+   "id": 57,
+   "cat": 6,
+   "name": "에이전트 성능 평가",
+   "level": "고급",
+   "explain": "에이전트 품질을 '느낌'이 아니라 숫자로 측정. 5차원 평가 + 10개 테스트 프롬프트 + 루브릭. 운영 환경에 배포 전 필수.",
+   "prompt": "ROLE\nLLM evaluation specialist.\n\nCONTEXT\nThe user deployed an agent and wants to measure quality.\n\nTASK\nDesign an evaluation framework.\n\nSTEPS\n1 Define 5 evaluation dimensions (accuracy, tone, safety, etc.)\n2 Create 10 test prompts covering edge cases\n3 Define scoring rubric (1-5 per dimension)\n4 Design A/B comparison method\n5 Suggest ongoing monitoring\n\nOUTPUT FORMAT\nEvaluation dimensions\nTest prompt set (10)\nScoring rubric\nA/B method\nMonitoring plan\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nLLM evaluation specialist.\n\nCONTEXT\nThe user deployed an agent and wants to measure quality.\n\nTASK\nDesign an evaluation framework.\n\nSTEPS\n1 Define 5 evaluation dimensions (accuracy, tone, safety, etc.)\n2 Create 10 test prompts covering edge cases\n3 Define scoring rubric (1-5 per dimension)\n4 Design A/B comparison method\n5 Suggest ongoing monitoring\n\nOUTPUT FORMAT\nEvaluation dimensions\nTest prompt set (10)\nScoring rubric\nA/B method\nMonitoring plan",
+   "sections": {
+    "ROLE": "LLM evaluation specialist.",
+    "CONTEXT": "The user deployed an agent and wants to measure quality.",
+    "TASK": "Design an evaluation framework.",
+    "STEPS": "1 Define 5 evaluation dimensions (accuracy, tone, safety, etc.)\n2 Create 10 test prompts covering edge cases\n3 Define scoring rubric (1-5 per dimension)\n4 Design A/B comparison method\n5 Suggest ongoing monitoring",
+    "OUTPUT FORMAT": "Evaluation dimensions\nTest prompt set (10)\nScoring rubric\nA/B method\nMonitoring plan"
+   }
+  },
+  {
+   "id": 58,
+   "cat": 6,
+   "name": "도구 사용 시나리오 (Tool Use)",
+   "level": "고급",
+   "explain": "에이전트가 웹검색·DB·API·계산기 등 외부 도구를 호출하는 로직 설계. 언제 쓰고 어떻게 넘기고 실패하면 어떻게 할지.",
+   "prompt": "ROLE\nAgent tool-use designer.\n\nCONTEXT\nThe user wants the agent to call external tools like search, calc, DB.\n\nTASK\nDesign tool-use scenarios.\n\nSTEPS\n1 List tools the agent can call (web search, SQL, calc, API)\n2 Define when to use each (trigger conditions)\n3 Specify input/output format per tool\n4 Write fallback when tool fails\n5 Test scenario with sample query\n\nOUTPUT FORMAT\nTool inventory\nTrigger conditions\nI/O schema per tool\nFallback logic\nTest scenarios\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nAgent tool-use designer.\n\nCONTEXT\nThe user wants the agent to call external tools like search, calc, DB.\n\nTASK\nDesign tool-use scenarios.\n\nSTEPS\n1 List tools the agent can call (web search, SQL, calc, API)\n2 Define when to use each (trigger conditions)\n3 Specify input/output format per tool\n4 Write fallback when tool fails\n5 Test scenario with sample query\n\nOUTPUT FORMAT\nTool inventory\nTrigger conditions\nI/O schema per tool\nFallback logic\nTest scenarios",
+   "sections": {
+    "ROLE": "Agent tool-use designer.",
+    "CONTEXT": "The user wants the agent to call external tools like search, calc, DB.",
+    "TASK": "Design tool-use scenarios.",
+    "STEPS": "1 List tools the agent can call (web search, SQL, calc, API)\n2 Define when to use each (trigger conditions)\n3 Specify input/output format per tool\n4 Write fallback when tool fails\n5 Test scenario with sample query",
+    "OUTPUT FORMAT": "Tool inventory\nTrigger conditions\nI/O schema per tool\nFallback logic\nTest scenarios"
+   }
+  },
+  {
+   "id": 59,
+   "cat": 6,
+   "name": "에이전트 워크플로우 설계",
+   "level": "고급",
+   "explain": "사람 개입 최소화한 자율 워크플로우 설계. 트리거 → 결정트리 → 에이전트 배정 → 사람 개입 지점 → 완료 기준. AI 자동화의 정점.",
+   "prompt": "ROLE\nWorkflow architect for autonomous agents.\n\nCONTEXT\nThe user wants an end-to-end autonomous workflow.\n\nTASK\nDesign a full autonomous workflow.\n\nSTEPS\n1 Define the initial trigger\n2 Map decision tree with branches\n3 Assign agents or tools per branch\n4 Add human-in-the-loop checkpoints\n5 Define completion criteria\n\nOUTPUT FORMAT\nWorkflow diagram (text)\nDecision tree\nAgent/tool assignment\nHIL checkpoints\nCompletion criteria\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nWorkflow architect for autonomous agents.\n\nCONTEXT\nThe user wants an end-to-end autonomous workflow.\n\nTASK\nDesign a full autonomous workflow.\n\nSTEPS\n1 Define the initial trigger\n2 Map decision tree with branches\n3 Assign agents or tools per branch\n4 Add human-in-the-loop checkpoints\n5 Define completion criteria\n\nOUTPUT FORMAT\nWorkflow diagram (text)\nDecision tree\nAgent/tool assignment\nHIL checkpoints\nCompletion criteria",
+   "sections": {
+    "ROLE": "Workflow architect for autonomous agents.",
+    "CONTEXT": "The user wants an end-to-end autonomous workflow.",
+    "TASK": "Design a full autonomous workflow.",
+    "STEPS": "1 Define the initial trigger\n2 Map decision tree with branches\n3 Assign agents or tools per branch\n4 Add human-in-the-loop checkpoints\n5 Define completion criteria",
+    "OUTPUT FORMAT": "Workflow diagram (text)\nDecision tree\nAgent/tool assignment\nHIL checkpoints\nCompletion criteria"
+   }
+  },
+  {
+   "id": 60,
+   "cat": 6,
+   "name": "에이전트 디버깅 프롬프트",
+   "level": "고급",
+   "explain": "에이전트가 이상한 답을 할 때 원인 진단. 프롬프트·컨텍스트·데이터·모델 중 어디가 문제인지 + 3개 수정안 + 테스트 + 문서화.",
+   "prompt": "ROLE\nAI debugger.\n\nCONTEXT\nThe user's agent is producing wrong or inconsistent outputs.\n\nTASK\nDiagnose and fix the agent.\n\nSTEPS\n1 Analyze failure cases\n2 Classify error type (prompt, context, data, model)\n3 Propose 3 fixes with expected impact\n4 Suggest test to verify the fix\n5 Document the fix for future\n\nOUTPUT FORMAT\nFailure analysis\nError classification\n3 fix proposals\nVerification test\nFix documentation\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nAI debugger.\n\nCONTEXT\nThe user's agent is producing wrong or inconsistent outputs.\n\nTASK\nDiagnose and fix the agent.\n\nSTEPS\n1 Analyze failure cases\n2 Classify error type (prompt, context, data, model)\n3 Propose 3 fixes with expected impact\n4 Suggest test to verify the fix\n5 Document the fix for future\n\nOUTPUT FORMAT\nFailure analysis\nError classification\n3 fix proposals\nVerification test\nFix documentation",
+   "sections": {
+    "ROLE": "AI debugger.",
+    "CONTEXT": "The user's agent is producing wrong or inconsistent outputs.",
+    "TASK": "Diagnose and fix the agent.",
+    "STEPS": "1 Analyze failure cases\n2 Classify error type (prompt, context, data, model)\n3 Propose 3 fixes with expected impact\n4 Suggest test to verify the fix\n5 Document the fix for future",
+    "OUTPUT FORMAT": "Failure analysis\nError classification\n3 fix proposals\nVerification test\nFix documentation"
+   }
+  },
+  {
+   "id": 61,
+   "cat": 7,
+   "name": "GEO 콘텐츠 구조 설계",
+   "level": "중급",
+   "explain": "ChatGPT·Perplexity·구글 AI Overview가 인용하는 콘텐츠 구조. Princeton GEO 연구 기반. Answer Nugget + 통계 + 전문가 인용.",
+   "prompt": "ROLE\nGEO (Generative Engine Optimization) strategist.\n\nCONTEXT\nThe user wants their content to be cited by ChatGPT, Perplexity, Google AI Overview.\n\nTASK\nCreate AI-friendly content structure.\n\nSTEPS\n1 Open with a direct answer nugget (under 40 words)\n2 Expand with evidence, stats, expert quotes\n3 Use Q&A subheaders\n4 Add structured lists and tables\n5 Close with a citable summary\n\nOUTPUT FORMAT\nAnswer nugget (40 words)\nExpanded sections\nQ&A subheaders\nData structures\nCitable summary\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nGEO (Generative Engine Optimization) strategist.\n\nCONTEXT\nThe user wants their content to be cited by ChatGPT, Perplexity, Google AI Overview.\n\nTASK\nCreate AI-friendly content structure.\n\nSTEPS\n1 Open with a direct answer nugget (under 40 words)\n2 Expand with evidence, stats, expert quotes\n3 Use Q&A subheaders\n4 Add structured lists and tables\n5 Close with a citable summary\n\nOUTPUT FORMAT\nAnswer nugget (40 words)\nExpanded sections\nQ&A subheaders\nData structures\nCitable summary",
+   "sections": {
+    "ROLE": "GEO (Generative Engine Optimization) strategist.",
+    "CONTEXT": "The user wants their content to be cited by ChatGPT, Perplexity, Google AI Overview.",
+    "TASK": "Create AI-friendly content structure.",
+    "STEPS": "1 Open with a direct answer nugget (under 40 words)\n2 Expand with evidence, stats, expert quotes\n3 Use Q&A subheaders\n4 Add structured lists and tables\n5 Close with a citable summary",
+    "OUTPUT FORMAT": "Answer nugget (40 words)\nExpanded sections\nQ&A subheaders\nData structures\nCitable summary"
+   }
+  },
+  {
+   "id": 62,
+   "cat": 7,
+   "name": "Query Pan-out 생성",
+   "level": "중급",
+   "explain": "한 키워드에서 AI 검색 전용 질문 15개를 파생. 정보형·비교형·실행형. 구글 팬아웃 알고리즘 대응 콘텐츠 플랜.",
+   "prompt": "ROLE\nSearch intent expansion specialist.\n\nCONTEXT\nThe user has one seed query and needs to cover related AI searches.\n\nTASK\nExpand a single query into a content cluster.\n\nSTEPS\n1 Analyze the seed query intent\n2 Generate 5 informational variants\n3 Generate 5 comparison variants\n4 Generate 5 action variants (how to, where to)\n5 Map to pillar-cluster content plan\n\nOUTPUT FORMAT\nSeed query\n15 expanded queries by type\nContent cluster map\nPriority ranking\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nSearch intent expansion specialist.\n\nCONTEXT\nThe user has one seed query and needs to cover related AI searches.\n\nTASK\nExpand a single query into a content cluster.\n\nSTEPS\n1 Analyze the seed query intent\n2 Generate 5 informational variants\n3 Generate 5 comparison variants\n4 Generate 5 action variants (how to, where to)\n5 Map to pillar-cluster content plan\n\nOUTPUT FORMAT\nSeed query\n15 expanded queries by type\nContent cluster map\nPriority ranking",
+   "sections": {
+    "ROLE": "Search intent expansion specialist.",
+    "CONTEXT": "The user has one seed query and needs to cover related AI searches.",
+    "TASK": "Expand a single query into a content cluster.",
+    "STEPS": "1 Analyze the seed query intent\n2 Generate 5 informational variants\n3 Generate 5 comparison variants\n4 Generate 5 action variants (how to, where to)\n5 Map to pillar-cluster content plan",
+    "OUTPUT FORMAT": "Seed query\n15 expanded queries by type\nContent cluster map\nPriority ranking"
+   }
+  },
+  {
+   "id": 63,
+   "cat": 7,
+   "name": "Answer Nugget 작성",
+   "level": "기초",
+   "explain": "ChatGPT·Perplexity가 그대로 인용할 수 있는 40~60자 답변 블록. 통계 + 출처 + 자립 구조. 블로그 첫 문단에 삽입.",
+   "prompt": "ROLE\nFeatured snippet copywriter specialized for AI citation.\n\nCONTEXT\nThe user wants a short block that AI will extract and cite.\n\nTASK\nWrite a 40-60 word answer nugget on the topic.\n\nSTEPS\n1 Start with the direct answer\n2 Follow with 1 specific data point\n3 Add 1 expert/source attribution\n4 Keep total under 60 words\n5 Ensure it works standalone\n\nOUTPUT FORMAT\nAnswer nugget (40-60 words)\nData point cited\nExpert/source attribution\nStandalone test\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nFeatured snippet copywriter specialized for AI citation.\n\nCONTEXT\nThe user wants a short block that AI will extract and cite.\n\nTASK\nWrite a 40-60 word answer nugget on the topic.\n\nSTEPS\n1 Start with the direct answer\n2 Follow with 1 specific data point\n3 Add 1 expert/source attribution\n4 Keep total under 60 words\n5 Ensure it works standalone\n\nOUTPUT FORMAT\nAnswer nugget (40-60 words)\nData point cited\nExpert/source attribution\nStandalone test",
+   "sections": {
+    "ROLE": "Featured snippet copywriter specialized for AI citation.",
+    "CONTEXT": "The user wants a short block that AI will extract and cite.",
+    "TASK": "Write a 40-60 word answer nugget on the topic.",
+    "STEPS": "1 Start with the direct answer\n2 Follow with 1 specific data point\n3 Add 1 expert/source attribution\n4 Keep total under 60 words\n5 Ensure it works standalone",
+    "OUTPUT FORMAT": "Answer nugget (40-60 words)\nData point cited\nExpert/source attribution\nStandalone test"
+   }
+  },
+  {
+   "id": 64,
+   "cat": 7,
+   "name": "FAQ 스키마 생성",
+   "level": "중급",
+   "explain": "FAQ 섹션 + 구글 리치결과 스키마 마크업. AI 검색·구글 모두에서 노출되는 하이브리드 포맷. 블로그·랜딩에 붙이면 노출 급상승.",
+   "prompt": "ROLE\nStructured data specialist.\n\nCONTEXT\nThe user wants FAQ schema markup for SEO+GEO.\n\nTASK\nCreate FAQ content and schema markup.\n\nSTEPS\n1 Generate 5-8 real user questions\n2 Write concise answers (50-80 words each)\n3 Format as FAQ Schema JSON-LD\n4 Ensure mobile-friendly reading\n5 Test with Google Rich Results\n\nOUTPUT FORMAT\nQ&A pairs (5-8)\nFAQ JSON-LD schema\nMobile preview\nValidation instructions\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nStructured data specialist.\n\nCONTEXT\nThe user wants FAQ schema markup for SEO+GEO.\n\nTASK\nCreate FAQ content and schema markup.\n\nSTEPS\n1 Generate 5-8 real user questions\n2 Write concise answers (50-80 words each)\n3 Format as FAQ Schema JSON-LD\n4 Ensure mobile-friendly reading\n5 Test with Google Rich Results\n\nOUTPUT FORMAT\nQ&A pairs (5-8)\nFAQ JSON-LD schema\nMobile preview\nValidation instructions",
+   "sections": {
+    "ROLE": "Structured data specialist.",
+    "CONTEXT": "The user wants FAQ schema markup for SEO+GEO.",
+    "TASK": "Create FAQ content and schema markup.",
+    "STEPS": "1 Generate 5-8 real user questions\n2 Write concise answers (50-80 words each)\n3 Format as FAQ Schema JSON-LD\n4 Ensure mobile-friendly reading\n5 Test with Google Rich Results",
+    "OUTPUT FORMAT": "Q&A pairs (5-8)\nFAQ JSON-LD schema\nMobile preview\nValidation instructions"
+   }
+  },
+  {
+   "id": 65,
+   "cat": 7,
+   "name": "AI 검색 최적화 메타태그",
+   "level": "중급",
+   "explain": "구글 + AI 검색 동시 최적화 메타태그. 제목·설명·OG·구조화 데이터까지. 3종 옵션 제공으로 A/B 테스트 가능.",
+   "prompt": "ROLE\nAI search meta optimization expert.\n\nCONTEXT\nThe user wants meta tags optimized for both Google and AI engines.\n\nTASK\nGenerate AI-optimized meta tags.\n\nSTEPS\n1 Write 3 title tag options (55-60 chars)\n2 Write 3 meta descriptions with answer preview\n3 Add OG and Twitter tags\n4 Include structured data recommendations\n5 Test for AI citation probability\n\nOUTPUT FORMAT\nTitle tag options (3)\nMeta descriptions (3)\nOG and Twitter tags\nStructured data hints\nAI citation scoring\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nAI search meta optimization expert.\n\nCONTEXT\nThe user wants meta tags optimized for both Google and AI engines.\n\nTASK\nGenerate AI-optimized meta tags.\n\nSTEPS\n1 Write 3 title tag options (55-60 chars)\n2 Write 3 meta descriptions with answer preview\n3 Add OG and Twitter tags\n4 Include structured data recommendations\n5 Test for AI citation probability\n\nOUTPUT FORMAT\nTitle tag options (3)\nMeta descriptions (3)\nOG and Twitter tags\nStructured data hints\nAI citation scoring",
+   "sections": {
+    "ROLE": "AI search meta optimization expert.",
+    "CONTEXT": "The user wants meta tags optimized for both Google and AI engines.",
+    "TASK": "Generate AI-optimized meta tags.",
+    "STEPS": "1 Write 3 title tag options (55-60 chars)\n2 Write 3 meta descriptions with answer preview\n3 Add OG and Twitter tags\n4 Include structured data recommendations\n5 Test for AI citation probability",
+    "OUTPUT FORMAT": "Title tag options (3)\nMeta descriptions (3)\nOG and Twitter tags\nStructured data hints\nAI citation scoring"
+   }
+  },
+  {
+   "id": 66,
+   "cat": 7,
+   "name": "인용 가능한 통계 삽입",
+   "level": "중급",
+   "explain": "콘텐츠에 AI가 인용할 만한 통계 5개를 붙이는 스킬. 'Gartner에 따르면 2025년...' 형식. 출처·신뢰도·삽입 위치까지.",
+   "prompt": "ROLE\nData journalism researcher.\n\nCONTEXT\nThe user's content needs citable statistics to boost AI citations.\n\nTASK\nFind and format statistics that AI engines will cite.\n\nSTEPS\n1 Identify 5 statistics relevant to the topic\n2 Cite credible sources (Gartner, McKinsey, gov)\n3 Format as \"According to [Source], [Stat] [Year]\"\n4 Place at strategic content points\n5 Add inline links to sources\n\nOUTPUT FORMAT\n5 statistics with sources\nInsertion points in content\nInline link anchors\nSource credibility rating\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nData journalism researcher.\n\nCONTEXT\nThe user's content needs citable statistics to boost AI citations.\n\nTASK\nFind and format statistics that AI engines will cite.\n\nSTEPS\n1 Identify 5 statistics relevant to the topic\n2 Cite credible sources (Gartner, McKinsey, gov)\n3 Format as \"According to [Source], [Stat] [Year]\"\n4 Place at strategic content points\n5 Add inline links to sources\n\nOUTPUT FORMAT\n5 statistics with sources\nInsertion points in content\nInline link anchors\nSource credibility rating",
+   "sections": {
+    "ROLE": "Data journalism researcher.",
+    "CONTEXT": "The user's content needs citable statistics to boost AI citations.",
+    "TASK": "Find and format statistics that AI engines will cite.",
+    "STEPS": "1 Identify 5 statistics relevant to the topic\n2 Cite credible sources (Gartner, McKinsey, gov)\n3 Format as \"According to [Source], [Stat] [Year]\"\n4 Place at strategic content points\n5 Add inline links to sources",
+    "OUTPUT FORMAT": "5 statistics with sources\nInsertion points in content\nInline link anchors\nSource credibility rating"
+   }
+  },
+  {
+   "id": 67,
+   "cat": 7,
+   "name": "전문가 인용문 생성",
+   "level": "중급",
+   "explain": "AI 인용률을 높이는 전문가 코멘트 포맷. 반론·구체 인사이트 중심. 실제 전문가 섭외 이메일 템플릿도 함께.",
+   "prompt": "ROLE\nExpert quote researcher.\n\nCONTEXT\nThe user wants expert quotes to boost content authority.\n\nTASK\nDraft expert-style quotes with attribution format.\n\nSTEPS\n1 Identify 3 types of experts relevant to topic\n2 Draft realistic quotes highlighting a contrarian or concrete insight\n3 Format with name, title, affiliation\n4 Suggest where to place in article\n5 Provide outreach template to confirm real quotes\n\nOUTPUT FORMAT\n3 expert quotes with attribution\nPlacement suggestions\nOutreach email template\nLegal note on use\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nExpert quote researcher.\n\nCONTEXT\nThe user wants expert quotes to boost content authority.\n\nTASK\nDraft expert-style quotes with attribution format.\n\nSTEPS\n1 Identify 3 types of experts relevant to topic\n2 Draft realistic quotes highlighting a contrarian or concrete insight\n3 Format with name, title, affiliation\n4 Suggest where to place in article\n5 Provide outreach template to confirm real quotes\n\nOUTPUT FORMAT\n3 expert quotes with attribution\nPlacement suggestions\nOutreach email template\nLegal note on use",
+   "sections": {
+    "ROLE": "Expert quote researcher.",
+    "CONTEXT": "The user wants expert quotes to boost content authority.",
+    "TASK": "Draft expert-style quotes with attribution format.",
+    "STEPS": "1 Identify 3 types of experts relevant to topic\n2 Draft realistic quotes highlighting a contrarian or concrete insight\n3 Format with name, title, affiliation\n4 Suggest where to place in article\n5 Provide outreach template to confirm real quotes",
+    "OUTPUT FORMAT": "3 expert quotes with attribution\nPlacement suggestions\nOutreach email template\nLegal note on use"
+   }
+  },
+  {
+   "id": 68,
+   "cat": 7,
+   "name": "사례 연구 GEO 포맷",
+   "level": "고급",
+   "explain": "AI가 증거로 인용하는 케이스 스터디. 구체 숫자 + 기간 + 고객 코멘트. 'X는 3개월만에 300% 성장' 같은 시그널이 GEO 핵심.",
+   "prompt": "ROLE\nCase study writer optimized for AI discovery.\n\nCONTEXT\nThe user wants a customer case study that AI will cite as proof.\n\nTASK\nWrite a GEO-optimized case study.\n\nSTEPS\n1 Headline with specific outcome (number + timeframe)\n2 Client background in 2 sentences\n3 Challenge with quantified pain\n4 Solution with specific actions\n5 Result with 3 concrete metrics + client quote\n\nOUTPUT FORMAT\nHeadline\nClient background\nChallenge (quantified)\nSolution actions\nResults and quote\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nCase study writer optimized for AI discovery.\n\nCONTEXT\nThe user wants a customer case study that AI will cite as proof.\n\nTASK\nWrite a GEO-optimized case study.\n\nSTEPS\n1 Headline with specific outcome (number + timeframe)\n2 Client background in 2 sentences\n3 Challenge with quantified pain\n4 Solution with specific actions\n5 Result with 3 concrete metrics + client quote\n\nOUTPUT FORMAT\nHeadline\nClient background\nChallenge (quantified)\nSolution actions\nResults and quote",
+   "sections": {
+    "ROLE": "Case study writer optimized for AI discovery.",
+    "CONTEXT": "The user wants a customer case study that AI will cite as proof.",
+    "TASK": "Write a GEO-optimized case study.",
+    "STEPS": "1 Headline with specific outcome (number + timeframe)\n2 Client background in 2 sentences\n3 Challenge with quantified pain\n4 Solution with specific actions\n5 Result with 3 concrete metrics + client quote",
+    "OUTPUT FORMAT": "Headline\nClient background\nChallenge (quantified)\nSolution actions\nResults and quote"
+   }
+  },
+  {
+   "id": 69,
+   "cat": 7,
+   "name": "Featured Snippet 최적화",
+   "level": "중급",
+   "explain": "구글 Position 0(강조 스니펫) 뺏어오는 블록. 질문 유형별(정의·리스트·표) 포맷. AI Overview 진출 기초 단계.",
+   "prompt": "ROLE\nFeatured snippet optimization expert.\n\nCONTEXT\nThe user wants to capture Position 0 on Google.\n\nTASK\nOptimize a content block for Featured Snippet.\n\nSTEPS\n1 Identify the target query type (definition, list, table)\n2 Write answer matching the query format\n3 Keep answer between 40-60 words\n4 Structure with correct HTML tags (h3, ul, table)\n5 Add supporting context below\n\nOUTPUT FORMAT\nTarget query\nSnippet answer block\nHTML structure\nSupporting context\nCompetitor snippet comparison\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nFeatured snippet optimization expert.\n\nCONTEXT\nThe user wants to capture Position 0 on Google.\n\nTASK\nOptimize a content block for Featured Snippet.\n\nSTEPS\n1 Identify the target query type (definition, list, table)\n2 Write answer matching the query format\n3 Keep answer between 40-60 words\n4 Structure with correct HTML tags (h3, ul, table)\n5 Add supporting context below\n\nOUTPUT FORMAT\nTarget query\nSnippet answer block\nHTML structure\nSupporting context\nCompetitor snippet comparison",
+   "sections": {
+    "ROLE": "Featured snippet optimization expert.",
+    "CONTEXT": "The user wants to capture Position 0 on Google.",
+    "TASK": "Optimize a content block for Featured Snippet.",
+    "STEPS": "1 Identify the target query type (definition, list, table)\n2 Write answer matching the query format\n3 Keep answer between 40-60 words\n4 Structure with correct HTML tags (h3, ul, table)\n5 Add supporting context below",
+    "OUTPUT FORMAT": "Target query\nSnippet answer block\nHTML structure\nSupporting context\nCompetitor snippet comparison"
+   }
+  },
+  {
+   "id": 70,
+   "cat": 7,
+   "name": "AI Overview 타겟 키워드 분석",
+   "level": "고급",
+   "explain": "구글 AI Overview에 노출되는 키워드를 역공학. 인용 소스 분석 + 이기는 콘텐츠 구조 + 측정 KPI. GEO 정점 스킬.",
+   "prompt": "ROLE\nGoogle AI Overview specialist.\n\nCONTEXT\nThe user wants to appear in Google's AI Overview box.\n\nTASK\nAnalyze keywords that trigger AI Overview and plan content.\n\nSTEPS\n1 Identify keywords currently showing AI Overview\n2 Analyze sources AI Overview cites\n3 Reverse-engineer their content structure\n4 Propose content that can outrank\n5 Set measurement plan\n\nOUTPUT FORMAT\nTrigger keyword list\nCited source analysis\nContent structure to beat them\nProposed outline\nMeasurement KPIs\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nGoogle AI Overview specialist.\n\nCONTEXT\nThe user wants to appear in Google's AI Overview box.\n\nTASK\nAnalyze keywords that trigger AI Overview and plan content.\n\nSTEPS\n1 Identify keywords currently showing AI Overview\n2 Analyze sources AI Overview cites\n3 Reverse-engineer their content structure\n4 Propose content that can outrank\n5 Set measurement plan\n\nOUTPUT FORMAT\nTrigger keyword list\nCited source analysis\nContent structure to beat them\nProposed outline\nMeasurement KPIs",
+   "sections": {
+    "ROLE": "Google AI Overview specialist.",
+    "CONTEXT": "The user wants to appear in Google's AI Overview box.",
+    "TASK": "Analyze keywords that trigger AI Overview and plan content.",
+    "STEPS": "1 Identify keywords currently showing AI Overview\n2 Analyze sources AI Overview cites\n3 Reverse-engineer their content structure\n4 Propose content that can outrank\n5 Set measurement plan",
+    "OUTPUT FORMAT": "Trigger keyword list\nCited source analysis\nContent structure to beat them\nProposed outline\nMeasurement KPIs"
+   }
+  },
+  {
+   "id": 71,
+   "cat": 8,
+   "name": "정책 보고서 초안",
+   "level": "중급",
+   "explain": "공공기관 정책 보고서 전체 초안. 요약 → 배경 → 분석 → 대안 → 권고. 공문서 스타일 + 데이터 근거 + 실행 로드맵.",
+   "prompt": "ROLE\nPublic policy analyst.\n\nCONTEXT\nThe user is drafting a policy report for a government agency.\n\nTASK\nProduce a complete policy report draft.\n\nSTEPS\n1 Executive summary (1 page)\n2 Background and current situation\n3 Data and evidence analysis\n4 Policy options with pros/cons\n5 Final recommendation with implementation roadmap\n\nOUTPUT FORMAT\nExecutive summary\nBackground\nData analysis\nPolicy options\nFinal recommendation\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nPublic policy analyst.\n\nCONTEXT\nThe user is drafting a policy report for a government agency.\n\nTASK\nProduce a complete policy report draft.\n\nSTEPS\n1 Executive summary (1 page)\n2 Background and current situation\n3 Data and evidence analysis\n4 Policy options with pros/cons\n5 Final recommendation with implementation roadmap\n\nOUTPUT FORMAT\nExecutive summary\nBackground\nData analysis\nPolicy options\nFinal recommendation",
+   "sections": {
+    "ROLE": "Public policy analyst.",
+    "CONTEXT": "The user is drafting a policy report for a government agency.",
+    "TASK": "Produce a complete policy report draft.",
+    "STEPS": "1 Executive summary (1 page)\n2 Background and current situation\n3 Data and evidence analysis\n4 Policy options with pros/cons\n5 Final recommendation with implementation roadmap",
+    "OUTPUT FORMAT": "Executive summary\nBackground\nData analysis\nPolicy options\nFinal recommendation"
+   }
+  },
+  {
+   "id": 72,
+   "cat": 8,
+   "name": "정책 브리프",
+   "level": "중급",
+   "explain": "장관·의원·임원 책상에 올라가는 1페이지 브리프. 메시지 2문장 + 증거 3개 + 권고 + 미행동 리스크. 짧지만 치명적.",
+   "prompt": "ROLE\nPolicy brief writer for high-level decision makers.\n\nCONTEXT\nThe user has 1 page to influence a policy decision.\n\nTASK\nWrite a 1-page policy brief.\n\nSTEPS\n1 Title with clear position\n2 Key message in 2 sentences\n3 Evidence bullet points (3)\n4 Recommended action\n5 Risk if inaction\n\nOUTPUT FORMAT\nTitle and key message\n3 evidence bullets\nRecommended action\nRisk of inaction\nCall-out box with statistics\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nPolicy brief writer for high-level decision makers.\n\nCONTEXT\nThe user has 1 page to influence a policy decision.\n\nTASK\nWrite a 1-page policy brief.\n\nSTEPS\n1 Title with clear position\n2 Key message in 2 sentences\n3 Evidence bullet points (3)\n4 Recommended action\n5 Risk if inaction\n\nOUTPUT FORMAT\nTitle and key message\n3 evidence bullets\nRecommended action\nRisk of inaction\nCall-out box with statistics",
+   "sections": {
+    "ROLE": "Policy brief writer for high-level decision makers.",
+    "CONTEXT": "The user has 1 page to influence a policy decision.",
+    "TASK": "Write a 1-page policy brief.",
+    "STEPS": "1 Title with clear position\n2 Key message in 2 sentences\n3 Evidence bullet points (3)\n4 Recommended action\n5 Risk if inaction",
+    "OUTPUT FORMAT": "Title and key message\n3 evidence bullets\nRecommended action\nRisk of inaction\nCall-out box with statistics"
+   }
+  },
+  {
+   "id": 73,
+   "cat": 8,
+   "name": "사업계획서 작성",
+   "level": "고급",
+   "explain": "정부지원사업 심사 통과용 사업계획서. 공공성 + 정책 부합성 + 시장 + 예산 + KPI. 창업진흥원·기재부 양식 호환.",
+   "prompt": "ROLE\nBusiness plan writer for government grants.\n\nCONTEXT\nThe user is applying for government funding.\n\nTASK\nDraft a grant-winning business plan.\n\nSTEPS\n1 Problem statement with public interest\n2 Solution aligned with policy goals\n3 Market size and target beneficiaries\n4 Budget plan with milestones\n5 Expected outcomes and KPIs\n\nOUTPUT FORMAT\nProblem and public interest\nSolution and policy alignment\nMarket and beneficiaries\nBudget and milestones\nKPIs and impact metrics\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nBusiness plan writer for government grants.\n\nCONTEXT\nThe user is applying for government funding.\n\nTASK\nDraft a grant-winning business plan.\n\nSTEPS\n1 Problem statement with public interest\n2 Solution aligned with policy goals\n3 Market size and target beneficiaries\n4 Budget plan with milestones\n5 Expected outcomes and KPIs\n\nOUTPUT FORMAT\nProblem and public interest\nSolution and policy alignment\nMarket and beneficiaries\nBudget and milestones\nKPIs and impact metrics",
+   "sections": {
+    "ROLE": "Business plan writer for government grants.",
+    "CONTEXT": "The user is applying for government funding.",
+    "TASK": "Draft a grant-winning business plan.",
+    "STEPS": "1 Problem statement with public interest\n2 Solution aligned with policy goals\n3 Market size and target beneficiaries\n4 Budget plan with milestones\n5 Expected outcomes and KPIs",
+    "OUTPUT FORMAT": "Problem and public interest\nSolution and policy alignment\nMarket and beneficiaries\nBudget and milestones\nKPIs and impact metrics"
+   }
+  },
+  {
+   "id": 74,
+   "cat": 8,
+   "name": "공문서 초안",
+   "level": "기초",
+   "explain": "공문서 규정 양식대로 작성. 수신·발신·제목·본문·결문. 공공기관 대상 협조요청·회신·안내문에 바로.",
+   "prompt": "ROLE\nGovernment document specialist.\n\nCONTEXT\nThe user needs a formal government-style document.\n\nTASK\nDraft an official public document.\n\nSTEPS\n1 Follow standard header format\n2 Clear purpose in opening paragraph\n3 Numbered clauses for main content\n4 Respectful honorific closing\n5 Attach references\n\nOUTPUT FORMAT\nHeader (recipient, date, doc number)\nPurpose paragraph\nNumbered clauses\nClosing and sign-off\nReferences\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nGovernment document specialist.\n\nCONTEXT\nThe user needs a formal government-style document.\n\nTASK\nDraft an official public document.\n\nSTEPS\n1 Follow standard header format\n2 Clear purpose in opening paragraph\n3 Numbered clauses for main content\n4 Respectful honorific closing\n5 Attach references\n\nOUTPUT FORMAT\nHeader (recipient, date, doc number)\nPurpose paragraph\nNumbered clauses\nClosing and sign-off\nReferences",
+   "sections": {
+    "ROLE": "Government document specialist.",
+    "CONTEXT": "The user needs a formal government-style document.",
+    "TASK": "Draft an official public document.",
+    "STEPS": "1 Follow standard header format\n2 Clear purpose in opening paragraph\n3 Numbered clauses for main content\n4 Respectful honorific closing\n5 Attach references",
+    "OUTPUT FORMAT": "Header (recipient, date, doc number)\nPurpose paragraph\nNumbered clauses\nClosing and sign-off\nReferences"
+   }
+  },
+  {
+   "id": 75,
+   "cat": 8,
+   "name": "연구 용역 제안서",
+   "level": "고급",
+   "explain": "공공 연구용역 입찰 제안서. RFP 부합성 + 방법론 + 팀 역량 + 일정 + 예산. 낙찰 가능성을 높이는 표준 구조.",
+   "prompt": "ROLE\nResearch proposal writer.\n\nCONTEXT\nThe user is bidding for a public research project.\n\nTASK\nWrite a competitive research proposal.\n\nSTEPS\n1 Research objectives aligned with RFP\n2 Methodology with phases and deliverables\n3 Team credentials and references\n4 Timeline with Gantt-style view\n5 Budget breakdown\n\nOUTPUT FORMAT\nResearch objectives\nMethodology and deliverables\nTeam and references\nTimeline\nBudget breakdown\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nResearch proposal writer.\n\nCONTEXT\nThe user is bidding for a public research project.\n\nTASK\nWrite a competitive research proposal.\n\nSTEPS\n1 Research objectives aligned with RFP\n2 Methodology with phases and deliverables\n3 Team credentials and references\n4 Timeline with Gantt-style view\n5 Budget breakdown\n\nOUTPUT FORMAT\nResearch objectives\nMethodology and deliverables\nTeam and references\nTimeline\nBudget breakdown",
+   "sections": {
+    "ROLE": "Research proposal writer.",
+    "CONTEXT": "The user is bidding for a public research project.",
+    "TASK": "Write a competitive research proposal.",
+    "STEPS": "1 Research objectives aligned with RFP\n2 Methodology with phases and deliverables\n3 Team credentials and references\n4 Timeline with Gantt-style view\n5 Budget breakdown",
+    "OUTPUT FORMAT": "Research objectives\nMethodology and deliverables\nTeam and references\nTimeline\nBudget breakdown"
+   }
+  },
+  {
+   "id": 76,
+   "cat": 8,
+   "name": "성과 보고서",
+   "level": "중급",
+   "explain": "프로젝트 종료 후 성과 보고서. 목표 대비 달성 + 정량/정성 성과 + 교훈 + 후속 제안. 정산·평가 회의 직전 필수.",
+   "prompt": "ROLE\nPerformance reporting specialist.\n\nCONTEXT\nThe user needs to report project outcomes to stakeholders.\n\nTASK\nWrite a performance report.\n\nSTEPS\n1 Project summary with original goals\n2 Quantitative results vs targets\n3 Qualitative achievements with stories\n4 Lessons learned\n5 Recommendations for next phase\n\nOUTPUT FORMAT\nProject summary\nQuantitative results table\nQualitative achievements\nLessons learned\nNext phase recommendations\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nPerformance reporting specialist.\n\nCONTEXT\nThe user needs to report project outcomes to stakeholders.\n\nTASK\nWrite a performance report.\n\nSTEPS\n1 Project summary with original goals\n2 Quantitative results vs targets\n3 Qualitative achievements with stories\n4 Lessons learned\n5 Recommendations for next phase\n\nOUTPUT FORMAT\nProject summary\nQuantitative results table\nQualitative achievements\nLessons learned\nNext phase recommendations",
+   "sections": {
+    "ROLE": "Performance reporting specialist.",
+    "CONTEXT": "The user needs to report project outcomes to stakeholders.",
+    "TASK": "Write a performance report.",
+    "STEPS": "1 Project summary with original goals\n2 Quantitative results vs targets\n3 Qualitative achievements with stories\n4 Lessons learned\n5 Recommendations for next phase",
+    "OUTPUT FORMAT": "Project summary\nQuantitative results table\nQualitative achievements\nLessons learned\nNext phase recommendations"
+   }
+  },
+  {
+   "id": 77,
+   "cat": 8,
+   "name": "예산안 설명자료",
+   "level": "고급",
+   "explain": "예산 심사에서 설명용 자료. 근거 + 기대효과 + 벤치마크 + 삭감 시 리스크. 국회·기획관리실 대응 필수.",
+   "prompt": "ROLE\nPublic budget justification writer.\n\nCONTEXT\nThe user must defend a budget line item.\n\nTASK\nWrite a budget justification document.\n\nSTEPS\n1 Line item and amount\n2 Policy rationale for the spend\n3 Expected outcomes with KPIs\n4 Comparison with similar budgets\n5 Risk if budget is cut\n\nOUTPUT FORMAT\nLine item and amount\nPolicy rationale\nExpected KPIs\nComparative benchmark\nRisk of budget cut\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nPublic budget justification writer.\n\nCONTEXT\nThe user must defend a budget line item.\n\nTASK\nWrite a budget justification document.\n\nSTEPS\n1 Line item and amount\n2 Policy rationale for the spend\n3 Expected outcomes with KPIs\n4 Comparison with similar budgets\n5 Risk if budget is cut\n\nOUTPUT FORMAT\nLine item and amount\nPolicy rationale\nExpected KPIs\nComparative benchmark\nRisk of budget cut",
+   "sections": {
+    "ROLE": "Public budget justification writer.",
+    "CONTEXT": "The user must defend a budget line item.",
+    "TASK": "Write a budget justification document.",
+    "STEPS": "1 Line item and amount\n2 Policy rationale for the spend\n3 Expected outcomes with KPIs\n4 Comparison with similar budgets\n5 Risk if budget is cut",
+    "OUTPUT FORMAT": "Line item and amount\nPolicy rationale\nExpected KPIs\nComparative benchmark\nRisk of budget cut"
+   }
+  },
+  {
+   "id": 78,
+   "cat": 8,
+   "name": "기자 회견 자료",
+   "level": "중급",
+   "explain": "기자회견 브리핑 키트. 핵심 메시지 1문장 + 지지 포인트 3개 + 예상 Q&A + 인용구. 홍보팀 살리는 구조.",
+   "prompt": "ROLE\nPress conference materials writer.\n\nCONTEXT\nThe user is preparing a public announcement.\n\nTASK\nPrepare press conference materials.\n\nSTEPS\n1 Key message in 1 sentence\n2 3 supporting points with data\n3 Anticipated Q&A with model answers\n4 Quotable sound bites\n5 Background and references\n\nOUTPUT FORMAT\nKey message\n3 supporting points\nQ&A with model answers\nSound bites\nBackground pack\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nPress conference materials writer.\n\nCONTEXT\nThe user is preparing a public announcement.\n\nTASK\nPrepare press conference materials.\n\nSTEPS\n1 Key message in 1 sentence\n2 3 supporting points with data\n3 Anticipated Q&A with model answers\n4 Quotable sound bites\n5 Background and references\n\nOUTPUT FORMAT\nKey message\n3 supporting points\nQ&A with model answers\nSound bites\nBackground pack",
+   "sections": {
+    "ROLE": "Press conference materials writer.",
+    "CONTEXT": "The user is preparing a public announcement.",
+    "TASK": "Prepare press conference materials.",
+    "STEPS": "1 Key message in 1 sentence\n2 3 supporting points with data\n3 Anticipated Q&A with model answers\n4 Quotable sound bites\n5 Background and references",
+    "OUTPUT FORMAT": "Key message\n3 supporting points\nQ&A with model answers\nSound bites\nBackground pack"
+   }
+  },
+  {
+   "id": 79,
+   "cat": 8,
+   "name": "국회 답변자료",
+   "level": "고급",
+   "explain": "국정감사·업무보고 대비 Q&A 자료. 예상 질문 10개 + 모범 답변 + 근거법령 + 민감 이슈 에스컬레이션.",
+   "prompt": "ROLE\nParliamentary response writer.\n\nCONTEXT\nThe user must prepare for parliamentary questions.\n\nTASK\nDraft parliamentary response materials.\n\nSTEPS\n1 Anticipate 10 likely questions\n2 Draft concise model answer for each\n3 Include data and legal basis\n4 Add escalation rules for sensitive topics\n5 Prepare follow-up materials\n\nOUTPUT FORMAT\n10 anticipated questions\nModel answers with data\nLegal basis\nEscalation rules\nFollow-up pack\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nParliamentary response writer.\n\nCONTEXT\nThe user must prepare for parliamentary questions.\n\nTASK\nDraft parliamentary response materials.\n\nSTEPS\n1 Anticipate 10 likely questions\n2 Draft concise model answer for each\n3 Include data and legal basis\n4 Add escalation rules for sensitive topics\n5 Prepare follow-up materials\n\nOUTPUT FORMAT\n10 anticipated questions\nModel answers with data\nLegal basis\nEscalation rules\nFollow-up pack",
+   "sections": {
+    "ROLE": "Parliamentary response writer.",
+    "CONTEXT": "The user must prepare for parliamentary questions.",
+    "TASK": "Draft parliamentary response materials.",
+    "STEPS": "1 Anticipate 10 likely questions\n2 Draft concise model answer for each\n3 Include data and legal basis\n4 Add escalation rules for sensitive topics\n5 Prepare follow-up materials",
+    "OUTPUT FORMAT": "10 anticipated questions\nModel answers with data\nLegal basis\nEscalation rules\nFollow-up pack"
+   }
+  },
+  {
+   "id": 80,
+   "cat": 8,
+   "name": "공청회 발제문",
+   "level": "중급",
+   "explain": "공청회·정책토론회 발제문. 도입 → 데이터 근거 문제 정의 → 해결안 → 예상 반박 대응 → 의견 수렴. 15분 발표 표준.",
+   "prompt": "ROLE\nPublic hearing presenter.\n\nCONTEXT\nThe user must present at a public hearing.\n\nTASK\nDraft a public hearing presentation.\n\nSTEPS\n1 Opening (issue context, 2 min)\n2 Data-driven problem framing (5 min)\n3 Proposed solution with alternatives (5 min)\n4 Anticipated objections and rebuttals\n5 Call for stakeholder input\n\nOUTPUT FORMAT\nOpening script\nProblem framing with data\nSolution and alternatives\nObjection-rebuttal pairs\nClosing call for input\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nPublic hearing presenter.\n\nCONTEXT\nThe user must present at a public hearing.\n\nTASK\nDraft a public hearing presentation.\n\nSTEPS\n1 Opening (issue context, 2 min)\n2 Data-driven problem framing (5 min)\n3 Proposed solution with alternatives (5 min)\n4 Anticipated objections and rebuttals\n5 Call for stakeholder input\n\nOUTPUT FORMAT\nOpening script\nProblem framing with data\nSolution and alternatives\nObjection-rebuttal pairs\nClosing call for input",
+   "sections": {
+    "ROLE": "Public hearing presenter.",
+    "CONTEXT": "The user must present at a public hearing.",
+    "TASK": "Draft a public hearing presentation.",
+    "STEPS": "1 Opening (issue context, 2 min)\n2 Data-driven problem framing (5 min)\n3 Proposed solution with alternatives (5 min)\n4 Anticipated objections and rebuttals\n5 Call for stakeholder input",
+    "OUTPUT FORMAT": "Opening script\nProblem framing with data\nSolution and alternatives\nObjection-rebuttal pairs\nClosing call for input"
+   }
+  },
+  {
+   "id": 81,
+   "cat": 9,
+   "name": "영상 스토리보드 생성",
+   "level": "중급",
+   "explain": "영상 촬영 전 장면별 스토리보드. 비주얼·카메라·오디오·트랜지션. AI 영상 생성(Sora·Veo)과 실사 촬영 모두 호환.",
+   "prompt": "ROLE\nVideo storyboard designer.\n\nCONTEXT\nThe user is planning an AI-generated or live video.\n\nTASK\nCreate a scene-by-scene storyboard.\n\nSTEPS\n1 Break script into 5-8 scenes\n2 Describe visuals per scene\n3 Specify camera angle and movement\n4 Add sound and music direction\n5 Note transitions\n\nOUTPUT FORMAT\nScene number and duration\nVisual description\nCamera direction\nAudio direction\nTransition note\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nVideo storyboard designer.\n\nCONTEXT\nThe user is planning an AI-generated or live video.\n\nTASK\nCreate a scene-by-scene storyboard.\n\nSTEPS\n1 Break script into 5-8 scenes\n2 Describe visuals per scene\n3 Specify camera angle and movement\n4 Add sound and music direction\n5 Note transitions\n\nOUTPUT FORMAT\nScene number and duration\nVisual description\nCamera direction\nAudio direction\nTransition note",
+   "sections": {
+    "ROLE": "Video storyboard designer.",
+    "CONTEXT": "The user is planning an AI-generated or live video.",
+    "TASK": "Create a scene-by-scene storyboard.",
+    "STEPS": "1 Break script into 5-8 scenes\n2 Describe visuals per scene\n3 Specify camera angle and movement\n4 Add sound and music direction\n5 Note transitions",
+    "OUTPUT FORMAT": "Scene number and duration\nVisual description\nCamera direction\nAudio direction\nTransition note"
+   }
+  },
+  {
+   "id": 82,
+   "cat": 9,
+   "name": "이미지 프롬프트 생성 (Midjourney)",
+   "level": "중급",
+   "explain": "Midjourney·DALL-E·Stable Diffusion용 정밀 프롬프트. 피사체·스타일·구도·조명 + 파라미터. 3개 변형안까지.",
+   "prompt": "ROLE\nMidjourney prompt engineer.\n\nCONTEXT\nThe user wants a high-quality AI-generated image.\n\nTASK\nWrite a detailed Midjourney prompt.\n\nSTEPS\n1 Subject and action\n2 Art style and artist reference\n3 Composition, camera angle, framing\n4 Lighting and color palette\n5 Technical parameters (--ar, --v, --style)\n\nOUTPUT FORMAT\nFull prompt string\nSubject breakdown\nStyle references\nTechnical params\n3 variation prompts\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nMidjourney prompt engineer.\n\nCONTEXT\nThe user wants a high-quality AI-generated image.\n\nTASK\nWrite a detailed Midjourney prompt.\n\nSTEPS\n1 Subject and action\n2 Art style and artist reference\n3 Composition, camera angle, framing\n4 Lighting and color palette\n5 Technical parameters (--ar, --v, --style)\n\nOUTPUT FORMAT\nFull prompt string\nSubject breakdown\nStyle references\nTechnical params\n3 variation prompts",
+   "sections": {
+    "ROLE": "Midjourney prompt engineer.",
+    "CONTEXT": "The user wants a high-quality AI-generated image.",
+    "TASK": "Write a detailed Midjourney prompt.",
+    "STEPS": "1 Subject and action\n2 Art style and artist reference\n3 Composition, camera angle, framing\n4 Lighting and color palette\n5 Technical parameters (--ar, --v, --style)",
+    "OUTPUT FORMAT": "Full prompt string\nSubject breakdown\nStyle references\nTechnical params\n3 variation prompts"
+   }
+  },
+  {
+   "id": 83,
+   "cat": 9,
+   "name": "영상 장면 프롬프트 (Sora/Veo)",
+   "level": "고급",
+   "explain": "Sora·Veo·Runway용 영상 생성 프롬프트. 장면·인물·카메라 무빙·지속시간. AI 영상을 '감독하듯' 제어하는 핵심.",
+   "prompt": "ROLE\nText-to-video prompt specialist.\n\nCONTEXT\nThe user wants to generate a video scene with Sora or Veo.\n\nTASK\nWrite a detailed video generation prompt.\n\nSTEPS\n1 Scene setting and mood\n2 Character actions and expressions\n3 Camera movement (pan, zoom, dolly)\n4 Duration and pacing\n5 Style reference and lighting\n\nOUTPUT FORMAT\nFull video prompt\nScene breakdown\nCamera movement\nDuration target\nStyle reference\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nText-to-video prompt specialist.\n\nCONTEXT\nThe user wants to generate a video scene with Sora or Veo.\n\nTASK\nWrite a detailed video generation prompt.\n\nSTEPS\n1 Scene setting and mood\n2 Character actions and expressions\n3 Camera movement (pan, zoom, dolly)\n4 Duration and pacing\n5 Style reference and lighting\n\nOUTPUT FORMAT\nFull video prompt\nScene breakdown\nCamera movement\nDuration target\nStyle reference",
+   "sections": {
+    "ROLE": "Text-to-video prompt specialist.",
+    "CONTEXT": "The user wants to generate a video scene with Sora or Veo.",
+    "TASK": "Write a detailed video generation prompt.",
+    "STEPS": "1 Scene setting and mood\n2 Character actions and expressions\n3 Camera movement (pan, zoom, dolly)\n4 Duration and pacing\n5 Style reference and lighting",
+    "OUTPUT FORMAT": "Full video prompt\nScene breakdown\nCamera movement\nDuration target\nStyle reference"
+   }
+  },
+  {
+   "id": 84,
+   "cat": 9,
+   "name": "캐릭터 일관성 프롬프트",
+   "level": "고급",
+   "explain": "같은 캐릭터를 여러 이미지/영상에서 일관되게 유지하는 설명서. 외모·의상·표정·재사용 구문. 스토리 기반 콘텐츠 필수.",
+   "prompt": "ROLE\nCharacter consistency specialist for AI imagery.\n\nCONTEXT\nThe user needs the same character across multiple AI images.\n\nTASK\nDesign a character sheet prompt.\n\nSTEPS\n1 Define character's physical features in precise detail\n2 Specify clothing and accessories\n3 Set personality cues through expression\n4 Lock 3-5 reference phrases to reuse\n5 Test across 3 different scenes\n\nOUTPUT FORMAT\nCharacter sheet\nReusable reference phrases\nScene adaptation examples\nConsistency checklist\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nCharacter consistency specialist for AI imagery.\n\nCONTEXT\nThe user needs the same character across multiple AI images.\n\nTASK\nDesign a character sheet prompt.\n\nSTEPS\n1 Define character's physical features in precise detail\n2 Specify clothing and accessories\n3 Set personality cues through expression\n4 Lock 3-5 reference phrases to reuse\n5 Test across 3 different scenes\n\nOUTPUT FORMAT\nCharacter sheet\nReusable reference phrases\nScene adaptation examples\nConsistency checklist",
+   "sections": {
+    "ROLE": "Character consistency specialist for AI imagery.",
+    "CONTEXT": "The user needs the same character across multiple AI images.",
+    "TASK": "Design a character sheet prompt.",
+    "STEPS": "1 Define character's physical features in precise detail\n2 Specify clothing and accessories\n3 Set personality cues through expression\n4 Lock 3-5 reference phrases to reuse\n5 Test across 3 different scenes",
+    "OUTPUT FORMAT": "Character sheet\nReusable reference phrases\nScene adaptation examples\nConsistency checklist"
+   }
+  },
+  {
+   "id": 85,
+   "cat": 9,
+   "name": "로고 디자인 프롬프트",
+   "level": "중급",
+   "explain": "로고 시안 5개를 서로 다른 스타일로. 미니멀·기하학·빈티지·마스코트·엠블럼. 브랜딩 초기 단계에 빠른 시각화.",
+   "prompt": "ROLE\nBrand logo prompt designer.\n\nCONTEXT\nThe user wants to generate logo concepts.\n\nTASK\nCreate 5 logo prompts with different styles.\n\nSTEPS\n1 Brand name and keyword symbols\n2 5 style directions (minimalist, geometric, vintage, mascot, emblem)\n3 Color palette per style\n4 Typography suggestions\n5 Background (transparent, vector)\n\nOUTPUT FORMAT\n5 prompt variations\nStyle breakdown per prompt\nColor palettes\nTypography notes\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nBrand logo prompt designer.\n\nCONTEXT\nThe user wants to generate logo concepts.\n\nTASK\nCreate 5 logo prompts with different styles.\n\nSTEPS\n1 Brand name and keyword symbols\n2 5 style directions (minimalist, geometric, vintage, mascot, emblem)\n3 Color palette per style\n4 Typography suggestions\n5 Background (transparent, vector)\n\nOUTPUT FORMAT\n5 prompt variations\nStyle breakdown per prompt\nColor palettes\nTypography notes",
+   "sections": {
+    "ROLE": "Brand logo prompt designer.",
+    "CONTEXT": "The user wants to generate logo concepts.",
+    "TASK": "Create 5 logo prompts with different styles.",
+    "STEPS": "1 Brand name and keyword symbols\n2 5 style directions (minimalist, geometric, vintage, mascot, emblem)\n3 Color palette per style\n4 Typography suggestions\n5 Background (transparent, vector)",
+    "OUTPUT FORMAT": "5 prompt variations\nStyle breakdown per prompt\nColor palettes\nTypography notes"
+   }
+  },
+  {
+   "id": 86,
+   "cat": 9,
+   "name": "인포그래픽 프롬프트",
+   "level": "중급",
+   "explain": "데이터를 인포그래픽으로 시각화. 레이아웃·아이콘·텍스트 위치까지. 보고서·프레젠테이션·SNS 자료 수준 업그레이드.",
+   "prompt": "ROLE\nInfographic designer using AI image tools.\n\nCONTEXT\nThe user wants to visualize data as an infographic.\n\nTASK\nGenerate an infographic prompt.\n\nSTEPS\n1 Data story in one sentence\n2 Layout type (timeline, comparison, flow, map)\n3 Data points and hierarchy\n4 Color and icon style\n5 Text placement directions\n\nOUTPUT FORMAT\nData story\nLayout type\nData structure\nStyle direction\nText placement\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nInfographic designer using AI image tools.\n\nCONTEXT\nThe user wants to visualize data as an infographic.\n\nTASK\nGenerate an infographic prompt.\n\nSTEPS\n1 Data story in one sentence\n2 Layout type (timeline, comparison, flow, map)\n3 Data points and hierarchy\n4 Color and icon style\n5 Text placement directions\n\nOUTPUT FORMAT\nData story\nLayout type\nData structure\nStyle direction\nText placement",
+   "sections": {
+    "ROLE": "Infographic designer using AI image tools.",
+    "CONTEXT": "The user wants to visualize data as an infographic.",
+    "TASK": "Generate an infographic prompt.",
+    "STEPS": "1 Data story in one sentence\n2 Layout type (timeline, comparison, flow, map)\n3 Data points and hierarchy\n4 Color and icon style\n5 Text placement directions",
+    "OUTPUT FORMAT": "Data story\nLayout type\nData structure\nStyle direction\nText placement"
+   }
+  },
+  {
+   "id": 87,
+   "cat": 9,
+   "name": "썸네일 이미지 프롬프트",
+   "level": "중급",
+   "explain": "CTR 높이는 유튜브 썸네일 이미지 프롬프트. 충격적 표정 + 대비 배경 + 텍스트 공간. A/B 테스트용 변형안까지.",
+   "prompt": "ROLE\nYouTube thumbnail image prompt writer.\n\nCONTEXT\nThe user wants a click-worthy thumbnail image.\n\nTASK\nGenerate a thumbnail image prompt.\n\nSTEPS\n1 Main subject with expression (shock, excitement)\n2 Bold contrast background\n3 Text placement zone (left or right third)\n4 Color palette (high contrast)\n5 Style reference (MrBeast, Noah Kagan, etc.)\n\nOUTPUT FORMAT\nImage prompt\nText zone marked\nColor palette\nStyle reference\nA/B variation prompt\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nYouTube thumbnail image prompt writer.\n\nCONTEXT\nThe user wants a click-worthy thumbnail image.\n\nTASK\nGenerate a thumbnail image prompt.\n\nSTEPS\n1 Main subject with expression (shock, excitement)\n2 Bold contrast background\n3 Text placement zone (left or right third)\n4 Color palette (high contrast)\n5 Style reference (MrBeast, Noah Kagan, etc.)\n\nOUTPUT FORMAT\nImage prompt\nText zone marked\nColor palette\nStyle reference\nA/B variation prompt",
+   "sections": {
+    "ROLE": "YouTube thumbnail image prompt writer.",
+    "CONTEXT": "The user wants a click-worthy thumbnail image.",
+    "TASK": "Generate a thumbnail image prompt.",
+    "STEPS": "1 Main subject with expression (shock, excitement)\n2 Bold contrast background\n3 Text placement zone (left or right third)\n4 Color palette (high contrast)\n5 Style reference (MrBeast, Noah Kagan, etc.)",
+    "OUTPUT FORMAT": "Image prompt\nText zone marked\nColor palette\nStyle reference\nA/B variation prompt"
+   }
+  },
+  {
+   "id": 88,
+   "cat": 9,
+   "name": "상품 촬영컷 프롬프트",
+   "level": "중급",
+   "explain": "이커머스·SNS용 상품 촬영컷 프롬프트. 앵글·배경·조명·소품. 촬영 스튜디오 비용 절감 + AI로 무한 생성.",
+   "prompt": "ROLE\nProduct photography prompt designer.\n\nCONTEXT\nThe user wants e-commerce product shots generated by AI.\n\nTASK\nCreate product shot prompts.\n\nSTEPS\n1 Product angle (front, 3/4, flat lay)\n2 Background style (clean white, lifestyle, editorial)\n3 Lighting setup\n4 Props and styling\n5 Resolution and aspect ratio\n\nOUTPUT FORMAT\n5 shot-type prompts\nLighting directions\nProps list\nTechnical specs\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nProduct photography prompt designer.\n\nCONTEXT\nThe user wants e-commerce product shots generated by AI.\n\nTASK\nCreate product shot prompts.\n\nSTEPS\n1 Product angle (front, 3/4, flat lay)\n2 Background style (clean white, lifestyle, editorial)\n3 Lighting setup\n4 Props and styling\n5 Resolution and aspect ratio\n\nOUTPUT FORMAT\n5 shot-type prompts\nLighting directions\nProps list\nTechnical specs",
+   "sections": {
+    "ROLE": "Product photography prompt designer.",
+    "CONTEXT": "The user wants e-commerce product shots generated by AI.",
+    "TASK": "Create product shot prompts.",
+    "STEPS": "1 Product angle (front, 3/4, flat lay)\n2 Background style (clean white, lifestyle, editorial)\n3 Lighting setup\n4 Props and styling\n5 Resolution and aspect ratio",
+    "OUTPUT FORMAT": "5 shot-type prompts\nLighting directions\nProps list\nTechnical specs"
+   }
+  },
+  {
+   "id": 89,
+   "cat": 9,
+   "name": "AI 아바타 생성 프롬프트",
+   "level": "중급",
+   "explain": "프로필·강의·영상용 AI 아바타 프롬프트. 스타일·복장·표정·활용 맥락. 본인 사진 없이 브랜딩 가능.",
+   "prompt": "ROLE\nAI avatar designer.\n\nCONTEXT\nThe user wants a personal/brand AI avatar.\n\nTASK\nDesign an avatar prompt.\n\nSTEPS\n1 Style direction (realistic, 3D, illustrated, pixel)\n2 Outfit and vibe\n3 Background theme\n4 Expression and pose\n5 Usage context (profile, banner, presentation)\n\nOUTPUT FORMAT\nStyle direction\nAvatar prompt\nUsage variations\nFile spec recommendation\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nAI avatar designer.\n\nCONTEXT\nThe user wants a personal/brand AI avatar.\n\nTASK\nDesign an avatar prompt.\n\nSTEPS\n1 Style direction (realistic, 3D, illustrated, pixel)\n2 Outfit and vibe\n3 Background theme\n4 Expression and pose\n5 Usage context (profile, banner, presentation)\n\nOUTPUT FORMAT\nStyle direction\nAvatar prompt\nUsage variations\nFile spec recommendation",
+   "sections": {
+    "ROLE": "AI avatar designer.",
+    "CONTEXT": "The user wants a personal/brand AI avatar.",
+    "TASK": "Design an avatar prompt.",
+    "STEPS": "1 Style direction (realistic, 3D, illustrated, pixel)\n2 Outfit and vibe\n3 Background theme\n4 Expression and pose\n5 Usage context (profile, banner, presentation)",
+    "OUTPUT FORMAT": "Style direction\nAvatar prompt\nUsage variations\nFile spec recommendation"
+   }
+  },
+  {
+   "id": 90,
+   "cat": 9,
+   "name": "음악/사운드 프롬프트 (Suno)",
+   "level": "중급",
+   "explain": "Suno·Udio용 음악 생성 프롬프트. 장르·템포·악기 + [Verse][Chorus] 구조화 가사. 광고·영상 BGM·징글 즉석 생성.",
+   "prompt": "ROLE\nAI music prompt writer for Suno / Udio.\n\nCONTEXT\nThe user wants to generate a custom song or BGM.\n\nTASK\nCreate a Suno-compatible music prompt with lyrics.\n\nSTEPS\n1 Genre and sub-genre\n2 Tempo, key, mood\n3 Instrument palette\n4 Vocal style direction\n5 Song structure with lyrics in sections\n\nOUTPUT FORMAT\nStyle prompt (Suno format)\nStructured lyrics with [Verse][Chorus] tags\nTempo and key\nAlternative prompt\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nAI music prompt writer for Suno / Udio.\n\nCONTEXT\nThe user wants to generate a custom song or BGM.\n\nTASK\nCreate a Suno-compatible music prompt with lyrics.\n\nSTEPS\n1 Genre and sub-genre\n2 Tempo, key, mood\n3 Instrument palette\n4 Vocal style direction\n5 Song structure with lyrics in sections\n\nOUTPUT FORMAT\nStyle prompt (Suno format)\nStructured lyrics with [Verse][Chorus] tags\nTempo and key\nAlternative prompt",
+   "sections": {
+    "ROLE": "AI music prompt writer for Suno / Udio.",
+    "CONTEXT": "The user wants to generate a custom song or BGM.",
+    "TASK": "Create a Suno-compatible music prompt with lyrics.",
+    "STEPS": "1 Genre and sub-genre\n2 Tempo, key, mood\n3 Instrument palette\n4 Vocal style direction\n5 Song structure with lyrics in sections",
+    "OUTPUT FORMAT": "Style prompt (Suno format)\nStructured lyrics with [Verse][Chorus] tags\nTempo and key\nAlternative prompt"
+   }
+  },
+  {
+   "id": 91,
+   "cat": 10,
+   "name": "AI 사업 아이디어 발굴",
+   "level": "중급",
+   "explain": "특정 시장에서 AI로 해결할 수 있는 사업 아이디어 5개. 페인-AI 매핑 + 시장규모 + 타당성 평가 + 순위.",
+   "prompt": "ROLE\nAI startup strategist.\n\nCONTEXT\nThe user wants to generate viable AI business ideas.\n\nTASK\nGenerate 5 AI business ideas for the given market.\n\nSTEPS\n1 Identify 3 market pains in the given domain\n2 Map AI capabilities to each pain\n3 Generate 5 business ideas with USP\n4 Evaluate each on market size and feasibility\n5 Rank with reasoning\n\nOUTPUT FORMAT\n5 business ideas\nTarget market per idea\nAI capability used\nMarket size estimate\nRanking with reasoning\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nAI startup strategist.\n\nCONTEXT\nThe user wants to generate viable AI business ideas.\n\nTASK\nGenerate 5 AI business ideas for the given market.\n\nSTEPS\n1 Identify 3 market pains in the given domain\n2 Map AI capabilities to each pain\n3 Generate 5 business ideas with USP\n4 Evaluate each on market size and feasibility\n5 Rank with reasoning\n\nOUTPUT FORMAT\n5 business ideas\nTarget market per idea\nAI capability used\nMarket size estimate\nRanking with reasoning",
+   "sections": {
+    "ROLE": "AI startup strategist.",
+    "CONTEXT": "The user wants to generate viable AI business ideas.",
+    "TASK": "Generate 5 AI business ideas for the given market.",
+    "STEPS": "1 Identify 3 market pains in the given domain\n2 Map AI capabilities to each pain\n3 Generate 5 business ideas with USP\n4 Evaluate each on market size and feasibility\n5 Rank with reasoning",
+    "OUTPUT FORMAT": "5 business ideas\nTarget market per idea\nAI capability used\nMarket size estimate\nRanking with reasoning"
+   }
+  },
+  {
+   "id": 92,
+   "cat": 10,
+   "name": "MVP 설계",
+   "level": "고급",
+   "explain": "MVP를 '최소 기능 3개'로 압축. 린스타트업 방식. 사용자 흐름 → 필수 기능 → 2주 빌드 플랜. 과잉 개발 방지.",
+   "prompt": "ROLE\nLean startup MVP architect.\n\nCONTEXT\nThe user has an idea and wants to build the minimum viable product.\n\nTASK\nDesign an MVP scope.\n\nSTEPS\n1 Core user problem in one sentence\n2 Single primary user flow\n3 Must-have features (max 3)\n4 Features to postpone\n5 2-week build plan\n\nOUTPUT FORMAT\nCore problem\nPrimary user flow\nMust-have features (max 3)\nBacklog (for later)\n2-week build plan\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nLean startup MVP architect.\n\nCONTEXT\nThe user has an idea and wants to build the minimum viable product.\n\nTASK\nDesign an MVP scope.\n\nSTEPS\n1 Core user problem in one sentence\n2 Single primary user flow\n3 Must-have features (max 3)\n4 Features to postpone\n5 2-week build plan\n\nOUTPUT FORMAT\nCore problem\nPrimary user flow\nMust-have features (max 3)\nBacklog (for later)\n2-week build plan",
+   "sections": {
+    "ROLE": "Lean startup MVP architect.",
+    "CONTEXT": "The user has an idea and wants to build the minimum viable product.",
+    "TASK": "Design an MVP scope.",
+    "STEPS": "1 Core user problem in one sentence\n2 Single primary user flow\n3 Must-have features (max 3)\n4 Features to postpone\n5 2-week build plan",
+    "OUTPUT FORMAT": "Core problem\nPrimary user flow\nMust-have features (max 3)\nBacklog (for later)\n2-week build plan"
+   }
+  },
+  {
+   "id": 93,
+   "cat": 10,
+   "name": "AI 수익 모델 설계",
+   "level": "고급",
+   "explain": "AI 제품 수익화 4모델(구독·사용량·엔터프라이즈·광고) 비교. WTP 분석 + 수익 예측 + 티어 설계. 프라이싱 결정 직전.",
+   "prompt": "ROLE\nAI business model strategist.\n\nCONTEXT\nThe user has an AI product and needs to monetize.\n\nTASK\nDesign a revenue model.\n\nSTEPS\n1 Analyze customer willingness-to-pay\n2 Compare 4 models (subscription, usage, enterprise, ads)\n3 Project revenue per model\n4 Identify model best fitting stage\n5 Set pricing tiers\n\nOUTPUT FORMAT\nWTP analysis\n4 model comparison table\nRevenue projection\nRecommended model\nPricing tiers\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nAI business model strategist.\n\nCONTEXT\nThe user has an AI product and needs to monetize.\n\nTASK\nDesign a revenue model.\n\nSTEPS\n1 Analyze customer willingness-to-pay\n2 Compare 4 models (subscription, usage, enterprise, ads)\n3 Project revenue per model\n4 Identify model best fitting stage\n5 Set pricing tiers\n\nOUTPUT FORMAT\nWTP analysis\n4 model comparison table\nRevenue projection\nRecommended model\nPricing tiers",
+   "sections": {
+    "ROLE": "AI business model strategist.",
+    "CONTEXT": "The user has an AI product and needs to monetize.",
+    "TASK": "Design a revenue model.",
+    "STEPS": "1 Analyze customer willingness-to-pay\n2 Compare 4 models (subscription, usage, enterprise, ads)\n3 Project revenue per model\n4 Identify model best fitting stage\n5 Set pricing tiers",
+    "OUTPUT FORMAT": "WTP analysis\n4 model comparison table\nRevenue projection\nRecommended model\nPricing tiers"
+   }
+  },
+  {
+   "id": 94,
+   "cat": 10,
+   "name": "1인 기업 AI 스택",
+   "level": "중급",
+   "explain": "1인 기업 운영을 위한 AI 도구 스택. 콘텐츠·영업·CS·관리별 추천 + 월 비용 + 연계 + ROI 순위. 창업자 필수 설계도.",
+   "prompt": "ROLE\nSolopreneur AI stack advisor.\n\nCONTEXT\nThe user is a solo founder and wants to automate operations.\n\nTASK\nDesign an AI-powered solopreneur stack.\n\nSTEPS\n1 Map core operations (content, sales, CS, admin)\n2 Recommend 1-2 AI tools per function\n3 Estimate monthly cost\n4 Propose integration points\n5 Prioritize by ROI\n\nOUTPUT FORMAT\nOperations map\nTool stack table\nMonthly cost estimate\nIntegration plan\nROI prioritization\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nSolopreneur AI stack advisor.\n\nCONTEXT\nThe user is a solo founder and wants to automate operations.\n\nTASK\nDesign an AI-powered solopreneur stack.\n\nSTEPS\n1 Map core operations (content, sales, CS, admin)\n2 Recommend 1-2 AI tools per function\n3 Estimate monthly cost\n4 Propose integration points\n5 Prioritize by ROI\n\nOUTPUT FORMAT\nOperations map\nTool stack table\nMonthly cost estimate\nIntegration plan\nROI prioritization",
+   "sections": {
+    "ROLE": "Solopreneur AI stack advisor.",
+    "CONTEXT": "The user is a solo founder and wants to automate operations.",
+    "TASK": "Design an AI-powered solopreneur stack.",
+    "STEPS": "1 Map core operations (content, sales, CS, admin)\n2 Recommend 1-2 AI tools per function\n3 Estimate monthly cost\n4 Propose integration points\n5 Prioritize by ROI",
+    "OUTPUT FORMAT": "Operations map\nTool stack table\nMonthly cost estimate\nIntegration plan\nROI prioritization"
+   }
+  },
+  {
+   "id": 95,
+   "cat": 10,
+   "name": "AI 강의 상품 기획",
+   "level": "중급",
+   "explain": "유료 AI 강의 상품 기획서. 타겟 → 커리큘럼 → 형태 → 보너스 → 가격·런칭. 강사가 자기 상품 만들 때 바로.",
+   "prompt": "ROLE\nAI course product designer.\n\nCONTEXT\nThe user wants to launch a paid AI course.\n\nTASK\nDesign a course product package.\n\nSTEPS\n1 Target learner and transformation promise\n2 Curriculum outline (modules)\n3 Delivery format (live, self-paced, hybrid)\n4 Bonus and support structure\n5 Pricing tiers and launch plan\n\nOUTPUT FORMAT\nTarget and transformation\nCurriculum outline\nDelivery format\nBonuses and support\nPricing and launch plan\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nAI course product designer.\n\nCONTEXT\nThe user wants to launch a paid AI course.\n\nTASK\nDesign a course product package.\n\nSTEPS\n1 Target learner and transformation promise\n2 Curriculum outline (modules)\n3 Delivery format (live, self-paced, hybrid)\n4 Bonus and support structure\n5 Pricing tiers and launch plan\n\nOUTPUT FORMAT\nTarget and transformation\nCurriculum outline\nDelivery format\nBonuses and support\nPricing and launch plan",
+   "sections": {
+    "ROLE": "AI course product designer.",
+    "CONTEXT": "The user wants to launch a paid AI course.",
+    "TASK": "Design a course product package.",
+    "STEPS": "1 Target learner and transformation promise\n2 Curriculum outline (modules)\n3 Delivery format (live, self-paced, hybrid)\n4 Bonus and support structure\n5 Pricing tiers and launch plan",
+    "OUTPUT FORMAT": "Target and transformation\nCurriculum outline\nDelivery format\nBonuses and support\nPricing and launch plan"
+   }
+  },
+  {
+   "id": 96,
+   "cat": 10,
+   "name": "AI 컨설팅 제안서",
+   "level": "고급",
+   "explain": "AI 컨설팅 수주용 제안서. 페인 → 3단계 접근 → 산출물 → 일정·팀 → 비용·ROI. 수주율 올리는 표준 구조.",
+   "prompt": "ROLE\nAI consulting proposal writer.\n\nCONTEXT\nThe user is pitching an AI consulting engagement.\n\nTASK\nWrite a winning consulting proposal.\n\nSTEPS\n1 Client's current pain (quantified)\n2 Proposed approach with 3 phases\n3 Deliverables per phase\n4 Timeline and team\n5 Investment and ROI projection\n\nOUTPUT FORMAT\nCurrent pain (quantified)\n3-phase approach\nDeliverables table\nTimeline and team\nInvestment and ROI\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nAI consulting proposal writer.\n\nCONTEXT\nThe user is pitching an AI consulting engagement.\n\nTASK\nWrite a winning consulting proposal.\n\nSTEPS\n1 Client's current pain (quantified)\n2 Proposed approach with 3 phases\n3 Deliverables per phase\n4 Timeline and team\n5 Investment and ROI projection\n\nOUTPUT FORMAT\nCurrent pain (quantified)\n3-phase approach\nDeliverables table\nTimeline and team\nInvestment and ROI",
+   "sections": {
+    "ROLE": "AI consulting proposal writer.",
+    "CONTEXT": "The user is pitching an AI consulting engagement.",
+    "TASK": "Write a winning consulting proposal.",
+    "STEPS": "1 Client's current pain (quantified)\n2 Proposed approach with 3 phases\n3 Deliverables per phase\n4 Timeline and team\n5 Investment and ROI projection",
+    "OUTPUT FORMAT": "Current pain (quantified)\n3-phase approach\nDeliverables table\nTimeline and team\nInvestment and ROI"
+   }
+  },
+  {
+   "id": 97,
+   "cat": 10,
+   "name": "AI 투자유치 IR",
+   "level": "고급",
+   "explain": "시드~시리즈A 투자유치 IR 12슬라이드 구조. 각 슬라이드 메시지 + 필요 데이터 + 디자인 방향 + 피치 팁.",
+   "prompt": "ROLE\nAI startup IR deck architect.\n\nCONTEXT\nThe user is raising seed or Series A funding.\n\nTASK\nDraft a 12-slide investor pitch deck outline.\n\nSTEPS\n1 Slides 1-3: problem, market, solution\n2 Slides 4-6: product demo, traction, business model\n3 Slides 7-9: competition, team, moat\n4 Slides 10-11: financials, go-to-market\n5 Slide 12: ask and use of funds\n\nOUTPUT FORMAT\n12-slide outline\nKey message per slide\nData needed per slide\nDesign direction\nPitch rehearsal tips\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nAI startup IR deck architect.\n\nCONTEXT\nThe user is raising seed or Series A funding.\n\nTASK\nDraft a 12-slide investor pitch deck outline.\n\nSTEPS\n1 Slides 1-3: problem, market, solution\n2 Slides 4-6: product demo, traction, business model\n3 Slides 7-9: competition, team, moat\n4 Slides 10-11: financials, go-to-market\n5 Slide 12: ask and use of funds\n\nOUTPUT FORMAT\n12-slide outline\nKey message per slide\nData needed per slide\nDesign direction\nPitch rehearsal tips",
+   "sections": {
+    "ROLE": "AI startup IR deck architect.",
+    "CONTEXT": "The user is raising seed or Series A funding.",
+    "TASK": "Draft a 12-slide investor pitch deck outline.",
+    "STEPS": "1 Slides 1-3: problem, market, solution\n2 Slides 4-6: product demo, traction, business model\n3 Slides 7-9: competition, team, moat\n4 Slides 10-11: financials, go-to-market\n5 Slide 12: ask and use of funds",
+    "OUTPUT FORMAT": "12-slide outline\nKey message per slide\nData needed per slide\nDesign direction\nPitch rehearsal tips"
+   }
+  },
+  {
+   "id": 98,
+   "cat": 10,
+   "name": "AI 제품 로드맵",
+   "level": "중급",
+   "explain": "12개월 분기별 로드맵. 분기 테마 + 핵심 피처 + 의존성 + 리스크 + KPI. 팀과 투자자 모두 공유 가능한 포맷.",
+   "prompt": "ROLE\nProduct roadmap strategist.\n\nCONTEXT\nThe user needs a 12-month product roadmap.\n\nTASK\nBuild a quarterly product roadmap.\n\nSTEPS\n1 Q1 theme and 3 key features\n2 Q2 theme and features\n3 Q3 theme and features\n4 Q4 theme and features\n5 Risk and assumption per quarter\n\nOUTPUT FORMAT\nQuarterly theme and features\nDependencies map\nRisk register\nAssumptions\nSuccess metrics per quarter\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nProduct roadmap strategist.\n\nCONTEXT\nThe user needs a 12-month product roadmap.\n\nTASK\nBuild a quarterly product roadmap.\n\nSTEPS\n1 Q1 theme and 3 key features\n2 Q2 theme and features\n3 Q3 theme and features\n4 Q4 theme and features\n5 Risk and assumption per quarter\n\nOUTPUT FORMAT\nQuarterly theme and features\nDependencies map\nRisk register\nAssumptions\nSuccess metrics per quarter",
+   "sections": {
+    "ROLE": "Product roadmap strategist.",
+    "CONTEXT": "The user needs a 12-month product roadmap.",
+    "TASK": "Build a quarterly product roadmap.",
+    "STEPS": "1 Q1 theme and 3 key features\n2 Q2 theme and features\n3 Q3 theme and features\n4 Q4 theme and features\n5 Risk and assumption per quarter",
+    "OUTPUT FORMAT": "Quarterly theme and features\nDependencies map\nRisk register\nAssumptions\nSuccess metrics per quarter"
+   }
+  },
+  {
+   "id": 99,
+   "cat": 10,
+   "name": "AI 팀 조직도 설계",
+   "level": "고급",
+   "explain": "AI 중심 팀 조직도 설계. 역할·책임·보고라인·채용 순서·보상 구간. 스타트업 HR의 첫 단추.",
+   "prompt": "ROLE\nAI org design consultant.\n\nCONTEXT\nThe user is building an AI-first team.\n\nTASK\nDesign an optimal AI team structure.\n\nSTEPS\n1 Identify 5 critical roles (founder, PM, ML, eng, GTM)\n2 Define responsibilities per role\n3 Set reporting lines and rituals\n4 Suggest hiring sequence by stage\n5 Propose compensation bands\n\nOUTPUT FORMAT\nOrg chart\nRole responsibilities\nRituals and cadence\nHiring sequence\nComp bands\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nAI org design consultant.\n\nCONTEXT\nThe user is building an AI-first team.\n\nTASK\nDesign an optimal AI team structure.\n\nSTEPS\n1 Identify 5 critical roles (founder, PM, ML, eng, GTM)\n2 Define responsibilities per role\n3 Set reporting lines and rituals\n4 Suggest hiring sequence by stage\n5 Propose compensation bands\n\nOUTPUT FORMAT\nOrg chart\nRole responsibilities\nRituals and cadence\nHiring sequence\nComp bands",
+   "sections": {
+    "ROLE": "AI org design consultant.",
+    "CONTEXT": "The user is building an AI-first team.",
+    "TASK": "Design an optimal AI team structure.",
+    "STEPS": "1 Identify 5 critical roles (founder, PM, ML, eng, GTM)\n2 Define responsibilities per role\n3 Set reporting lines and rituals\n4 Suggest hiring sequence by stage\n5 Propose compensation bands",
+    "OUTPUT FORMAT": "Org chart\nRole responsibilities\nRituals and cadence\nHiring sequence\nComp bands"
+   }
+  },
+  {
+   "id": 100,
+   "cat": 10,
+   "name": "AI 브랜드 네이밍",
+   "level": "중급",
+   "explain": "AI 제품·브랜드 이름 10개 생성. 5가지 네이밍 방향 × 2개씩. 도메인·발음·차별성 체크 + TOP 3 추천. 런칭 전 필수.",
+   "prompt": "ROLE\nBrand naming specialist for AI products.\n\nCONTEXT\nThe user needs a memorable brand name.\n\nTASK\nGenerate 10 brand name candidates.\n\nSTEPS\n1 List 5 naming directions (descriptive, abstract, compound, invented, metaphor)\n2 Generate 2 names per direction\n3 Check .com domain availability heuristic\n4 Test pronunciation across languages\n5 Rank by memorability and differentiation\n\nOUTPUT FORMAT\n10 name candidates\nType per name\nDomain availability heuristic\nPronunciation check\nTop 3 recommendations\n\n----\nBased on the above content, create a skill.",
+   "core": "ROLE\nBrand naming specialist for AI products.\n\nCONTEXT\nThe user needs a memorable brand name.\n\nTASK\nGenerate 10 brand name candidates.\n\nSTEPS\n1 List 5 naming directions (descriptive, abstract, compound, invented, metaphor)\n2 Generate 2 names per direction\n3 Check .com domain availability heuristic\n4 Test pronunciation across languages\n5 Rank by memorability and differentiation\n\nOUTPUT FORMAT\n10 name candidates\nType per name\nDomain availability heuristic\nPronunciation check\nTop 3 recommendations",
+   "sections": {
+    "ROLE": "Brand naming specialist for AI products.",
+    "CONTEXT": "The user needs a memorable brand name.",
+    "TASK": "Generate 10 brand name candidates.",
+    "STEPS": "1 List 5 naming directions (descriptive, abstract, compound, invented, metaphor)\n2 Generate 2 names per direction\n3 Check .com domain availability heuristic\n4 Test pronunciation across languages\n5 Rank by memorability and differentiation",
+    "OUTPUT FORMAT": "10 name candidates\nType per name\nDomain availability heuristic\nPronunciation check\nTop 3 recommendations"
+   }
+  }
+ ]
+}
