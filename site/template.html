@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
-<title>AI 스킬 라이브러리 110</title>
+<title>AI 스킬 라이브러리</title>
 <meta name="description" content="업무 분야별 AI 프롬프트 스킬과 레시피를 검색하고 복사해서 바로 쓰는 초보자용 대시보드">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Nanum+Myeongjo:wght@800&display=swap">
@@ -279,7 +279,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
           <button class="stage" data-go="basics"><b>AI 기본기 익히기</b><span>요약·교정·되묻기 같은 기본 동작 10개. 전부 기초.</span><small>30분 · 10개 스킬</small></button>
           <button class="stage" data-go="roles"><b>내 역할 고르기</b><span>직장인, 1인기업, 강사, 공공기관. 역할마다 시작 스킬 3개.</span><small>1분</small></button>
           <button class="stage" data-go="recipes"><b>레시피로 업무 1건 완성</b><span>스킬 3~5개를 순서대로 이어 실제 결과물 하나를 만듭니다.</span><small id="st-recipes">레시피 보기</small></button>
-          <button class="stage" data-go="all"><b>분야별 심화</b><span>10개 분야 100개 스킬을 검색·필터로 찾아 쓰기.</span><small>필요할 때</small></button>
+          <button class="stage" data-go="all"><b>분야별 심화</b><span id="st-all">분야별 스킬을 검색·필터로 찾아 쓰기.</span><small>필요할 때</small></button>
         </div>
         <div class="roles" id="roles"><span class="lbl">내 역할:</span></div>
         <div class="rolepick" id="rolepick" hidden></div>
@@ -434,6 +434,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
   $('t-total').innerHTML = skills.length + '<small>개</small>';
   $('t-recipes').innerHTML = recipes.length + '<small>개</small>';
   $('st-recipes').textContent = recipes.length + '개 레시피';
+  $('st-all').textContent = `${cats.length-1}개 분야 ${skills.length-skills.filter(s=>s.cat===basicsCat.id).length}개 스킬을 검색·필터로 찾아 쓰기.`;
   const lvCount = Object.fromEntries(LV.map(l=>[l, skills.filter(s=>s.level===l).length]));
   $('mixbar').innerHTML = LV.map(l=>`<span style="flex:${lvCount[l]};background:${LVC[l]}" title="${l} ${lvCount[l]}"></span>`).join('');
   $('mixleg').innerHTML = LV.map(l=>`<span><i class="dot" style="background:${LVC[l]}"></i>${l} ${lvCount[l]}개</span>`).join('');
