@@ -14,6 +14,7 @@
 | `site/template.html` | 페이지 템플릿. 디자인·문구를 고칠 때 이 파일을 수정 |
 | `site/config.json` | 크레딧 등 표시 문구 덮어쓰기 (엑셀 원본을 수정하지 않고 바꿀 때) |
 | `scripts/build.py` | 엑셀 → JSON → index.html 생성 스크립트 |
+| `scripts/feedback_apps_script.gs` | 👍/👎 집계용 Google Apps Script (구글 시트에 붙여 배포) |
 | `source/*.xlsx` | 원본 엑셀 (스킬 1~100) |
 | `data/extra/skills_*.json` | 엑셀 밖에서 추가한 카테고리와 스킬. `skills_basics.json`(101~110 AI 기본기), `skills_11_docs.json`~`skills_16_learning.json`(111~158: 문서·보고, 영업·고객관리, 데이터·엑셀, HR·조직, 재무·계약, 학습·자기계발). 같은 형식의 파일을 더 두면 카테고리가 늘어남 |
 | `data/extra/recipes.json` | 레시피(스킬 체인)와 역할별 시작점 |
@@ -35,6 +36,19 @@
   - **스킬 원문**: 엑셀의 영문 전문 그대로 — Claude Projects 지침, ChatGPT GPT Instructions, Gemini Gems 등록용
 - 초보자 안내 패널, 링크 공유(`#skill-42`, `#cat-3`, `#recipes`, `#recipe-R1`, `#role-solo`, `#guide`)
 - 라이트/다크 모드, 모바일 대응
+
+## "도움됨" 피드백 집계 연결 (선택, 5분)
+
+스킬 상세 화면의 👍 도움됨 / 👎 아쉬움 버튼과 한 줄 의견은 기본적으로 각자 브라우저에만 저장됩니다.
+집계하려면 구글 시트 + Apps Script(무료)를 연결합니다.
+
+1. 새 Google 시트를 만들고 확장 프로그램 → Apps Script 를 연다
+2. `scripts/feedback_apps_script.gs` 내용을 붙여넣고 저장
+3. 배포 → 새 배포 → 웹 앱 (실행: 나, 액세스: 모든 사용자) → 웹 앱 URL 복사
+4. `site/config.json` 의 `feedback_url` 에 URL을 넣고 `main` 에 푸시
+5. 사이트에서 👍 를 눌러 시트 `votes` 탭에 행이 쌓이는지 확인. Apps Script 편집기에서 `buildSummary` 를 실행하면 스킬별 집계 탭(`summary`)이 만들어진다
+
+수집 항목은 시각, 스킬 번호·이름·카테고리, 투표, 의견, 선택한 역할, 페이지 해시, 기기 종류(모바일/데스크톱)이며 개인 식별 정보는 없습니다.
 
 ## 무료 배포 (GitHub Pages)
 

@@ -245,6 +245,15 @@ textarea{width:100%;min-height:92px;resize:vertical;font:inherit;font-size:14px;
 .howto li{margin-bottom:4px}
 .inrec{font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .inrec button{background:var(--surface-2);border:0;border-radius:999px;padding:3px 10px;font-size:12.5px}
+.fb{border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+.fb-q{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13.5px}
+.fb-q span{margin-right:auto;font-weight:600}
+.fb-btn{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px;font-size:13.5px}
+.fb-btn[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);font-weight:600}
+.fb-btn:disabled{opacity:.6;cursor:default}
+.fb-more{display:flex;flex-direction:column;gap:6px}
+.fb-more textarea{min-height:48px;font-size:13.5px}
+.fb-note{margin:0;font-size:12px;color:var(--faint)}
 .mfoot{display:flex;justify-content:space-between;gap:8px;padding:10px 20px 14px;border-top:1px solid var(--line)}
 .mfoot button{background:none;border:0;color:var(--accent);font-size:13.5px;padding:4px 6px;max-width:48%;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .mfoot button:disabled{color:var(--faint)}
@@ -390,6 +399,16 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
           <button class="btn" id="m-fav" aria-pressed="false">☆ 즐겨찾기</button>
         </div>
         <div class="inrec" id="m-inrec"></div>
+        <div class="fb" id="fb">
+          <div class="fb-q"><span id="fb-label">이 스킬이 도움이 됐나요?</span>
+            <button class="fb-btn" id="fb-up" aria-pressed="false">👍 도움됨</button>
+            <button class="fb-btn" id="fb-down" aria-pressed="false">👎 아쉬움</button></div>
+          <div class="fb-more" id="fb-more" hidden>
+            <textarea id="fb-text" rows="2" placeholder="무엇이 좋았거나 아쉬웠나요? (선택, 한 줄)"></textarea>
+            <button class="btn" id="fb-send">의견 보내기</button>
+          </div>
+          <p class="fb-note" id="fb-note"></p>
+        </div>
         <details class="howto">
           <summary>어디에 붙여야 하나요?</summary>
           <ul>
@@ -425,6 +444,15 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
   const state = { view:'skills', cat: 0, lv: new Set(), q: '', sort: 'id', fav: false, noinput: false, role: null, openRecipe: null };
   let favs = new Set();
   try { favs = new Set(JSON.parse(localStorage.getItem('skill-favs')||'[]')); } catch(e){}
+  let votes = {};
+  try { votes = JSON.parse(localStorage.getItem('skill-votes')||'{}') || {}; } catch(e){}
+  const FB_URL = (D.meta.feedback_url || '').trim();
+  function sendFeedback(payload){
+    if (!FB_URL) return false;
+    const body = JSON.stringify(payload);
+    try { if (navigator.sendBeacon && navigator.sendBeacon(FB_URL, body)) return true; } catch(e){}
+    try { fetch(FB_URL, {method:'POST', mode:'no-cors', keepalive:true, body}); return true; } catch(e){ return false; }
+  }
   try { state.role = localStorage.getItem('skill-role') || null; } catch(e){}
   const save = (k,v) => { try { localStorage.setItem(k, v); } catch(e){} };
 
@@ -577,7 +605,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
     $('m-inputhelp').textContent = s.input==='자료' ? '이 스킬은 붙여넣을 자료가 있어야 제대로 됩니다. 자료를 여기에 붙여두면 복사할 때 INPUT 자리에 들어갑니다.' : '주제, 대상, 자료 등을 적어두면 복사할 때 프롬프트의 INPUT 자리에 함께 들어갑니다.';
     const inRec = recipes.filter(r=>r.steps.some(st=>st.skill===id));
     $('m-inrec').innerHTML = inRec.length ? `<span>이 스킬이 쓰이는 레시피:</span>` + inRec.map(r=>`<button data-recipe="${r.id}">${esc(r.title)}</button>`).join('') : '';
-    syncFavBtn();
+    syncFavBtn(); syncFb();
     const list = state.view==='skills' ? filtered() : skills; const i = list.findIndex(x=>x.id===id);
     const prev = i>0 ? list[i-1] : null, next = i>=0 && i<list.length-1 ? list[i+1] : null;
     $('m-prev').disabled = !prev; $('m-prev').textContent = prev ? `‹ ${prev.name}` : '‹ 이전'; $('m-prev').dataset.id = prev ? prev.id : '';
@@ -586,6 +614,30 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
     $('m-close').focus();
     if (push) setHash('skill-'+id);
   }
+  function syncFb(){
+    const v = votes[cur] || null;
+    $('fb-up').setAttribute('aria-pressed', v==='up'); $('fb-down').setAttribute('aria-pressed', v==='down');
+    $('fb-label').textContent = v ? (v==='up' ? '도움이 됐다고 표시했습니다' : '아쉬웠다고 표시했습니다') : '이 스킬이 도움이 됐나요?';
+    $('fb-more').hidden = !v || !!(votes['c'+cur]); $('fb-text').value = '';
+    $('fb-note').textContent = votes['c'+cur] ? '의견 보내주셔서 감사합니다.' : (FB_URL ? '익명으로 집계됩니다. 개인 정보는 수집하지 않습니다.' : '이 브라우저에만 저장됩니다. 집계 연결은 저장소 README 참고.');
+  }
+  function vote(v){
+    if (!cur) return;
+    const s = byId[cur];
+    if (votes[cur] === v) return;
+    votes[cur] = v; save('skill-votes', JSON.stringify(votes)); syncFb();
+    sendFeedback({t:new Date().toISOString(), skill:s.id, name:s.name, category:catOf[s.cat].name, vote:v, comment:'', role:state.role||'', hash:location.hash, ua:(navigator.userAgent.match(/Mobile|Android|iPhone/)?'mobile':'desktop')});
+    toast(v==='up' ? '고맙습니다. 도움됨으로 기록했습니다' : '알려주셔서 고맙습니다. 아쉬운 점을 적어 주시면 고치겠습니다');
+  }
+  $('fb-up').addEventListener('click', ()=> vote('up'));
+  $('fb-down').addEventListener('click', ()=> vote('down'));
+  $('fb-send').addEventListener('click', ()=>{
+    const txt = $('fb-text').value.trim(); if (!txt || !cur) return;
+    const s = byId[cur];
+    votes['c'+cur] = 1; save('skill-votes', JSON.stringify(votes));
+    sendFeedback({t:new Date().toISOString(), skill:s.id, name:s.name, category:catOf[s.cat].name, vote:votes[cur]||'', comment:txt.slice(0,500), role:state.role||'', hash:location.hash, ua:(navigator.userAgent.match(/Mobile|Android|iPhone/)?'mobile':'desktop')});
+    syncFb(); toast('의견을 보냈습니다');
+  });
   function syncFavBtn(){ const on = favs.has(cur); $('m-fav').setAttribute('aria-pressed', on); $('m-fav').textContent = on ? '★ 즐겨찾기 해제' : '☆ 즐겨찾기'; }
   function close(){ dlg.close(); }
   dlg.addEventListener('close', ()=>{ cur=null; if (location.hash.startsWith('#skill-')) setHash(state.view==='recipes' ? (state.openRecipe ? 'recipe-'+state.openRecipe : 'recipes') : (state.cat ? 'cat-'+state.cat : '')); });
