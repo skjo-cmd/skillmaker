@@ -86,9 +86,14 @@ for f in sorted(EXTRA.glob("skills_*.json")):
                                "sections": parse_sections(prompt)})
 
 # --- 프롬프트 패치 (data/extra/prompt_patches.json): 원본 뒤에 섹션을 덧붙인다. 꼬리표(---- create a skill)는 맨 뒤로 유지
-pp = EXTRA / "prompt_patches.json"
-if pp.exists():
-    patches = {k: v for k, v in json.loads(pp.read_text(encoding="utf-8")).items() if k.isdigit()}
+patches = {}
+for f in [EXTRA / "prompt_patches.json"] + sorted((EXTRA / "enrich").glob("*.json")):
+    if f.exists():
+        for k, v in json.loads(f.read_text(encoding="utf-8")).items():
+            if k.isdigit():
+                assert k not in patches, f"skill {k} patched twice ({f.name})"
+                patches[k] = v
+if patches:
     for s_ in data["skills"]:
         pt = patches.get(str(s_["id"]))
         if not pt: continue
@@ -97,7 +102,7 @@ if pp.exists():
         s_["core"] = core
         s_["prompt"] = core + (sep + tail if sep else "")
         s_["sections"] = parse_sections(core)
-        s_["patched"] = True
+        s_["patched"] = "FORMAT EXAMPLE" in s_["sections"]
         if pt.get("explain"): s_["explain"] = pt["explain"]
 
 # --- 난이도 재배정 (data/extra/levels.json): 엑셀 원본 난이도는 level_orig 에 남긴다

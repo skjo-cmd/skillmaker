@@ -18,7 +18,8 @@
 | `data/extra/skills_basics.json` | 엑셀 밖에서 추가한 스킬 (101~ AI 기본기). 같은 형식으로 `skills_*.json` 파일을 더 두면 카테고리가 늘어남 |
 | `data/extra/recipes.json` | 레시피(스킬 체인)와 역할별 시작점 |
 | `data/extra/tags.json` | '자료 필요' 태그를 붙일 스킬 번호 |
-| `data/extra/prompt_patches.json` | 원본 프롬프트 뒤에 덧붙이는 섹션(한글 서식 예시·제약·입력). 현재 공문서·국회 답변자료·사업계획서 3종 |
+| `data/extra/prompt_patches.json` | 공문서·국회 답변자료·사업계획서 3종에 덧붙이는 한글 서식 예시·제약·자가 점검·입력 |
+| `data/extra/enrich/*.json` | 나머지 97개에 덧붙이는 CONSTRAINTS·EXAMPLE·QUALITY CHECK·INPUT (카테고리별 파일). 같은 번호를 두 파일에 넣으면 빌드가 실패함 |
 | `data/extra/levels.json` | 난이도 재배정 기준과 변경 목록(사유 포함). 원본 난이도는 데이터의 `level_orig`에 남음 |
 
 ## 사이트 기능

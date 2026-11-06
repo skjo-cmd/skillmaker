@@ -317,7 +317,9 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
               <li><code>TASK</code> 한 문장으로 된 할 일.</li>
               <li><code>STEPS</code> AI가 따라갈 작업 순서 5~6단계.</li>
               <li><code>OUTPUT FORMAT</code> 결과물 형태. 표·목록·분량을 바꾸고 싶으면 이 줄을 수정합니다.</li>
-              <li><code>INPUT</code> 내 자료가 들어가는 자리. 기본기 스킬에는 처음부터 있습니다.</li>
+              <li><code>CONSTRAINTS</code> 언어·분량·금지 사항. 모든 스킬에 "한국어로 답한다"가 들어 있습니다.</li>
+              <li><code>EXAMPLE</code> 입력과 결과의 짧은 예시. <code>QUALITY CHECK</code> 결과를 받은 뒤 확인할 3가지.</li>
+              <li><code>INPUT</code> 내 자료가 들어가는 자리. 상세 화면의 입력칸에 적으면 복사할 때 이 자리에 들어갑니다.</li>
             </ul>
           </div>
           <div>
@@ -389,7 +391,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
           <ul>
             <li><b>한 번만 쓸 때</b>: ChatGPT · Claude · Gemini 채팅창에 '바로 쓰기용' 텍스트를 붙이고 전송.</li>
             <li><b>매번 다시 쓸 때</b>: '스킬 원문'을 ChatGPT의 GPT 만들기 → Instructions, Claude의 Projects → 지침, Gemini의 Gems 지침에 넣어두면 이름만 불러 재사용할 수 있습니다.</li>
-            <li><b>결과가 영어로 나오면</b>: 맨 아래에 "Answer in Korean."을 한 줄 추가하세요. 바로 쓰기용 복사에는 이미 들어 있습니다.</li>
+            <li><b>결과가 영어로 나오면</b>: 맨 아래에 "한국어로 답해 주세요."를 한 줄 추가하세요. 모든 스킬의 CONSTRAINTS에 이미 들어 있지만 모델에 따라 놓칠 수 있습니다.</li>
           </ul>
         </details>
         <pre id="m-preview" class="sr" aria-hidden="true"></pre>
