@@ -85,6 +85,15 @@ for f in sorted(EXTRA.glob("skills_*.json")):
                                "input": x.get("input", ""), "explain": x["explain"], "prompt": prompt, "core": prompt,
                                "sections": parse_sections(prompt)})
 
+# --- 난이도 재배정 (data/extra/levels.json): 엑셀 원본 난이도는 level_orig 에 남긴다
+lv = EXTRA / "levels.json"
+if lv.exists():
+    ch = json.loads(lv.read_text(encoding="utf-8")).get("changes", {})
+    for s_ in data["skills"]:
+        c = ch.get(str(s_["id"]))
+        if c and c["level"] != s_["level"]:
+            s_["level_orig"], s_["level"], s_["level_why"] = s_["level"], c["level"], c["why"]
+
 # --- 태그: 자료 입력이 꼭 필요한 스킬
 tags = json.loads((EXTRA / "tags.json").read_text(encoding="utf-8")) if (EXTRA / "tags.json").exists() else {}
 need = set(tags.get("input_required", []))
@@ -106,8 +115,9 @@ if CONFIG.exists():
     data["meta"].update(json.loads(CONFIG.read_text(encoding="utf-8")))
 data["skills"].sort(key=lambda s: s["id"])
 data["categories"].sort(key=lambda c: c["order"])
-data["meta"]["count"] = len(data["skills"])
 data["meta"]["levels"] = dict(collections.Counter(s["level"] for s in data["skills"]))
+data["meta"]["count"] = len(data["skills"])
+
 
 OUT_JSON.parent.mkdir(exist_ok=True)
 OUT_JSON.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")

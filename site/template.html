@@ -219,6 +219,7 @@ dialog::backdrop{background:rgba(10,14,22,.55);backdrop-filter:blur(2px)}
 @media (max-width:720px){.mbody{grid-template-columns:minmax(0,1fr)}}
 .explain{background:var(--accent-soft);border-radius:10px;padding:12px 14px;font-size:14.5px;line-height:1.6;grid-column:1/-1}
 .explain b{font-weight:600;display:block;font-size:12px;letter-spacing:.06em;color:var(--accent);margin-bottom:4px}
+.relabel{margin-top:8px;padding-top:8px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
 .secs{display:flex;flex-direction:column;gap:10px;min-width:0}
 .sec{border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .sec .sh{display:flex;align-items:center;gap:8px;padding:7px 12px;background:var(--surface-2);font-size:12px;font-weight:700;letter-spacing:.06em;font-family:var(--f-mono)}
@@ -324,6 +325,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
             <ul>
               <li><b>자료 필요</b> 태그: 회의록, 데이터, 기존 글처럼 붙여넣을 자료가 있어야 제대로 됩니다. 자료 없이 돌리면 공허한 답이 나옵니다.</li>
               <li><b>한국어</b> 태그: 프롬프트 본문이 한국어라 읽고 고치기 쉽습니다. 나머지는 영문 프롬프트에 한글 해설이 붙어 있습니다.</li>
+              <li><b>난이도</b>: 기초는 메모 몇 줄로 되고 결과를 바로 판단할 수 있는 것, 중급은 자료가 필요하거나 그 업무 경험이 있어야 판단되는 것, 고급은 둘 다 필요하거나 사실 검증이 필수인 것입니다. 원본 난이도를 바꾼 스킬은 상세 화면에 이유를 적어 두었습니다.</li>
               <li><b>스킬 원문</b> 복사는 Claude Projects 지침, ChatGPT의 GPT 만들기, Gemini Gems처럼 <b>재사용 설정에 등록</b>할 때 씁니다.</li>
             </ul>
           </div>
@@ -560,7 +562,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
     const s = byId[id]; if(!s) return; cur = id;
     $('m-meta').innerHTML = `<span class="no" style="font-family:var(--f-mono)">${pad(s.id)}</span><span class="pill lv-${s.level}">${esc(s.level)}</span><span>${esc(catOf[s.cat].emoji)} ${esc(catOf[s.cat].name)}</span>${tags(s)}`;
     $('m-title').textContent = s.name;
-    $('m-explain').innerHTML = `<b>이 스킬은</b>${esc(s.explain)}`;
+    $('m-explain').innerHTML = `<b>이 스킬은</b>${esc(s.explain)}` + (s.level_orig ? `<div class="relabel">난이도 ${esc(s.level_orig)} → <b style="display:inline;font-size:inherit;letter-spacing:0;color:inherit">${esc(s.level)}</b>로 조정. ${esc(s.level_why)}</div>` : '');
     const keys = Object.keys(s.sections);
     $('m-secs').innerHTML = keys.length ? keys.map(k=>`<div class="sec ${s.lang==='ko'?'ko':''}"><div class="sh">${esc(k)}<span>${esc(KR[k]||'')}</span></div><pre>${esc(s.sections[k])}</pre></div>`).join('') : `<div class="sec"><pre>${esc(s.prompt)}</pre></div>`;
     $('m-input').value = '';

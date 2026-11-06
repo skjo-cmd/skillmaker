@@ -3,12 +3,12 @@
   "title": "AI 분야별 Skill 라이브러리 100",
   "credit": "닥터J커브·다모아드림  |  구조: Role + Context + Task + Steps + Output",
   "source_file": "ai_skill_library_100.xlsx",
-  "count": 110,
   "levels": {
-   "기초": 32,
-   "중급": 53,
-   "고급": 25
-  }
+   "기초": 45,
+   "중급": 46,
+   "고급": 19
+  },
+  "count": 110
  },
  "categories": [
   {
@@ -229,7 +229,7 @@
    "id": 6,
    "cat": 1,
    "name": "강의 오프닝 훅 설계",
-   "level": "중급",
+   "level": "기초",
    "explain": "첫 3분에 청중을 잡지 못하면 강의 전체가 흔들립니다. 스토리·통계·질문·모순·데모 5가지 훅 패턴 중 상황에 맞는 것을 골라 대본까지 만들어줍니다.",
    "prompt": "ROLE\nKeynote speaker and audience engagement strategist.\n\nCONTEXT\nThe user wants a powerful 3-5 minute opening that immediately hooks the audience.\n\nTASK\nCreate a lecture opening using proven hook patterns.\n\nSTEPS\n1 Identify the audience's biggest pain point\n2 Choose hook type (story, statistic, question, contradiction, demo)\n3 Craft the hook text\n4 Connect the hook to the lecture's core promise\n5 Deliver a transition into the main content\n\nOUTPUT FORMAT\nHook type selected and reason\nOpening script (read-aloud ready)\nTransition line to main content\nBackup hook option\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nKeynote speaker and audience engagement strategist.\n\nCONTEXT\nThe user wants a powerful 3-5 minute opening that immediately hooks the audience.\n\nTASK\nCreate a lecture opening using proven hook patterns.\n\nSTEPS\n1 Identify the audience's biggest pain point\n2 Choose hook type (story, statistic, question, contradiction, demo)\n3 Craft the hook text\n4 Connect the hook to the lecture's core promise\n5 Deliver a transition into the main content\n\nOUTPUT FORMAT\nHook type selected and reason\nOpening script (read-aloud ready)\nTransition line to main content\nBackup hook option",
@@ -241,13 +241,15 @@
     "OUTPUT FORMAT": "Hook type selected and reason\nOpening script (read-aloud ready)\nTransition line to main content\nBackup hook option"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "주제만 있으면 되고 훅 문장은 바로 읽고 고를 수 있다",
    "input": ""
   },
   {
    "id": 7,
    "cat": 1,
    "name": "이해도 체크 질문 세트",
-   "level": "중급",
+   "level": "기초",
    "explain": "강의 중간 '방금 이해하셨나요?' 대신 쓰는 5단계 질문 세트. 단순 암기 → 적용 → 분석 → 판단까지 난이도별로 나와서 수강생 수준 진단 가능.",
    "prompt": "ROLE\nFormative assessment designer.\n\nCONTEXT\nThe user wants to verify comprehension mid-lecture.\n\nTASK\nGenerate 5 comprehension check questions at varying cognitive levels.\n\nSTEPS\n1 Re-read the content delivered so far\n2 Create 2 recall questions (basic)\n3 Create 2 application questions (mid)\n4 Create 1 analysis or judgment question (advanced)\n5 Provide a model answer for each\n\nOUTPUT FORMAT\nQuestion 1-5 with level tag\nModel answer per question\nFollow-up prompts for discussion\n\n----Based on the above content, create a skill.",
    "core": "ROLE\nFormative assessment designer.\n\nCONTEXT\nThe user wants to verify comprehension mid-lecture.\n\nTASK\nGenerate 5 comprehension check questions at varying cognitive levels.\n\nSTEPS\n1 Re-read the content delivered so far\n2 Create 2 recall questions (basic)\n3 Create 2 application questions (mid)\n4 Create 1 analysis or judgment question (advanced)\n5 Provide a model answer for each\n\nOUTPUT FORMAT\nQuestion 1-5 with level tag\nModel answer per question\nFollow-up prompts for discussion",
@@ -259,6 +261,8 @@
     "OUTPUT FORMAT": "Question 1-5 with level tag\nModel answer per question\nFollow-up prompts for discussion"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "주제만 있으면 되고 질문의 난이도 단계는 바로 보인다",
    "input": ""
   },
   {
@@ -319,7 +323,7 @@
    "id": 11,
    "cat": 2,
    "name": "SEO 블로그 글 생성",
-   "level": "기초",
+   "level": "중급",
    "explain": "키워드만 주면 구글 상위 노출을 노리는 1500자 블로그를 자동 생성. 제목·메타·본문·CTA까지. SEO 초심자도 바로 쓸 수 있습니다.",
    "prompt": "ROLE\nSEO content writer with expertise in search-first blogging.\n\nCONTEXT\nThe user wants a ranked-ready blog article on the given keyword.\n\nTASK\nWrite a 1500-word SEO-optimized blog post.\n\nSTEPS\n1 Analyze target keyword and search intent\n2 Craft an H1 title with keyword within 60 chars\n3 Write intro with hook + problem + promise\n4 Structure body with H2/H3 using semantic keywords\n5 Close with action-driving CTA\n\nOUTPUT FORMAT\nTitle options (3)\nMeta description\nFull article with headings\nInternal linking suggestions\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nSEO content writer with expertise in search-first blogging.\n\nCONTEXT\nThe user wants a ranked-ready blog article on the given keyword.\n\nTASK\nWrite a 1500-word SEO-optimized blog post.\n\nSTEPS\n1 Analyze target keyword and search intent\n2 Craft an H1 title with keyword within 60 chars\n3 Write intro with hook + problem + promise\n4 Structure body with H2/H3 using semantic keywords\n5 Close with action-driving CTA\n\nOUTPUT FORMAT\nTitle options (3)\nMeta description\nFull article with headings\nInternal linking suggestions",
@@ -331,6 +335,8 @@
     "OUTPUT FORMAT": "Title options (3)\nMeta description\nFull article with headings\nInternal linking suggestions"
    },
    "lang": "en",
+   "level_orig": "기초",
+   "level_why": "키워드 조사가 선행되어야 하고, SEO 품질은 초보자가 판단하기 어렵다",
    "input": ""
   },
   {
@@ -427,7 +433,7 @@
    "id": 17,
    "cat": 2,
    "name": "랜딩페이지 카피",
-   "level": "고급",
+   "level": "중급",
    "explain": "P-A-S-O 구조로 완성하는 랜딩페이지 전체 카피. 히어로부터 FAQ·최종 CTA까지. 디자인은 랜딩페이지빌더에 맡기고 글만 이걸로.",
    "prompt": "ROLE\nConversion copywriter specializing in landing pages.\n\nCONTEXT\nThe user is building a landing page and needs copy that converts.\n\nTASK\nWrite a full landing page copy using the Problem-Agitate-Solve-Outcome structure.\n\nSTEPS\n1 Hero: headline + sub + CTA\n2 Problem: agitate the current pain\n3 Solution: introduce the offer with 3 key benefits\n4 Proof: testimonials, numbers, logos\n5 Offer: pricing, bonus, guarantee, FAQ, final CTA\n\nOUTPUT FORMAT\nHero section copy\nProblem/Solution blocks\nBenefits (3)\nSocial proof suggestions\nFAQ (5)\nFinal CTA\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nConversion copywriter specializing in landing pages.\n\nCONTEXT\nThe user is building a landing page and needs copy that converts.\n\nTASK\nWrite a full landing page copy using the Problem-Agitate-Solve-Outcome structure.\n\nSTEPS\n1 Hero: headline + sub + CTA\n2 Problem: agitate the current pain\n3 Solution: introduce the offer with 3 key benefits\n4 Proof: testimonials, numbers, logos\n5 Offer: pricing, bonus, guarantee, FAQ, final CTA\n\nOUTPUT FORMAT\nHero section copy\nProblem/Solution blocks\nBenefits (3)\nSocial proof suggestions\nFAQ (5)\nFinal CTA",
@@ -439,13 +445,15 @@
     "OUTPUT FORMAT": "Hero section copy\nProblem/Solution blocks\nBenefits (3)\nSocial proof suggestions\nFAQ (5)\nFinal CTA"
    },
    "lang": "en",
+   "level_orig": "고급",
+   "level_why": "제품 메모로 충분하고 카피 판단은 중급 수준. 고급일 이유가 없다",
    "input": ""
   },
   {
    "id": 18,
    "cat": 2,
    "name": "쇼츠/릴스 30초 스크립트",
-   "level": "중급",
+   "level": "기초",
    "explain": "30초 쇼츠/릴스 전용 스크립트. 3초 훅 → 20초에 반전 → 저장·공유 유도. 텍스트 오버레이 위치까지 초단위로.",
    "prompt": "ROLE\nShort-form video script writer.\n\nCONTEXT\nThe user wants a 30-second viral-ready short video.\n\nTASK\nWrite a 30-second script with maximum viral potential.\n\nSTEPS\n1 Hook in first 3 seconds with pattern interrupt\n2 Deliver 1 core insight in 15 seconds\n3 Add a visual twist or reversal at 20 seconds\n4 Close with a \"save/share\" trigger\n5 Suggest text overlay at each moment\n\nOUTPUT FORMAT\nSecond-by-second script (0-3s, 4-15s, 16-25s, 26-30s)\nText overlay per segment\nVisual direction\nHashtag set\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nShort-form video script writer.\n\nCONTEXT\nThe user wants a 30-second viral-ready short video.\n\nTASK\nWrite a 30-second script with maximum viral potential.\n\nSTEPS\n1 Hook in first 3 seconds with pattern interrupt\n2 Deliver 1 core insight in 15 seconds\n3 Add a visual twist or reversal at 20 seconds\n4 Close with a \"save/share\" trigger\n5 Suggest text overlay at each moment\n\nOUTPUT FORMAT\nSecond-by-second script (0-3s, 4-15s, 16-25s, 26-30s)\nText overlay per segment\nVisual direction\nHashtag set",
@@ -457,13 +465,15 @@
     "OUTPUT FORMAT": "Second-by-second script (0-3s, 4-15s, 16-25s, 26-30s)\nText overlay per segment\nVisual direction\nHashtag set"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "주제만 있으면 되고 30초 대본은 바로 판단된다",
    "input": ""
   },
   {
    "id": 19,
    "cat": 2,
    "name": "팟캐스트 에피소드 아웃라인",
-   "level": "중급",
+   "level": "기초",
    "explain": "30분 팟캐스트 에피소드 구조 설계. 콜드오픈 → 3블록 → 인터랙션 → 다음화 훅. 혼자 녹음하든 게스트를 부르든 흐름이 무너지지 않습니다.",
    "prompt": "ROLE\nPodcast producer for educational content.\n\nCONTEXT\nThe user is planning a 30-minute podcast episode.\n\nTASK\nDesign a 30-min podcast episode outline with talking points.\n\nSTEPS\n1 Write cold open that teases the payoff\n2 Intro with topic framing and guest intro\n3 3 content blocks with transitions\n4 Listener question or interactive moment\n5 Wrap-up with key takeaway and next episode hook\n\nOUTPUT FORMAT\nCold open script\nEpisode segments with timestamps\nTalking points per segment\nWrap-up and teaser\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nPodcast producer for educational content.\n\nCONTEXT\nThe user is planning a 30-minute podcast episode.\n\nTASK\nDesign a 30-min podcast episode outline with talking points.\n\nSTEPS\n1 Write cold open that teases the payoff\n2 Intro with topic framing and guest intro\n3 3 content blocks with transitions\n4 Listener question or interactive moment\n5 Wrap-up with key takeaway and next episode hook\n\nOUTPUT FORMAT\nCold open script\nEpisode segments with timestamps\nTalking points per segment\nWrap-up and teaser",
@@ -475,6 +485,8 @@
     "OUTPUT FORMAT": "Cold open script\nEpisode segments with timestamps\nTalking points per segment\nWrap-up and teaser"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "주제만 있으면 되고 아웃라인은 바로 판단된다",
    "input": ""
   },
   {
@@ -625,7 +637,7 @@
    "id": 28,
    "cat": 3,
    "name": "키워드 분석",
-   "level": "기초",
+   "level": "중급",
    "explain": "주 키워드 1개 → 롱테일 10개 → 검색 의도·난이도 자동 분류 → 콘텐츠 포맷 추천. SEO·GEO 콘텐츠 설계의 출발점.",
    "prompt": "ROLE\nSEO and content strategist.\n\nCONTEXT\nThe user is planning content and needs a keyword strategy.\n\nTASK\nAnalyze keywords and propose a content map.\n\nSTEPS\n1 Identify 1 primary keyword\n2 List 10 long-tail variations\n3 Classify by search intent (info, nav, trans, commercial)\n4 Estimate difficulty and traffic potential\n5 Suggest content format per keyword\n\nOUTPUT FORMAT\nPrimary keyword\nLong-tail keyword table (intent, difficulty, volume)\nContent type per keyword\nPillar-cluster content map\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nSEO and content strategist.\n\nCONTEXT\nThe user is planning content and needs a keyword strategy.\n\nTASK\nAnalyze keywords and propose a content map.\n\nSTEPS\n1 Identify 1 primary keyword\n2 List 10 long-tail variations\n3 Classify by search intent (info, nav, trans, commercial)\n4 Estimate difficulty and traffic potential\n5 Suggest content format per keyword\n\nOUTPUT FORMAT\nPrimary keyword\nLong-tail keyword table (intent, difficulty, volume)\nContent type per keyword\nPillar-cluster content map",
@@ -637,6 +649,8 @@
     "OUTPUT FORMAT": "Primary keyword\nLong-tail keyword table (intent, difficulty, volume)\nContent type per keyword\nPillar-cluster content map"
    },
    "lang": "en",
+   "level_orig": "기초",
+   "level_why": "AI는 검색량을 모른다. 결과를 SEO 도구로 확인해야 쓸 수 있다",
    "input": ""
   },
   {
@@ -697,7 +711,7 @@
    "id": 32,
    "cat": 4,
    "name": "브랜드 메시징 프레임워크",
-   "level": "고급",
+   "level": "중급",
    "explain": "브랜드가 모든 채널에서 같은 목소리를 내도록 하는 메시징 프레임. 목적문 → 포지셔닝 → 3개 필러 → 톤앤매너까지. 브랜드북 핵심.",
    "prompt": "ROLE\nBrand strategist and messaging architect.\n\nCONTEXT\nThe user wants a coherent messaging system across all touchpoints.\n\nTASK\nBuild a brand messaging framework.\n\nSTEPS\n1 Define brand purpose in one sentence\n2 Craft positioning statement (for X who need Y, we are Z)\n3 List 3 pillar messages\n4 Write proof points per pillar\n5 Generate tone of voice guidelines\n\nOUTPUT FORMAT\nBrand purpose\nPositioning statement\n3 message pillars\nProof points\nTone of voice guide\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nBrand strategist and messaging architect.\n\nCONTEXT\nThe user wants a coherent messaging system across all touchpoints.\n\nTASK\nBuild a brand messaging framework.\n\nSTEPS\n1 Define brand purpose in one sentence\n2 Craft positioning statement (for X who need Y, we are Z)\n3 List 3 pillar messages\n4 Write proof points per pillar\n5 Generate tone of voice guidelines\n\nOUTPUT FORMAT\nBrand purpose\nPositioning statement\n3 message pillars\nProof points\nTone of voice guide",
@@ -709,6 +723,8 @@
     "OUTPUT FORMAT": "Brand purpose\nPositioning statement\n3 message pillars\nProof points\nTone of voice guide"
    },
    "lang": "en",
+   "level_orig": "고급",
+   "level_why": "브랜드 메모로 가능. 판단에 경험은 필요하나 전문 검증까지는 아니다",
    "input": ""
   },
   {
@@ -733,7 +749,7 @@
    "id": 34,
    "cat": 4,
    "name": "광고 카피 (페북/구글)",
-   "level": "중급",
+   "level": "기초",
    "explain": "페북·구글 광고용 카피 5세트. 헤드라인 + 본문 + CTA + A/B 가설까지. 광고비 지출 전 반드시 이 스킬 한 번 돌려보세요.",
    "prompt": "ROLE\nPerformance marketing copywriter.\n\nCONTEXT\nThe user needs ad copy that converts on paid channels.\n\nTASK\nWrite 5 ad copy variations for Facebook or Google Ads.\n\nSTEPS\n1 Identify target audience pain\n2 Write headline with benefit or curiosity\n3 Write primary text with social proof\n4 Add specific CTA\n5 Create 5 variations for A/B testing\n\nOUTPUT FORMAT\nAd set structure\nHeadlines (5)\nPrimary texts (5)\nCTA buttons\nA/B test hypothesis\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nPerformance marketing copywriter.\n\nCONTEXT\nThe user needs ad copy that converts on paid channels.\n\nTASK\nWrite 5 ad copy variations for Facebook or Google Ads.\n\nSTEPS\n1 Identify target audience pain\n2 Write headline with benefit or curiosity\n3 Write primary text with social proof\n4 Add specific CTA\n5 Create 5 variations for A/B testing\n\nOUTPUT FORMAT\nAd set structure\nHeadlines (5)\nPrimary texts (5)\nCTA buttons\nA/B test hypothesis",
@@ -745,13 +761,15 @@
     "OUTPUT FORMAT": "Ad set structure\nHeadlines (5)\nPrimary texts (5)\nCTA buttons\nA/B test hypothesis"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "제품 메모로 충분하고 광고 문구는 바로 읽고 고를 수 있다",
    "input": ""
   },
   {
    "id": 35,
    "cat": 4,
    "name": "세일즈 퍼널 이메일 시퀀스",
-   "level": "고급",
+   "level": "중급",
    "explain": "리드를 구매자로 전환시키는 7일 이메일 시퀀스. 환영 → 스토리 → 가치 → 증거 → 제안 → 긴급성 → 라스트콜. 정보성 상품 판매에 강력.",
    "prompt": "ROLE\nEmail sequence strategist.\n\nCONTEXT\nThe user is building a 7-day nurture sequence.\n\nTASK\nWrite a 7-email sequence leading from lead to purchase.\n\nSTEPS\n1 Day 1: welcome + valuable free gift\n2 Day 2: story that builds trust\n3 Day 3: educational value (top tip)\n4 Day 4: case study or testimonial\n5 Day 5-7: offer reveal, urgency, last call\n\nOUTPUT FORMAT\nSubject line per email\nBody text per email\nCTA per email\nSend schedule\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nEmail sequence strategist.\n\nCONTEXT\nThe user is building a 7-day nurture sequence.\n\nTASK\nWrite a 7-email sequence leading from lead to purchase.\n\nSTEPS\n1 Day 1: welcome + valuable free gift\n2 Day 2: story that builds trust\n3 Day 3: educational value (top tip)\n4 Day 4: case study or testimonial\n5 Day 5-7: offer reveal, urgency, last call\n\nOUTPUT FORMAT\nSubject line per email\nBody text per email\nCTA per email\nSend schedule",
@@ -763,6 +781,8 @@
     "OUTPUT FORMAT": "Subject line per email\nBody text per email\nCTA per email\nSend schedule"
    },
    "lang": "en",
+   "level_orig": "고급",
+   "level_why": "7통 이메일 초안. 자료 없이 가능하고 판단은 중급",
    "input": ""
   },
   {
@@ -805,7 +825,7 @@
    "id": 38,
    "cat": 4,
    "name": "인플루언서 협업 제안서",
-   "level": "중급",
+   "level": "기초",
    "explain": "인플루언서 DM/이메일 협업 제안. 개인화 오프닝 + 상호 가치 + 포맷 2-3개 + 보상안. 답장 오는 제안서 공식.",
    "prompt": "ROLE\nInfluencer partnership manager.\n\nCONTEXT\nThe user wants to pitch an influencer for collaboration.\n\nTASK\nWrite a collaboration pitch that influencers actually open.\n\nSTEPS\n1 Personalize opening with specific compliment\n2 State mutual value clearly\n3 Propose 2-3 collab formats\n4 Include compensation range\n5 Call for reply with clear next step\n\nOUTPUT FORMAT\nSubject line\nPersonalized opener\nValue proposition\nCollab formats\nCompensation and next step\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nInfluencer partnership manager.\n\nCONTEXT\nThe user wants to pitch an influencer for collaboration.\n\nTASK\nWrite a collaboration pitch that influencers actually open.\n\nSTEPS\n1 Personalize opening with specific compliment\n2 State mutual value clearly\n3 Propose 2-3 collab formats\n4 Include compensation range\n5 Call for reply with clear next step\n\nOUTPUT FORMAT\nSubject line\nPersonalized opener\nValue proposition\nCollab formats\nCompensation and next step",
@@ -817,6 +837,8 @@
     "OUTPUT FORMAT": "Subject line\nPersonalized opener\nValue proposition\nCollab formats\nCompensation and next step"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "협업 제안 DM은 메모로 되고 바로 판단된다",
    "input": ""
   },
   {
@@ -1039,7 +1061,7 @@
    "id": 51,
    "cat": 6,
    "name": "AI 에이전트 역할 정의",
-   "level": "중급",
+   "level": "기초",
    "explain": "AI 에이전트 '직무 설명서'. 이름·목적·책임·경계·성공기준. Custom GPT·Claude Project·커스텀 에이전트 설계의 핵심 1단계.",
    "prompt": "ROLE\nAI agent architect (Claude/GPT Agents expert).\n\nCONTEXT\nThe user wants to build a custom AI agent for a specific job.\n\nTASK\nDefine the agent's role with clear boundaries.\n\nSTEPS\n1 Name the agent and one-line purpose\n2 List 3-5 core responsibilities\n3 Define what the agent will NOT do\n4 Specify tone and communication style\n5 Define success criteria\n\nOUTPUT FORMAT\nAgent name and purpose\nCore responsibilities\nExplicit boundaries (what NOT to do)\nTone and style\nSuccess criteria\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nAI agent architect (Claude/GPT Agents expert).\n\nCONTEXT\nThe user wants to build a custom AI agent for a specific job.\n\nTASK\nDefine the agent's role with clear boundaries.\n\nSTEPS\n1 Name the agent and one-line purpose\n2 List 3-5 core responsibilities\n3 Define what the agent will NOT do\n4 Specify tone and communication style\n5 Define success criteria\n\nOUTPUT FORMAT\nAgent name and purpose\nCore responsibilities\nExplicit boundaries (what NOT to do)\nTone and style\nSuccess criteria",
@@ -1051,6 +1073,8 @@
     "OUTPUT FORMAT": "Agent name and purpose\nCore responsibilities\nExplicit boundaries (what NOT to do)\nTone and style\nSuccess criteria"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "에이전트의 직무 설명서. 입력 없이 되고 항목별로 읽으면 바로 판단된다",
    "input": ""
   },
   {
@@ -1111,7 +1135,7 @@
    "id": 55,
    "cat": 6,
    "name": "AI 비서 퍼소나 설계",
-   "level": "중급",
+   "level": "기초",
    "explain": "회사 브랜드에 맞는 AI 비서 인격 설계. 이름·배경스토리·말투·감정 범위·시그니처 문구. 챗봇·보이스 UI에 필수.",
    "prompt": "ROLE\nAI persona designer for conversational products.\n\nCONTEXT\nThe user is creating a branded AI assistant.\n\nTASK\nDesign an AI persona with consistent character.\n\nSTEPS\n1 Give the AI a name and backstory\n2 Define personality traits (5 adjectives)\n3 Set speech patterns and vocabulary\n4 Define emotional range\n5 Add signature phrases\n\nOUTPUT FORMAT\nName and backstory\nPersonality traits\nSpeech patterns\nEmotional range\nSignature phrases\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nAI persona designer for conversational products.\n\nCONTEXT\nThe user is creating a branded AI assistant.\n\nTASK\nDesign an AI persona with consistent character.\n\nSTEPS\n1 Give the AI a name and backstory\n2 Define personality traits (5 adjectives)\n3 Set speech patterns and vocabulary\n4 Define emotional range\n5 Add signature phrases\n\nOUTPUT FORMAT\nName and backstory\nPersonality traits\nSpeech patterns\nEmotional range\nSignature phrases",
@@ -1123,13 +1147,15 @@
     "OUTPUT FORMAT": "Name and backstory\nPersonality traits\nSpeech patterns\nEmotional range\nSignature phrases"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "비서 성격 설정. 입력 없이 되고 결과 판단이 쉽다",
    "input": ""
   },
   {
    "id": 56,
    "cat": 6,
    "name": "에이전트 가드레일 설정",
-   "level": "고급",
+   "level": "중급",
    "explain": "에이전트가 하면 안 되는 것을 명시적으로 막는 가드레일. 개인정보·법적·공격적 답변 금지 + 거절 스크립트 + 사람 에스컬레이션.",
    "prompt": "ROLE\nAI safety and guardrail engineer.\n\nCONTEXT\nThe user wants to prevent the agent from making dangerous outputs.\n\nTASK\nDesign guardrails for the agent.\n\nSTEPS\n1 List risk categories (privacy, legal, offensive, etc.)\n2 Define prohibited outputs per category\n3 Write refusal script for edge cases\n4 Design input validation rules\n5 Set escalation to human\n\nOUTPUT FORMAT\nRisk categories\nProhibited outputs\nRefusal scripts\nInput validation\nHuman escalation triggers\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nAI safety and guardrail engineer.\n\nCONTEXT\nThe user wants to prevent the agent from making dangerous outputs.\n\nTASK\nDesign guardrails for the agent.\n\nSTEPS\n1 List risk categories (privacy, legal, offensive, etc.)\n2 Define prohibited outputs per category\n3 Write refusal script for edge cases\n4 Design input validation rules\n5 Set escalation to human\n\nOUTPUT FORMAT\nRisk categories\nProhibited outputs\nRefusal scripts\nInput validation\nHuman escalation triggers",
@@ -1141,6 +1167,8 @@
     "OUTPUT FORMAT": "Risk categories\nProhibited outputs\nRefusal scripts\nInput validation\nHuman escalation triggers"
    },
    "lang": "en",
+   "level_orig": "고급",
+   "level_why": "금지 목록과 거절 문구. 자료 없이 되고 항목별 판단 가능",
    "input": ""
   },
   {
@@ -1237,7 +1265,7 @@
    "id": 62,
    "cat": 7,
    "name": "Query Pan-out 생성",
-   "level": "중급",
+   "level": "기초",
    "explain": "한 키워드에서 AI 검색 전용 질문 15개를 파생. 정보형·비교형·실행형. 구글 팬아웃 알고리즘 대응 콘텐츠 플랜.",
    "prompt": "ROLE\nSearch intent expansion specialist.\n\nCONTEXT\nThe user has one seed query and needs to cover related AI searches.\n\nTASK\nExpand a single query into a content cluster.\n\nSTEPS\n1 Analyze the seed query intent\n2 Generate 5 informational variants\n3 Generate 5 comparison variants\n4 Generate 5 action variants (how to, where to)\n5 Map to pillar-cluster content plan\n\nOUTPUT FORMAT\nSeed query\n15 expanded queries by type\nContent cluster map\nPriority ranking\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nSearch intent expansion specialist.\n\nCONTEXT\nThe user has one seed query and needs to cover related AI searches.\n\nTASK\nExpand a single query into a content cluster.\n\nSTEPS\n1 Analyze the seed query intent\n2 Generate 5 informational variants\n3 Generate 5 comparison variants\n4 Generate 5 action variants (how to, where to)\n5 Map to pillar-cluster content plan\n\nOUTPUT FORMAT\nSeed query\n15 expanded queries by type\nContent cluster map\nPriority ranking",
@@ -1249,13 +1277,15 @@
     "OUTPUT FORMAT": "Seed query\n15 expanded queries by type\nContent cluster map\nPriority ranking"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "키워드 하나로 질문 15개. 바로 판단된다",
    "input": ""
   },
   {
    "id": 63,
    "cat": 7,
    "name": "Answer Nugget 작성",
-   "level": "기초",
+   "level": "중급",
    "explain": "ChatGPT·Perplexity가 그대로 인용할 수 있는 40~60자 답변 블록. 통계 + 출처 + 자립 구조. 블로그 첫 문단에 삽입.",
    "prompt": "ROLE\nFeatured snippet copywriter specialized for AI citation.\n\nCONTEXT\nThe user wants a short block that AI will extract and cite.\n\nTASK\nWrite a 40-60 word answer nugget on the topic.\n\nSTEPS\n1 Start with the direct answer\n2 Follow with 1 specific data point\n3 Add 1 expert/source attribution\n4 Keep total under 60 words\n5 Ensure it works standalone\n\nOUTPUT FORMAT\nAnswer nugget (40-60 words)\nData point cited\nExpert/source attribution\nStandalone test\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nFeatured snippet copywriter specialized for AI citation.\n\nCONTEXT\nThe user wants a short block that AI will extract and cite.\n\nTASK\nWrite a 40-60 word answer nugget on the topic.\n\nSTEPS\n1 Start with the direct answer\n2 Follow with 1 specific data point\n3 Add 1 expert/source attribution\n4 Keep total under 60 words\n5 Ensure it works standalone\n\nOUTPUT FORMAT\nAnswer nugget (40-60 words)\nData point cited\nExpert/source attribution\nStandalone test",
@@ -1267,6 +1297,8 @@
     "OUTPUT FORMAT": "Answer nugget (40-60 words)\nData point cited\nExpert/source attribution\nStandalone test"
    },
    "lang": "en",
+   "level_orig": "기초",
+   "level_why": "인용할 통계와 출처가 있어야 하고 GEO 개념을 알아야 결과를 판단한다",
    "input": "자료"
   },
   {
@@ -1309,7 +1341,7 @@
    "id": 66,
    "cat": 7,
    "name": "인용 가능한 통계 삽입",
-   "level": "중급",
+   "level": "고급",
    "explain": "콘텐츠에 AI가 인용할 만한 통계 5개를 붙이는 스킬. 'Gartner에 따르면 2025년...' 형식. 출처·신뢰도·삽입 위치까지.",
    "prompt": "ROLE\nData journalism researcher.\n\nCONTEXT\nThe user's content needs citable statistics to boost AI citations.\n\nTASK\nFind and format statistics that AI engines will cite.\n\nSTEPS\n1 Identify 5 statistics relevant to the topic\n2 Cite credible sources (Gartner, McKinsey, gov)\n3 Format as \"According to [Source], [Stat] [Year]\"\n4 Place at strategic content points\n5 Add inline links to sources\n\nOUTPUT FORMAT\n5 statistics with sources\nInsertion points in content\nInline link anchors\nSource credibility rating\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nData journalism researcher.\n\nCONTEXT\nThe user's content needs citable statistics to boost AI citations.\n\nTASK\nFind and format statistics that AI engines will cite.\n\nSTEPS\n1 Identify 5 statistics relevant to the topic\n2 Cite credible sources (Gartner, McKinsey, gov)\n3 Format as \"According to [Source], [Stat] [Year]\"\n4 Place at strategic content points\n5 Add inline links to sources\n\nOUTPUT FORMAT\n5 statistics with sources\nInsertion points in content\nInline link anchors\nSource credibility rating",
@@ -1321,6 +1353,8 @@
     "OUTPUT FORMAT": "5 statistics with sources\nInsertion points in content\nInline link anchors\nSource credibility rating"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "AI가 통계를 지어낼 위험이 가장 큰 스킬. 출처 확인 없이는 쓸 수 없다",
    "input": "자료"
   },
   {
@@ -1453,7 +1487,7 @@
    "id": 74,
    "cat": 8,
    "name": "공문서 초안",
-   "level": "기초",
+   "level": "중급",
    "explain": "공문서 규정 양식대로 작성. 수신·발신·제목·본문·결문. 공공기관 대상 협조요청·회신·안내문에 바로.",
    "prompt": "ROLE\nGovernment document specialist.\n\nCONTEXT\nThe user needs a formal government-style document.\n\nTASK\nDraft an official public document.\n\nSTEPS\n1 Follow standard header format\n2 Clear purpose in opening paragraph\n3 Numbered clauses for main content\n4 Respectful honorific closing\n5 Attach references\n\nOUTPUT FORMAT\nHeader (recipient, date, doc number)\nPurpose paragraph\nNumbered clauses\nClosing and sign-off\nReferences\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nGovernment document specialist.\n\nCONTEXT\nThe user needs a formal government-style document.\n\nTASK\nDraft an official public document.\n\nSTEPS\n1 Follow standard header format\n2 Clear purpose in opening paragraph\n3 Numbered clauses for main content\n4 Respectful honorific closing\n5 Attach references\n\nOUTPUT FORMAT\nHeader (recipient, date, doc number)\nPurpose paragraph\nNumbered clauses\nClosing and sign-off\nReferences",
@@ -1465,6 +1499,8 @@
     "OUTPUT FORMAT": "Header (recipient, date, doc number)\nPurpose paragraph\nNumbered clauses\nClosing and sign-off\nReferences"
    },
    "lang": "en",
+   "level_orig": "기초",
+   "level_why": "현재 영문 프롬프트는 한국 공문서 서식(수신·제목·붙임, 항목 기호)을 보장하지 않아 서식 검토가 필요하다",
    "input": ""
   },
   {
@@ -1597,7 +1633,7 @@
    "id": 82,
    "cat": 9,
    "name": "이미지 프롬프트 생성 (Midjourney)",
-   "level": "중급",
+   "level": "기초",
    "explain": "Midjourney·DALL-E·Stable Diffusion용 정밀 프롬프트. 피사체·스타일·구도·조명 + 파라미터. 3개 변형안까지.",
    "prompt": "ROLE\nMidjourney prompt engineer.\n\nCONTEXT\nThe user wants a high-quality AI-generated image.\n\nTASK\nWrite a detailed Midjourney prompt.\n\nSTEPS\n1 Subject and action\n2 Art style and artist reference\n3 Composition, camera angle, framing\n4 Lighting and color palette\n5 Technical parameters (--ar, --v, --style)\n\nOUTPUT FORMAT\nFull prompt string\nSubject breakdown\nStyle references\nTechnical params\n3 variation prompts\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nMidjourney prompt engineer.\n\nCONTEXT\nThe user wants a high-quality AI-generated image.\n\nTASK\nWrite a detailed Midjourney prompt.\n\nSTEPS\n1 Subject and action\n2 Art style and artist reference\n3 Composition, camera angle, framing\n4 Lighting and color palette\n5 Technical parameters (--ar, --v, --style)\n\nOUTPUT FORMAT\nFull prompt string\nSubject breakdown\nStyle references\nTechnical params\n3 variation prompts",
@@ -1609,13 +1645,15 @@
     "OUTPUT FORMAT": "Full prompt string\nSubject breakdown\nStyle references\nTechnical params\n3 variation prompts"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "이미지 생성 프롬프트. 바로 생성해 보고 판단된다",
    "input": ""
   },
   {
    "id": 83,
    "cat": 9,
    "name": "영상 장면 프롬프트 (Sora/Veo)",
-   "level": "고급",
+   "level": "중급",
    "explain": "Sora·Veo·Runway용 영상 생성 프롬프트. 장면·인물·카메라 무빙·지속시간. AI 영상을 '감독하듯' 제어하는 핵심.",
    "prompt": "ROLE\nText-to-video prompt specialist.\n\nCONTEXT\nThe user wants to generate a video scene with Sora or Veo.\n\nTASK\nWrite a detailed video generation prompt.\n\nSTEPS\n1 Scene setting and mood\n2 Character actions and expressions\n3 Camera movement (pan, zoom, dolly)\n4 Duration and pacing\n5 Style reference and lighting\n\nOUTPUT FORMAT\nFull video prompt\nScene breakdown\nCamera movement\nDuration target\nStyle reference\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nText-to-video prompt specialist.\n\nCONTEXT\nThe user wants to generate a video scene with Sora or Veo.\n\nTASK\nWrite a detailed video generation prompt.\n\nSTEPS\n1 Scene setting and mood\n2 Character actions and expressions\n3 Camera movement (pan, zoom, dolly)\n4 Duration and pacing\n5 Style reference and lighting\n\nOUTPUT FORMAT\nFull video prompt\nScene breakdown\nCamera movement\nDuration target\nStyle reference",
@@ -1627,13 +1665,15 @@
     "OUTPUT FORMAT": "Full video prompt\nScene breakdown\nCamera movement\nDuration target\nStyle reference"
    },
    "lang": "en",
+   "level_orig": "고급",
+   "level_why": "영상 프롬프트. 생성해 보고 판단 가능하며 고급 전문성은 필요 없다",
    "input": ""
   },
   {
    "id": 84,
    "cat": 9,
    "name": "캐릭터 일관성 프롬프트",
-   "level": "고급",
+   "level": "중급",
    "explain": "같은 캐릭터를 여러 이미지/영상에서 일관되게 유지하는 설명서. 외모·의상·표정·재사용 구문. 스토리 기반 콘텐츠 필수.",
    "prompt": "ROLE\nCharacter consistency specialist for AI imagery.\n\nCONTEXT\nThe user needs the same character across multiple AI images.\n\nTASK\nDesign a character sheet prompt.\n\nSTEPS\n1 Define character's physical features in precise detail\n2 Specify clothing and accessories\n3 Set personality cues through expression\n4 Lock 3-5 reference phrases to reuse\n5 Test across 3 different scenes\n\nOUTPUT FORMAT\nCharacter sheet\nReusable reference phrases\nScene adaptation examples\nConsistency checklist\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nCharacter consistency specialist for AI imagery.\n\nCONTEXT\nThe user needs the same character across multiple AI images.\n\nTASK\nDesign a character sheet prompt.\n\nSTEPS\n1 Define character's physical features in precise detail\n2 Specify clothing and accessories\n3 Set personality cues through expression\n4 Lock 3-5 reference phrases to reuse\n5 Test across 3 different scenes\n\nOUTPUT FORMAT\nCharacter sheet\nReusable reference phrases\nScene adaptation examples\nConsistency checklist",
@@ -1645,13 +1685,15 @@
     "OUTPUT FORMAT": "Character sheet\nReusable reference phrases\nScene adaptation examples\nConsistency checklist"
    },
    "lang": "en",
+   "level_orig": "고급",
+   "level_why": "캐릭터 설명서 작성. 반복 생성으로 확인 가능",
    "input": ""
   },
   {
    "id": 85,
    "cat": 9,
    "name": "로고 디자인 프롬프트",
-   "level": "중급",
+   "level": "기초",
    "explain": "로고 시안 5개를 서로 다른 스타일로. 미니멀·기하학·빈티지·마스코트·엠블럼. 브랜딩 초기 단계에 빠른 시각화.",
    "prompt": "ROLE\nBrand logo prompt designer.\n\nCONTEXT\nThe user wants to generate logo concepts.\n\nTASK\nCreate 5 logo prompts with different styles.\n\nSTEPS\n1 Brand name and keyword symbols\n2 5 style directions (minimalist, geometric, vintage, mascot, emblem)\n3 Color palette per style\n4 Typography suggestions\n5 Background (transparent, vector)\n\nOUTPUT FORMAT\n5 prompt variations\nStyle breakdown per prompt\nColor palettes\nTypography notes\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nBrand logo prompt designer.\n\nCONTEXT\nThe user wants to generate logo concepts.\n\nTASK\nCreate 5 logo prompts with different styles.\n\nSTEPS\n1 Brand name and keyword symbols\n2 5 style directions (minimalist, geometric, vintage, mascot, emblem)\n3 Color palette per style\n4 Typography suggestions\n5 Background (transparent, vector)\n\nOUTPUT FORMAT\n5 prompt variations\nStyle breakdown per prompt\nColor palettes\nTypography notes",
@@ -1663,6 +1705,8 @@
     "OUTPUT FORMAT": "5 prompt variations\nStyle breakdown per prompt\nColor palettes\nTypography notes"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "로고 시안 프롬프트. 입력 없이 되고 바로 판단",
    "input": ""
   },
   {
@@ -1687,7 +1731,7 @@
    "id": 87,
    "cat": 9,
    "name": "썸네일 이미지 프롬프트",
-   "level": "중급",
+   "level": "기초",
    "explain": "CTR 높이는 유튜브 썸네일 이미지 프롬프트. 충격적 표정 + 대비 배경 + 텍스트 공간. A/B 테스트용 변형안까지.",
    "prompt": "ROLE\nYouTube thumbnail image prompt writer.\n\nCONTEXT\nThe user wants a click-worthy thumbnail image.\n\nTASK\nGenerate a thumbnail image prompt.\n\nSTEPS\n1 Main subject with expression (shock, excitement)\n2 Bold contrast background\n3 Text placement zone (left or right third)\n4 Color palette (high contrast)\n5 Style reference (MrBeast, Noah Kagan, etc.)\n\nOUTPUT FORMAT\nImage prompt\nText zone marked\nColor palette\nStyle reference\nA/B variation prompt\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nYouTube thumbnail image prompt writer.\n\nCONTEXT\nThe user wants a click-worthy thumbnail image.\n\nTASK\nGenerate a thumbnail image prompt.\n\nSTEPS\n1 Main subject with expression (shock, excitement)\n2 Bold contrast background\n3 Text placement zone (left or right third)\n4 Color palette (high contrast)\n5 Style reference (MrBeast, Noah Kagan, etc.)\n\nOUTPUT FORMAT\nImage prompt\nText zone marked\nColor palette\nStyle reference\nA/B variation prompt",
@@ -1699,13 +1743,15 @@
     "OUTPUT FORMAT": "Image prompt\nText zone marked\nColor palette\nStyle reference\nA/B variation prompt"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "썸네일 프롬프트. 입력 없이 되고 바로 판단",
    "input": ""
   },
   {
    "id": 88,
    "cat": 9,
    "name": "상품 촬영컷 프롬프트",
-   "level": "중급",
+   "level": "기초",
    "explain": "이커머스·SNS용 상품 촬영컷 프롬프트. 앵글·배경·조명·소품. 촬영 스튜디오 비용 절감 + AI로 무한 생성.",
    "prompt": "ROLE\nProduct photography prompt designer.\n\nCONTEXT\nThe user wants e-commerce product shots generated by AI.\n\nTASK\nCreate product shot prompts.\n\nSTEPS\n1 Product angle (front, 3/4, flat lay)\n2 Background style (clean white, lifestyle, editorial)\n3 Lighting setup\n4 Props and styling\n5 Resolution and aspect ratio\n\nOUTPUT FORMAT\n5 shot-type prompts\nLighting directions\nProps list\nTechnical specs\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nProduct photography prompt designer.\n\nCONTEXT\nThe user wants e-commerce product shots generated by AI.\n\nTASK\nCreate product shot prompts.\n\nSTEPS\n1 Product angle (front, 3/4, flat lay)\n2 Background style (clean white, lifestyle, editorial)\n3 Lighting setup\n4 Props and styling\n5 Resolution and aspect ratio\n\nOUTPUT FORMAT\n5 shot-type prompts\nLighting directions\nProps list\nTechnical specs",
@@ -1717,13 +1763,15 @@
     "OUTPUT FORMAT": "5 shot-type prompts\nLighting directions\nProps list\nTechnical specs"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "상품컷 프롬프트. 입력 없이 되고 바로 판단",
    "input": ""
   },
   {
    "id": 89,
    "cat": 9,
    "name": "AI 아바타 생성 프롬프트",
-   "level": "중급",
+   "level": "기초",
    "explain": "프로필·강의·영상용 AI 아바타 프롬프트. 스타일·복장·표정·활용 맥락. 본인 사진 없이 브랜딩 가능.",
    "prompt": "ROLE\nAI avatar designer.\n\nCONTEXT\nThe user wants a personal/brand AI avatar.\n\nTASK\nDesign an avatar prompt.\n\nSTEPS\n1 Style direction (realistic, 3D, illustrated, pixel)\n2 Outfit and vibe\n3 Background theme\n4 Expression and pose\n5 Usage context (profile, banner, presentation)\n\nOUTPUT FORMAT\nStyle direction\nAvatar prompt\nUsage variations\nFile spec recommendation\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nAI avatar designer.\n\nCONTEXT\nThe user wants a personal/brand AI avatar.\n\nTASK\nDesign an avatar prompt.\n\nSTEPS\n1 Style direction (realistic, 3D, illustrated, pixel)\n2 Outfit and vibe\n3 Background theme\n4 Expression and pose\n5 Usage context (profile, banner, presentation)\n\nOUTPUT FORMAT\nStyle direction\nAvatar prompt\nUsage variations\nFile spec recommendation",
@@ -1735,13 +1783,15 @@
     "OUTPUT FORMAT": "Style direction\nAvatar prompt\nUsage variations\nFile spec recommendation"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "아바타 프롬프트. 입력 없이 되고 바로 판단",
    "input": ""
   },
   {
    "id": 90,
    "cat": 9,
    "name": "음악/사운드 프롬프트 (Suno)",
-   "level": "중급",
+   "level": "기초",
    "explain": "Suno·Udio용 음악 생성 프롬프트. 장르·템포·악기 + [Verse][Chorus] 구조화 가사. 광고·영상 BGM·징글 즉석 생성.",
    "prompt": "ROLE\nAI music prompt writer for Suno / Udio.\n\nCONTEXT\nThe user wants to generate a custom song or BGM.\n\nTASK\nCreate a Suno-compatible music prompt with lyrics.\n\nSTEPS\n1 Genre and sub-genre\n2 Tempo, key, mood\n3 Instrument palette\n4 Vocal style direction\n5 Song structure with lyrics in sections\n\nOUTPUT FORMAT\nStyle prompt (Suno format)\nStructured lyrics with [Verse][Chorus] tags\nTempo and key\nAlternative prompt\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nAI music prompt writer for Suno / Udio.\n\nCONTEXT\nThe user wants to generate a custom song or BGM.\n\nTASK\nCreate a Suno-compatible music prompt with lyrics.\n\nSTEPS\n1 Genre and sub-genre\n2 Tempo, key, mood\n3 Instrument palette\n4 Vocal style direction\n5 Song structure with lyrics in sections\n\nOUTPUT FORMAT\nStyle prompt (Suno format)\nStructured lyrics with [Verse][Chorus] tags\nTempo and key\nAlternative prompt",
@@ -1753,13 +1803,15 @@
     "OUTPUT FORMAT": "Style prompt (Suno format)\nStructured lyrics with [Verse][Chorus] tags\nTempo and key\nAlternative prompt"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "음악 프롬프트. 입력 없이 되고 들어보면 판단",
    "input": ""
   },
   {
    "id": 91,
    "cat": 10,
    "name": "AI 사업 아이디어 발굴",
-   "level": "중급",
+   "level": "기초",
    "explain": "특정 시장에서 AI로 해결할 수 있는 사업 아이디어 5개. 페인-AI 매핑 + 시장규모 + 타당성 평가 + 순위.",
    "prompt": "ROLE\nAI startup strategist.\n\nCONTEXT\nThe user wants to generate viable AI business ideas.\n\nTASK\nGenerate 5 AI business ideas for the given market.\n\nSTEPS\n1 Identify 3 market pains in the given domain\n2 Map AI capabilities to each pain\n3 Generate 5 business ideas with USP\n4 Evaluate each on market size and feasibility\n5 Rank with reasoning\n\nOUTPUT FORMAT\n5 business ideas\nTarget market per idea\nAI capability used\nMarket size estimate\nRanking with reasoning\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nAI startup strategist.\n\nCONTEXT\nThe user wants to generate viable AI business ideas.\n\nTASK\nGenerate 5 AI business ideas for the given market.\n\nSTEPS\n1 Identify 3 market pains in the given domain\n2 Map AI capabilities to each pain\n3 Generate 5 business ideas with USP\n4 Evaluate each on market size and feasibility\n5 Rank with reasoning\n\nOUTPUT FORMAT\n5 business ideas\nTarget market per idea\nAI capability used\nMarket size estimate\nRanking with reasoning",
@@ -1771,13 +1823,15 @@
     "OUTPUT FORMAT": "5 business ideas\nTarget market per idea\nAI capability used\nMarket size estimate\nRanking with reasoning"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "시장 한 줄로 아이디어 5개. 읽고 고르면 된다",
    "input": ""
   },
   {
    "id": 92,
    "cat": 10,
    "name": "MVP 설계",
-   "level": "고급",
+   "level": "중급",
    "explain": "MVP를 '최소 기능 3개'로 압축. 린스타트업 방식. 사용자 흐름 → 필수 기능 → 2주 빌드 플랜. 과잉 개발 방지.",
    "prompt": "ROLE\nLean startup MVP architect.\n\nCONTEXT\nThe user has an idea and wants to build the minimum viable product.\n\nTASK\nDesign an MVP scope.\n\nSTEPS\n1 Core user problem in one sentence\n2 Single primary user flow\n3 Must-have features (max 3)\n4 Features to postpone\n5 2-week build plan\n\nOUTPUT FORMAT\nCore problem\nPrimary user flow\nMust-have features (max 3)\nBacklog (for later)\n2-week build plan\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nLean startup MVP architect.\n\nCONTEXT\nThe user has an idea and wants to build the minimum viable product.\n\nTASK\nDesign an MVP scope.\n\nSTEPS\n1 Core user problem in one sentence\n2 Single primary user flow\n3 Must-have features (max 3)\n4 Features to postpone\n5 2-week build plan\n\nOUTPUT FORMAT\nCore problem\nPrimary user flow\nMust-have features (max 3)\nBacklog (for later)\n2-week build plan",
@@ -1789,6 +1843,8 @@
     "OUTPUT FORMAT": "Core problem\nPrimary user flow\nMust-have features (max 3)\nBacklog (for later)\n2-week build plan"
    },
    "lang": "en",
+   "level_orig": "고급",
+   "level_why": "아이디어 메모로 가능. 기능 3개 압축은 중급 판단",
    "input": ""
   },
   {
@@ -1921,7 +1977,7 @@
    "id": 100,
    "cat": 10,
    "name": "AI 브랜드 네이밍",
-   "level": "중급",
+   "level": "기초",
    "explain": "AI 제품·브랜드 이름 10개 생성. 5가지 네이밍 방향 × 2개씩. 도메인·발음·차별성 체크 + TOP 3 추천. 런칭 전 필수.",
    "prompt": "ROLE\nBrand naming specialist for AI products.\n\nCONTEXT\nThe user needs a memorable brand name.\n\nTASK\nGenerate 10 brand name candidates.\n\nSTEPS\n1 List 5 naming directions (descriptive, abstract, compound, invented, metaphor)\n2 Generate 2 names per direction\n3 Check .com domain availability heuristic\n4 Test pronunciation across languages\n5 Rank by memorability and differentiation\n\nOUTPUT FORMAT\n10 name candidates\nType per name\nDomain availability heuristic\nPronunciation check\nTop 3 recommendations\n\n----\nBased on the above content, create a skill.",
    "core": "ROLE\nBrand naming specialist for AI products.\n\nCONTEXT\nThe user needs a memorable brand name.\n\nTASK\nGenerate 10 brand name candidates.\n\nSTEPS\n1 List 5 naming directions (descriptive, abstract, compound, invented, metaphor)\n2 Generate 2 names per direction\n3 Check .com domain availability heuristic\n4 Test pronunciation across languages\n5 Rank by memorability and differentiation\n\nOUTPUT FORMAT\n10 name candidates\nType per name\nDomain availability heuristic\nPronunciation check\nTop 3 recommendations",
@@ -1933,6 +1989,8 @@
     "OUTPUT FORMAT": "10 name candidates\nType per name\nDomain availability heuristic\nPronunciation check\nTop 3 recommendations"
    },
    "lang": "en",
+   "level_orig": "중급",
+   "level_why": "이름 10개. 입력 없이 되고 바로 판단",
    "input": ""
   },
   {
