@@ -1,5 +1,5 @@
 {
   "credit": "닥터J커브·다모아드림  |  구조: Role + Context + Task + Steps + Output",
-  "feedback_url": "",
+  "feedback_url": "https://script.google.com/macros/s/AKfycbx_VPcCUUJwNwbKJpQyUbKkKB5fzlB1zA80jDqV6RhlM5FbLUUkw1SpcPwc-MQB_PJ3/exec",
   "_feedback_help": "scripts/feedback_apps_script.gs 를 Google Apps Script 웹 앱으로 배포한 뒤 그 URL을 feedback_url 에 넣으면 👍/👎 가 구글 시트에 쌓인다. 비어 있으면 투표는 각자 브라우저에만 저장된다."
 }
