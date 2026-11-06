@@ -3,6 +3,7 @@
   "title": "AI 분야별 Skill 라이브러리 100",
   "credit": "닥터J커브·다모아드림  |  구조: Role + Context + Task + Steps + Output",
   "source_file": "ai_skill_library_100.xlsx",
+  "review_cycle_months": 6,
   "levels": {
    "기초": 45,
    "중급": 46,
@@ -933,6 +934,13 @@
    "patched": false,
    "level_orig": "중급",
    "level_why": "제품 메모로 충분하고 광고 문구는 바로 읽고 고를 수 있다",
+   "review": {
+    "level": "보통",
+    "depends": "페이스북·구글 광고 글자 수와 심의 정책",
+    "reviewed": "2026-11-06",
+    "note": "광고 플랫폼 글자 수 제한은 변경될 수 있다. 입력 전 광고 관리자 화면의 현재 제한을 확인한다.",
+    "next": "2027-05"
+   },
    "input": ""
   },
   {
@@ -1190,6 +1198,13 @@
    },
    "lang": "en",
    "patched": false,
+   "review": {
+    "level": "보통",
+    "depends": "엑셀 버전별 함수 지원(XLOOKUP, FILTER 등)",
+    "reviewed": "2026-11-06",
+    "note": "구버전 대안 수식을 함께 주도록 제약에 넣어 두었다. 구글 시트는 함수 이름이 다를 수 있다.",
+    "next": "2027-05"
+   },
    "input": ""
   },
   {
@@ -1236,6 +1251,13 @@
    },
    "lang": "en",
    "patched": false,
+   "review": {
+    "level": "높음",
+    "depends": "Zapier·Make·n8n 요금제와 무료 범위",
+    "reviewed": "2026-11-06",
+    "note": "도구 요금과 무료 한도는 자주 바뀐다. 결과의 비용 추정은 공식 사이트에서 다시 확인한다.",
+    "next": "2027-05"
+   },
    "input": ""
   },
   {
@@ -1259,6 +1281,13 @@
    },
    "lang": "en",
    "patched": false,
+   "review": {
+    "level": "높음",
+    "depends": "Zapier·Make의 앱 지원 목록과 트리거 종류",
+    "reviewed": "2026-11-06",
+    "note": "카카오톡 등 국내 앱은 공식 연동이 없을 수 있다. 결과의 [지원 여부 확인] 표시를 반드시 확인한다.",
+    "next": "2027-05"
+   },
    "input": ""
   },
   {
@@ -1330,6 +1359,13 @@
    "patched": false,
    "level_orig": "중급",
    "level_why": "에이전트의 직무 설명서. 입력 없이 되고 항목별로 읽으면 바로 판단된다",
+   "review": {
+    "level": "높음",
+    "depends": "ChatGPT GPT 만들기, Claude Projects, Gemini Gems의 메뉴와 지침 입력 방식",
+    "reviewed": "2026-11-06",
+    "note": "등록 화면과 메뉴 이름이 바뀌어도 지침 내용 자체는 그대로 쓸 수 있다.",
+    "next": "2027-05"
+   },
    "input": ""
   },
   {
@@ -1353,6 +1389,13 @@
    },
    "lang": "en",
    "patched": false,
+   "review": {
+    "level": "보통",
+    "depends": "n8n·Claude Projects 등 오케스트레이션 도구",
+    "reviewed": "2026-11-06",
+    "note": "설계 원칙(핸드오프·중단 조건)은 도구와 무관하다. 도구명만 현재 쓰는 것으로 바꾼다.",
+    "next": "2027-05"
+   },
    "input": ""
   },
   {
@@ -1376,6 +1419,13 @@
    },
    "lang": "en",
    "patched": false,
+   "review": {
+    "level": "높음",
+    "depends": "LangChain·n8n 등 체인 실행 도구",
+    "reviewed": "2026-11-06",
+    "note": "체인 설계는 도구 없이 채팅창에서 수동으로도 실행 가능하다. 도구 자동화는 선택 사항.",
+    "next": "2027-05"
+   },
    "input": ""
   },
   {
@@ -1399,6 +1449,13 @@
    },
    "lang": "en",
    "patched": false,
+   "review": {
+    "level": "높음",
+    "depends": "Claude Projects 등 문서 업로드 기능의 용량·형식 제한",
+    "reviewed": "2026-11-06",
+    "note": "업로드 가능한 파일 수와 용량은 서비스마다 다르고 자주 바뀐다. 청킹 수치는 일반 권장값이다.",
+    "next": "2027-05"
+   },
    "input": ""
   },
   {
@@ -1564,6 +1621,13 @@
    },
    "lang": "en",
    "patched": false,
+   "review": {
+    "level": "높음",
+    "depends": "Princeton GEO 연구(2023)와 ChatGPT·Perplexity·구글 AI Overview의 인용 방식",
+    "reviewed": "2026-11-06",
+    "note": "AI 검색의 인용 기준은 공개되어 있지 않고 계속 바뀐다. 구조 원칙(답 먼저, 출처 명시)은 유지되지만 효과는 직접 측정해야 한다.",
+    "next": "2027-05"
+   },
    "input": "자료"
   },
   {
@@ -1614,6 +1678,13 @@
    "patched": false,
    "level_orig": "기초",
    "level_why": "인용할 통계와 출처가 있어야 하고 GEO 개념을 알아야 결과를 판단한다",
+   "review": {
+    "level": "보통",
+    "depends": "ChatGPT·Perplexity의 답변 인용 방식",
+    "reviewed": "2026-11-06",
+    "note": "40~60자 기준은 경험칙이다. 실제 인용 여부는 직접 검색해 확인한다.",
+    "next": "2027-05"
+   },
    "input": "자료"
   },
   {
@@ -1637,6 +1708,13 @@
    },
    "lang": "en",
    "patched": false,
+   "review": {
+    "level": "높음",
+    "depends": "구글 FAQ 리치결과 정책과 schema.org FAQPage 사양",
+    "reviewed": "2026-11-06",
+    "note": "구글은 2023년 8월부터 FAQ 리치결과 노출을 공공·의료 등 권위 있는 사이트 위주로 제한했다. 일반 사이트에서는 검색결과 확장 효과를 기대하기 어렵고, FAQ 본문 자체는 AI 검색 인용용으로 여전히 유효하다.",
+    "next": "2027-05"
+   },
    "input": ""
   },
   {
@@ -1660,6 +1738,13 @@
    },
    "lang": "en",
    "patched": false,
+   "review": {
+    "level": "보통",
+    "depends": "검색엔진의 메타태그 표시 길이와 구조화 데이터 정책",
+    "reviewed": "2026-11-06",
+    "note": "타이틀·설명 표시 길이는 검색엔진이 수시로 조정한다. 글자 수는 안전 범위로 잡았다.",
+    "next": "2027-05"
+   },
    "input": "자료"
   },
   {
@@ -1754,6 +1839,13 @@
    },
    "lang": "en",
    "patched": false,
+   "review": {
+    "level": "보통",
+    "depends": "구글 강조 스니펫(Position 0) 노출 방식",
+    "reviewed": "2026-11-06",
+    "note": "AI Overview가 노출되는 검색어에서는 강조 스니펫이 사라지거나 밀릴 수 있다.",
+    "next": "2027-05"
+   },
    "input": ""
   },
   {
@@ -1777,6 +1869,13 @@
    },
    "lang": "en",
    "patched": false,
+   "review": {
+    "level": "높음",
+    "depends": "구글 AI Overview의 국가별 출시 상태와 노출 기준",
+    "reviewed": "2026-11-06",
+    "note": "한국 노출 범위와 인용 방식은 계속 바뀐다. 프롬프트가 노출 여부를 단정하지 않고 직접 검색·캡처를 요구하도록 되어 있다.",
+    "next": "2027-05"
+   },
    "input": ""
   },
   {
@@ -2032,6 +2131,13 @@
    },
    "lang": "en",
    "patched": false,
+   "review": {
+    "level": "보통",
+    "depends": "Sora·Veo 등 AI 영상 도구의 장면 길이 한계",
+    "reviewed": "2026-11-06",
+    "note": "AI 생성용 장면은 5~10초 단위로 쪼개야 한다. 실사 촬영용 스토리보드는 도구와 무관하다.",
+    "next": "2027-05"
+   },
    "input": ""
   },
   {
@@ -2057,6 +2163,13 @@
    "patched": false,
    "level_orig": "중급",
    "level_why": "이미지 생성 프롬프트. 바로 생성해 보고 판단된다",
+   "review": {
+    "level": "높음",
+    "depends": "Midjourney 파라미터(--ar, --v 등)와 버전, DALL-E·Stable Diffusion 프롬프트 문법",
+    "reviewed": "2026-11-06",
+    "note": "파라미터 문법은 버전마다 다르다. 피사체·스타일·조명 서술 부분은 도구가 바뀌어도 그대로 쓴다.",
+    "next": "2027-05"
+   },
    "input": ""
   },
   {
@@ -2082,6 +2195,13 @@
    "patched": false,
    "level_orig": "고급",
    "level_why": "영상 프롬프트. 생성해 보고 판단 가능하며 고급 전문성은 필요 없다",
+   "review": {
+    "level": "높음",
+    "depends": "Sora·Veo·Runway의 지원 길이·비율·텍스트 렌더링 사양",
+    "reviewed": "2026-11-06",
+    "note": "도구별 최대 길이와 비율이 다르고 빠르게 바뀐다. 장면 서술 원칙은 유지된다.",
+    "next": "2027-05"
+   },
    "input": ""
   },
   {
@@ -2255,6 +2375,13 @@
    "patched": false,
    "level_orig": "중급",
    "level_why": "음악 프롬프트. 입력 없이 되고 들어보면 판단",
+   "review": {
+    "level": "높음",
+    "depends": "Suno·Udio의 프롬프트 형식, 가사 태그, 상업 이용 약관",
+    "reviewed": "2026-11-06",
+    "note": "상업 이용 조건은 요금제와 약관에 따라 다르다. 광고·강의에 쓰기 전 약관을 확인한다.",
+    "next": "2027-05"
+   },
    "input": ""
   },
   {
@@ -2351,6 +2478,13 @@
    },
    "lang": "en",
    "patched": false,
+   "review": {
+    "level": "높음",
+    "depends": "ChatGPT·Claude 등 AI 도구의 요금제와 무료 범위",
+    "reviewed": "2026-11-06",
+    "note": "월 비용 추정은 검토일 기준 범위다. 도구 선택 원칙(이미 쓰는 도구 우선, 무료 먼저)은 유지된다.",
+    "next": "2027-05"
+   },
    "input": ""
   },
   {

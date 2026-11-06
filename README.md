@@ -20,6 +20,7 @@
 | `data/extra/tags.json` | '자료 필요' 태그를 붙일 스킬 번호 |
 | `data/extra/prompt_patches.json` | 공문서·국회 답변자료·사업계획서 3종에 덧붙이는 한글 서식 예시·제약·자가 점검·입력 |
 | `data/extra/enrich/*.json` | 나머지 97개에 덧붙이는 CONSTRAINTS·EXAMPLE·QUALITY CHECK·INPUT (카테고리별 파일). 같은 번호를 두 파일에 넣으면 빌드가 실패함 |
+| `data/extra/review.json` | 도구·시점 의존 스킬의 의존 대상, 검토일, 점검 주기(6개월). 점검 후 `reviewed` 날짜만 갱신 |
 | `data/extra/levels.json` | 난이도 재배정 기준과 변경 목록(사유 포함). 원본 난이도는 데이터의 `level_orig`에 남음 |
 
 ## 사이트 기능

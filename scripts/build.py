@@ -114,6 +114,19 @@ if lv.exists():
         if c and c["level"] != s_["level"]:
             s_["level_orig"], s_["level"], s_["level_why"] = s_["level"], c["level"], c["why"]
 
+# --- 도구·시점 의존 검토일 (data/extra/review.json)
+rv = EXTRA / "review.json"
+if rv.exists():
+    r = json.loads(rv.read_text(encoding="utf-8"))
+    months = r.get("policy", {}).get("cycle_months", 6)
+    data["meta"]["review_cycle_months"] = months
+    for s_ in data["skills"]:
+        it = r["items"].get(str(s_["id"]))
+        if it:
+            y, m, d_ = map(int, it["reviewed"].split("-"))
+            m2 = m + months; y2 = y + (m2 - 1) // 12; m2 = (m2 - 1) % 12 + 1
+            s_["review"] = {**it, "next": f"{y2}-{m2:02d}"}
+
 # --- 태그: 자료 입력이 꼭 필요한 스킬
 tags = json.loads((EXTRA / "tags.json").read_text(encoding="utf-8")) if (EXTRA / "tags.json").exists() else {}
 need = set(tags.get("input_required", []))
