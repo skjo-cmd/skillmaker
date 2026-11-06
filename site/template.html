@@ -513,7 +513,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
     if (state.sort==='name') list = [...list].sort((a,b)=> a.name.localeCompare(b.name,'ko'));
     return list;
   }
-  const tags = s => (s.input==='자료' ? `<span class="tag">자료 필요</span>` : '') + (s.lang==='ko' ? `<span class="tag ko">한국어</span>` : '');
+  const tags = s => (s.input==='자료' ? `<span class="tag">자료 필요</span>` : '') + (s.lang==='ko' ? `<span class="tag ko">한국어</span>` : '') + (s.patched ? `<span class="tag ko">한글 서식</span>` : '');
   function render(){
     $('view-recipes').hidden = state.view!=='recipes';
     $('view-skills').hidden = state.view!=='skills';
@@ -557,14 +557,14 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
 
   // 상세
   const dlg = $('dlg'); let cur = null;
-  const KR = {ROLE:'역할', CONTEXT:'상황', TASK:'할 일', STEPS:'작업 순서', 'OUTPUT FORMAT':'결과 형식', CONSTRAINTS:'제약', EXAMPLE:'예시', 'QUALITY CHECK':'자가 점검', INPUT:'내 입력 자리'};
+  const KR = {ROLE:'역할', CONTEXT:'상황', TASK:'할 일', STEPS:'작업 순서', 'OUTPUT FORMAT':'결과 형식', CONSTRAINTS:'제약', EXAMPLE:'예시', 'FORMAT EXAMPLE':'서식 예시', 'QUALITY CHECK':'자가 점검', INPUT:'내 입력 자리'};
   function open(id, push=true){
     const s = byId[id]; if(!s) return; cur = id;
     $('m-meta').innerHTML = `<span class="no" style="font-family:var(--f-mono)">${pad(s.id)}</span><span class="pill lv-${s.level}">${esc(s.level)}</span><span>${esc(catOf[s.cat].emoji)} ${esc(catOf[s.cat].name)}</span>${tags(s)}`;
     $('m-title').textContent = s.name;
     $('m-explain').innerHTML = `<b>이 스킬은</b>${esc(s.explain)}` + (s.level_orig ? `<div class="relabel">난이도 ${esc(s.level_orig)} → <b style="display:inline;font-size:inherit;letter-spacing:0;color:inherit">${esc(s.level)}</b>로 조정. ${esc(s.level_why)}</div>` : '');
     const keys = Object.keys(s.sections);
-    $('m-secs').innerHTML = keys.length ? keys.map(k=>`<div class="sec ${s.lang==='ko'?'ko':''}"><div class="sh">${esc(k)}<span>${esc(KR[k]||'')}</span></div><pre>${esc(s.sections[k])}</pre></div>`).join('') : `<div class="sec"><pre>${esc(s.prompt)}</pre></div>`;
+    $('m-secs').innerHTML = keys.length ? keys.map(k=>`<div class="sec ${(s.lang==='ko' || /[가-힣]/.test(s.sections[k]))?'ko':''}"><div class="sh">${esc(k)}<span>${esc(KR[k]||'')}</span></div><pre>${esc(s.sections[k])}</pre></div>`).join('') : `<div class="sec"><pre>${esc(s.prompt)}</pre></div>`;
     $('m-input').value = '';
     $('m-input').placeholder = s.sections.INPUT ? s.sections.INPUT : '예) 주제: 소상공인을 위한 인스타그램 마케팅 입문 / 대상: 40~50대 자영업자 / 분량: 2시간';
     $('m-inputhelp').textContent = s.input==='자료' ? '이 스킬은 붙여넣을 자료가 있어야 제대로 됩니다. 자료를 여기에 붙여두면 복사할 때 INPUT 자리에 들어갑니다.' : '주제, 대상, 자료 등을 적어두면 복사할 때 프롬프트의 INPUT 자리에 함께 들어갑니다.';
