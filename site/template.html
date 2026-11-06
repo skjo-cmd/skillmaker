@@ -4,18 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
-<title>AI 스킬 라이브러리 100</title>
-<meta name="description" content="업무 분야별 AI 프롬프트 스킬 100개를 검색하고 복사해서 바로 쓰는 초보자용 대시보드">
+<title>AI 스킬 라이브러리 110</title>
+<meta name="description" content="업무 분야별 AI 프롬프트 스킬과 레시피를 검색하고 복사해서 바로 쓰는 초보자용 대시보드">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Nanum+Myeongjo:wght@800&display=swap">
 <style>
-/* 레이아웃: 왼쪽 카테고리 색인(데스크톱) + 오른쪽 요약·필터·카드 격자. 도서관 카드목록을 닮은 정보 밀도 */
+/* 레이아웃: 왼쪽 색인(레시피·카테고리) + 오른쪽 시작 지도 → 요약·차트 → 필터·카드. 도서관 카드목록을 닮은 정보 밀도 */
 :root{
   --bg:#f3f5f8; --surface:#ffffff; --surface-2:#e9edf3; --line:#d5dbe5;
   --ink:#171c28; --muted:#5b6476; --faint:#8a93a6;
   --accent:#1d4fd7; --accent-ink:#ffffff; --accent-soft:#e3eafd;
   --lv1:#1baf7a; --lv2:#2a78d6; --lv3:#eb6834;   /* 기초·중급·고급 (검증된 3슬롯) */
   --lv1-soft:#dcf5ea; --lv2-soft:#deeafb; --lv3-soft:#fde6db;
+  --warn-soft:#fff3d6; --warn-ink:#7a5200;
   --shadow:0 1px 2px rgba(23,28,40,.06),0 8px 24px rgba(23,28,40,.08);
   --f-body:"IBM Plex Sans KR",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
@@ -29,6 +30,7 @@
     --accent:#7a9cf5; --accent-ink:#0e1116; --accent-soft:#1c2740;
     --lv1:#199e70; --lv2:#3987e5; --lv3:#d95926;
     --lv1-soft:#153527; --lv2-soft:#17304f; --lv3-soft:#3d2316;
+    --warn-soft:#3a2f12; --warn-ink:#f0c36a;
     --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
     color-scheme:dark;
   }
@@ -39,6 +41,7 @@
   --accent:#7a9cf5; --accent-ink:#0e1116; --accent-soft:#1c2740;
   --lv1:#199e70; --lv2:#3987e5; --lv3:#d95926;
   --lv1-soft:#153527; --lv2-soft:#17304f; --lv3-soft:#3d2316;
+  --warn-soft:#3a2f12; --warn-ink:#f0c36a;
   --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
   color-scheme:dark;
 }
@@ -65,13 +68,15 @@ h1{font-family:var(--f-display);font-weight:800;font-size:clamp(26px,4vw,38px);l
 .main{display:grid;grid-template-columns:232px minmax(0,1fr);gap:28px;margin-top:20px}
 @media (max-width:860px){.main{grid-template-columns:minmax(0,1fr)}}
 .side{position:sticky;top:calc(12px + env(safe-area-inset-top,0px));align-self:start;display:flex;flex-direction:column;gap:4px}
-.side h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px 10px;font-weight:600}
+.side h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:10px 0 6px 10px;font-weight:600}
+.side h2:first-child{margin-top:0}
 .nav{display:flex;flex-direction:column;gap:2px}
 .nav button{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:none;border:0;border-radius:8px;padding:7px 10px;color:var(--ink);font-size:14px}
 .nav button:hover{background:var(--surface-2)}
 .nav button[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent);font-weight:600}
 .nav .n{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--faint);font-size:12.5px}
 .nav button[aria-pressed="true"] .n{color:var(--accent)}
+.nav button.entry{border:1px dashed var(--line)}
 @media (max-width:860px){
   .side{position:static}
   .side h2{display:none}
@@ -80,8 +85,32 @@ h1{font-family:var(--f-display);font-weight:800;font-size:clamp(26px,4vw,38px);l
   .nav .n{margin-left:2px}
 }
 
+/* 시작 지도 */
+.map{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 18px;min-width:0}
+.map-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 12px}
+.map h2{font-size:15.5px;margin:0;font-weight:700}
+.map .sub{color:var(--muted);font-size:13px;margin:2px 0 0}
+.stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px;counter-reset:st}
+@media (max-width:720px){.stages{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stage{position:relative;border:1px solid var(--line);border-radius:10px;padding:12px 12px 12px 14px;background:var(--bg);text-align:left;min-width:0;display:flex;flex-direction:column;gap:4px}
+.stage::before{counter-increment:st;content:counter(st);position:absolute;top:-9px;left:10px;background:var(--accent);color:var(--accent-ink);font-size:11px;font-weight:700;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+.stage:hover{border-color:var(--accent)}
+.stage b{font-size:14px;font-weight:600}
+.stage span{font-size:12.5px;color:var(--muted)}
+.stage small{font-size:12px;color:var(--accent);font-weight:600;margin-top:2px}
+.roles{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:16px}
+.roles .lbl{font-size:13px;color:var(--muted);margin-right:4px}
+.rolepick{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:12px}
+.rp{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--bg);min-width:0}
+.rp h3{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-weight:600}
+.rp ol{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:5px}
+.rp li button{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:13.5px}
+.rp li button:hover{border-color:var(--accent)}
+.rp .no{font-family:var(--f-mono);font-size:11.5px;color:var(--faint)}
+.rp .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
 /* 요약 타일 */
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:14px}
 .tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;min-width:0}
 .tile .k{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.04em}
 .tile .v{font-size:28px;font-weight:700;line-height:1.1;margin-top:4px;font-variant-numeric:tabular-nums}
@@ -103,7 +132,6 @@ h1{font-family:var(--f-display);font-weight:800;font-size:clamp(26px,4vw,38px);l
 .chart{margin-top:10px;overflow-x:auto}
 .chart svg{display:block;width:100%;min-width:420px;height:auto;font-family:var(--f-body)}
 .chart text{fill:var(--ink);font-size:12.5px}
-.chart .lab{fill:var(--ink)}
 .chart .cnt{fill:#fff;font-size:11.5px;font-weight:600}
 .chart .tot{fill:var(--muted);font-variant-numeric:tabular-nums}
 .chart .row{cursor:pointer}
@@ -140,15 +168,18 @@ h1{font-family:var(--f-display);font-weight:800;font-size:clamp(26px,4vw,38px);l
 select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
 .count{color:var(--muted);font-size:13.5px;margin-left:auto;font-variant-numeric:tabular-nums}
 @media (max-width:600px){.count{margin-left:0;width:100%}}
+.catintro{margin:14px 0 0;padding:10px 14px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;font-size:14px}
 
 /* 카드 */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:14px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px 12px;text-align:left;display:flex;flex-direction:column;gap:8px;min-width:0;position:relative;transition:transform .12s ease,box-shadow .12s ease}
 .card:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
-.card .meta{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+.card .meta{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);flex-wrap:wrap;padding-right:28px}
 .card .no{font-family:var(--f-mono);font-variant-numeric:tabular-nums;color:var(--faint)}
 .pill{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--cs);color:var(--ink)}
 .pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c)}
+.tag{display:inline-flex;align-items:center;font-size:11px;font-weight:600;padding:2px 7px;border-radius:5px;background:var(--warn-soft);color:var(--warn-ink)}
+.tag.ko{background:var(--surface-2);color:var(--muted)}
 .card h3{font-size:16px;margin:0;line-height:1.3;font-weight:600}
 .card p{margin:0;color:var(--muted);font-size:13.5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .card .foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:6px;font-size:12.5px;color:var(--faint)}
@@ -156,6 +187,25 @@ select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid 
 .star[aria-pressed="true"]{color:#e0a030}
 .star:hover{background:var(--surface-2)}
 .empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px 0}
+
+/* 레시피 */
+.rlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin-top:14px}
+.rcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;text-align:left;display:flex;flex-direction:column;gap:8px;min-width:0}
+.rcard:hover{box-shadow:var(--shadow)}
+.rcard[aria-expanded="true"]{grid-column:1/-1;border-color:var(--accent)}
+.rcard .meta{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+.rcard h3{font-size:16px;margin:0;font-weight:600}
+.rcard p{margin:0;color:var(--muted);font-size:13.5px}
+.rcard .foot{font-size:12.5px;color:var(--faint);display:flex;justify-content:space-between;margin-top:auto;padding-top:4px}
+.steps{display:flex;flex-direction:column;gap:0;margin-top:6px;border-top:1px solid var(--line);padding-top:10px}
+.step{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;padding:8px 0;position:relative}
+.step + .step::before{content:"";position:absolute;left:13px;top:-14px;height:14px;border-left:2px solid var(--line)}
+.step .num{width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-size:12.5px;font-weight:700;font-variant-numeric:tabular-nums}
+.step button{text-align:left;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 12px;display:flex;flex-direction:column;gap:3px;min-width:0}
+.step button:hover{border-color:var(--accent)}
+.step .sn{font-weight:600;font-size:14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.step .carry{font-size:12.5px;color:var(--muted)}
+.step .carry::before{content:"→ 다음으로 넘길 것: ";color:var(--faint)}
 
 /* 상세 모달 */
 dialog{border:0;padding:0;background:transparent;max-width:min(880px,calc(100vw - 32px));width:100%;max-height:calc(100vh - 32px);margin:auto}
@@ -174,6 +224,7 @@ dialog::backdrop{background:rgba(10,14,22,.55);backdrop-filter:blur(2px)}
 .sec .sh{display:flex;align-items:center;gap:8px;padding:7px 12px;background:var(--surface-2);font-size:12px;font-weight:700;letter-spacing:.06em;font-family:var(--f-mono)}
 .sec .sh span{font-family:var(--f-body);font-weight:500;color:var(--muted);letter-spacing:0;font-size:12.5px}
 .sec pre{margin:0;padding:10px 12px;font-family:var(--f-mono);font-size:12.5px;line-height:1.6;white-space:pre-wrap;word-break:break-word}
+.sec.ko pre{font-family:var(--f-body);font-size:13.5px}
 .use{display:flex;flex-direction:column;gap:12px;min-width:0}
 .use h3{margin:0;font-size:14px}
 .use p{margin:0;color:var(--muted);font-size:13.5px}
@@ -188,6 +239,8 @@ textarea{width:100%;min-height:92px;resize:vertical;font:inherit;font-size:14px;
 .howto summary{cursor:pointer;font-weight:600}
 .howto ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}
 .howto li{margin-bottom:4px}
+.inrec{font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.inrec button{background:var(--surface-2);border:0;border-radius:999px;padding:3px 10px;font-size:12.5px}
 .mfoot{display:flex;justify-content:space-between;gap:8px;padding:10px 20px 14px;border-top:1px solid var(--line)}
 .mfoot button{background:none;border:0;color:var(--accent);font-size:13.5px;padding:4px 6px;max-width:48%;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .mfoot button:disabled{color:var(--faint)}
@@ -201,22 +254,36 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
   <header class="top">
     <div>
       <div class="eyebrow">Role · Context · Task · Steps · Output</div>
-      <h1 id="title">AI 스킬 라이브러리 100</h1>
-      <p class="lede">업무 분야별로 정리한 프롬프트 스킬 100개. 골라서 복사하고, 마지막 줄에 내 주제만 적으면 ChatGPT · Claude · Gemini 어디서든 바로 동작합니다.</p>
+      <h1 id="title">AI 스킬 라이브러리</h1>
+      <p class="lede">업무 분야별 프롬프트 스킬과 업무 1건을 끝내는 레시피. 골라서 복사하고 내 자료만 붙이면 ChatGPT · Claude · Gemini 어디서든 바로 동작합니다.</p>
     </div>
     <div class="credit" id="credit"></div>
   </header>
 
   <div class="main">
     <aside class="side">
-      <h2>카테고리</h2>
-      <nav class="nav" id="nav" aria-label="카테고리"></nav>
+      <h2>둘러보기</h2>
+      <nav class="nav" id="nav" aria-label="목차"></nav>
     </aside>
 
     <main>
+      <section class="map" aria-labelledby="map-title">
+        <div class="map-h">
+          <div><h2 id="map-title">시작 지도</h2><p class="sub">처음이면 1번부터, 급하면 역할을 골라 추천 레시피로 바로 가세요.</p></div>
+        </div>
+        <div class="stages" id="stages">
+          <button class="stage" data-go="basics"><b>AI 기본기 익히기</b><span>요약·교정·되묻기 같은 기본 동작 10개. 전부 기초.</span><small>30분 · 10개 스킬</small></button>
+          <button class="stage" data-go="roles"><b>내 역할 고르기</b><span>직장인, 1인기업, 강사, 공공기관. 역할마다 시작 스킬 3개.</span><small>1분</small></button>
+          <button class="stage" data-go="recipes"><b>레시피로 업무 1건 완성</b><span>스킬 3~5개를 순서대로 이어 실제 결과물 하나를 만듭니다.</span><small id="st-recipes">레시피 보기</small></button>
+          <button class="stage" data-go="all"><b>분야별 심화</b><span>10개 분야 100개 스킬을 검색·필터로 찾아 쓰기.</span><small>필요할 때</small></button>
+        </div>
+        <div class="roles" id="roles"><span class="lbl">내 역할:</span></div>
+        <div class="rolepick" id="rolepick" hidden></div>
+      </section>
+
       <section class="tiles" aria-label="요약">
-        <div class="tile"><div class="k">전체 스킬</div><div class="v" id="t-total">100<small>개</small></div></div>
-        <div class="tile"><div class="k">카테고리</div><div class="v" id="t-cats">10<small>분야</small></div></div>
+        <div class="tile"><div class="k">전체 스킬</div><div class="v" id="t-total"></div></div>
+        <div class="tile"><div class="k">레시피</div><div class="v" id="t-recipes"></div></div>
         <div class="tile mix"><div class="k">난이도 구성</div><div class="mixbar" id="mixbar"></div><div class="mixleg" id="mixleg"></div></div>
         <div class="tile"><div class="k">내 즐겨찾기</div><div class="v" id="t-fav">0<small>개</small></div></div>
       </section>
@@ -236,9 +303,9 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
           <div>
             <h3>사용 순서</h3>
             <ol>
-              <li><b>스킬 고르기.</b> 왼쪽 카테고리나 검색창으로 내 업무에 맞는 카드를 찾습니다. 처음엔 <b>기초</b> 표시가 있는 것부터.</li>
-              <li><b>복사하기.</b> 카드를 열고 <b>바로 쓰기용 복사</b>를 누릅니다. 아래 입력칸에 내 주제·자료를 적어두면 함께 복사됩니다.</li>
-              <li><b>붙여넣기.</b> ChatGPT, Claude, Gemini 등 쓰는 AI 채팅창에 붙이고 전송합니다. 결과가 아쉬우면 OUTPUT FORMAT 줄을 고쳐 다시 보내세요.</li>
+              <li><b>스킬 고르기.</b> 시작 지도에서 역할을 고르거나 검색창으로 내 업무에 맞는 카드를 찾습니다. 처음엔 <b>기초</b> 표시가 있는 것부터.</li>
+              <li><b>복사하기.</b> 카드를 열고 <b>바로 쓰기용 복사</b>를 누릅니다. 입력칸에 내 주제·자료를 적어두면 함께 복사됩니다.</li>
+              <li><b>붙여넣기.</b> ChatGPT, Claude, Gemini 등 쓰는 AI 채팅창에 붙이고 전송합니다. 결과가 아쉬우면 <b>결과 수정 요청하기</b> 스킬을 쓰세요.</li>
             </ol>
           </div>
           <div>
@@ -249,37 +316,47 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
               <li><code>TASK</code> 한 문장으로 된 할 일.</li>
               <li><code>STEPS</code> AI가 따라갈 작업 순서 5~6단계.</li>
               <li><code>OUTPUT FORMAT</code> 결과물 형태. 표·목록·분량을 바꾸고 싶으면 이 줄을 수정합니다.</li>
+              <li><code>INPUT</code> 내 자료가 들어가는 자리. 기본기 스킬에는 처음부터 있습니다.</li>
             </ul>
           </div>
           <div>
-            <h3>두 가지 복사 방식</h3>
+            <h3>표시 읽는 법</h3>
             <ul>
-              <li><b>바로 쓰기용</b>: 일반 채팅창에 붙여서 한 번 쓰는 용도. 끝에 INPUT 칸이 붙습니다.</li>
-              <li><b>스킬 원문</b>: 파일의 영문 전문 그대로. 마지막 줄 "create a skill"은 Claude Projects 지침, ChatGPT의 GPT 만들기(Instructions), Gemini Gems처럼 <b>재사용 설정에 등록</b>할 때 쓰는 문장입니다.</li>
+              <li><b>자료 필요</b> 태그: 회의록, 데이터, 기존 글처럼 붙여넣을 자료가 있어야 제대로 됩니다. 자료 없이 돌리면 공허한 답이 나옵니다.</li>
+              <li><b>한국어</b> 태그: 프롬프트 본문이 한국어라 읽고 고치기 쉽습니다. 나머지는 영문 프롬프트에 한글 해설이 붙어 있습니다.</li>
+              <li><b>스킬 원문</b> 복사는 Claude Projects 지침, ChatGPT의 GPT 만들기, Gemini Gems처럼 <b>재사용 설정에 등록</b>할 때 씁니다.</li>
             </ul>
           </div>
         </div>
       </details>
 
-      <section class="filters" aria-label="필터">
-        <label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="스킬명, 설명, 프롬프트 내용 검색 (예: 회의록, SEO, 제안서)" autocomplete="off"><span class="sr">검색</span></label>
-        <div class="chips" id="lv-chips" role="group" aria-label="난이도">
-          <button class="chip lv-기초" data-lv="기초" aria-pressed="false"><span class="dot" style="background:var(--lv1)"></span>기초</button>
-          <button class="chip lv-중급" data-lv="중급" aria-pressed="false"><span class="dot" style="background:var(--lv2)"></span>중급</button>
-          <button class="chip lv-고급" data-lv="고급" aria-pressed="false"><span class="dot" style="background:var(--lv3)"></span>고급</button>
-          <button class="chip" id="fav-chip" aria-pressed="false">★ 즐겨찾기</button>
-        </div>
-        <select id="sort" aria-label="정렬"><option value="id">번호순</option><option value="level">쉬운 것부터</option><option value="name">이름순</option></select>
-        <div class="count" id="count"></div>
+      <section id="view-recipes" hidden>
+        <div class="panel-h" style="margin-top:18px"><div><h2 style="font-size:17px;margin:0">레시피</h2><p class="sub" style="color:var(--muted);font-size:13.5px;margin:2px 0 0">스킬 3~5개를 순서대로 이어 업무 1건을 끝냅니다. 각 단계의 결과를 다음 단계에 붙여넣으면 됩니다.</p></div></div>
+        <div class="rlist" id="rlist"></div>
       </section>
 
-      <section class="grid" id="grid" aria-live="polite"></section>
+      <section id="view-skills">
+        <div class="catintro" id="catintro" hidden></div>
+        <section class="filters" aria-label="필터">
+          <label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="스킬명, 설명, 프롬프트 내용 검색 (예: 회의록, SEO, 제안서)" autocomplete="off"><span class="sr">검색</span></label>
+          <div class="chips" id="lv-chips" role="group" aria-label="난이도">
+            <button class="chip lv-기초" data-lv="기초" aria-pressed="false"><span class="dot" style="background:var(--lv1)"></span>기초</button>
+            <button class="chip lv-중급" data-lv="중급" aria-pressed="false"><span class="dot" style="background:var(--lv2)"></span>중급</button>
+            <button class="chip lv-고급" data-lv="고급" aria-pressed="false"><span class="dot" style="background:var(--lv3)"></span>고급</button>
+            <button class="chip" id="noinput-chip" aria-pressed="false">자료 없이 가능</button>
+            <button class="chip" id="fav-chip" aria-pressed="false">★ 즐겨찾기</button>
+          </div>
+          <select id="sort" aria-label="정렬"><option value="id">번호순</option><option value="level">쉬운 것부터</option><option value="name">이름순</option></select>
+          <div class="count" id="count"></div>
+        </section>
+        <section class="grid" id="grid" aria-live="polite"></section>
+      </section>
     </main>
   </div>
 
   <footer>
     <span id="foot-credit"></span>
-    <span><a id="dl-json" href="data/skills.json" target="_blank" rel="noopener">데이터 JSON</a> · 프롬프트 영문 원문은 파일 그대로 제공합니다 · 무료 공개 자료</span>
+    <span><a id="dl-json" href="data/skills.json" target="_blank" rel="noopener">데이터 JSON</a> · 무료 공개 자료</span>
   </footer>
 </div>
 
@@ -296,20 +373,21 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
       <div class="explain" id="m-explain"></div>
       <div class="secs" id="m-secs"></div>
       <div class="use">
-        <h3>내 입력 (선택)</h3>
-        <p>주제, 대상, 자료 등을 적어두면 복사할 때 프롬프트 끝에 INPUT 항목으로 함께 들어갑니다.</p>
+        <h3>내 입력</h3>
+        <p id="m-inputhelp">주제, 대상, 자료 등을 적어두면 복사할 때 프롬프트의 INPUT 자리에 함께 들어갑니다.</p>
         <textarea id="m-input" placeholder="예) 주제: 소상공인을 위한 인스타그램 마케팅 입문 / 대상: 40~50대 자영업자 / 분량: 2시간"></textarea>
         <div class="btns">
           <button class="btn primary" id="copy-use">바로 쓰기용 복사</button>
           <button class="btn" id="copy-raw">스킬 원문 복사</button>
           <button class="btn" id="m-fav" aria-pressed="false">☆ 즐겨찾기</button>
         </div>
+        <div class="inrec" id="m-inrec"></div>
         <details class="howto">
           <summary>어디에 붙여야 하나요?</summary>
           <ul>
             <li><b>한 번만 쓸 때</b>: ChatGPT · Claude · Gemini 채팅창에 '바로 쓰기용' 텍스트를 붙이고 전송.</li>
             <li><b>매번 다시 쓸 때</b>: '스킬 원문'을 ChatGPT의 GPT 만들기 → Instructions, Claude의 Projects → 지침, Gemini의 Gems 지침에 넣어두면 이름만 불러 재사용할 수 있습니다.</li>
-            <li><b>결과가 영어로 나오면</b>: 맨 아래에 "Answer in Korean."을 한 줄 추가하세요.</li>
+            <li><b>결과가 영어로 나오면</b>: 맨 아래에 "Answer in Korean."을 한 줄 추가하세요. 바로 쓰기용 복사에는 이미 들어 있습니다.</li>
           </ul>
         </details>
         <pre id="m-preview" class="sr" aria-hidden="true"></pre>
@@ -326,46 +404,80 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
   const D = JSON.parse(document.getElementById('skill-data').textContent);
   const LV = ['기초','중급','고급'];
   const LVC = {'기초':'var(--lv1)','중급':'var(--lv2)','고급':'var(--lv3)'};
-  const cats = D.categories, skills = D.skills;
+  const cats = D.categories, skills = D.skills, recipes = D.recipes.recipes, roles = D.recipes.roles;
   const byId = Object.fromEntries(skills.map(s=>[s.id,s]));
   const catOf = Object.fromEntries(cats.map(c=>[c.id,c]));
+  const recById = Object.fromEntries(recipes.map(r=>[r.id,r]));
+  const basicsCat = cats.find(c=>c.order===0) || cats[0];
   const $ = id => document.getElementById(id);
   const esc = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+  const pad = n => '#'+String(n).padStart(3,'0');
 
   // 상태
-  const state = { cat: 0, lv: new Set(), q: '', sort: 'id', fav: false };
+  const state = { view:'skills', cat: 0, lv: new Set(), q: '', sort: 'id', fav: false, noinput: false, role: null, openRecipe: null };
   let favs = new Set();
   try { favs = new Set(JSON.parse(localStorage.getItem('skill-favs')||'[]')); } catch(e){}
-  const saveFavs = () => { try { localStorage.setItem('skill-favs', JSON.stringify([...favs])); } catch(e){} };
+  try { state.role = localStorage.getItem('skill-role') || null; } catch(e){}
+  const save = (k,v) => { try { localStorage.setItem(k, v); } catch(e){} };
 
-  // 헤더
-  $('title').textContent = D.meta.title || 'AI 스킬 라이브러리 100';
+  // 헤더·타일
   $('credit').innerHTML = D.meta.credit ? D.meta.credit.split('|').map(p=>esc(p.trim())).filter(Boolean).map((p,i)=> i===0 ? '<b>'+p+'</b>' : p).join('<br>') : '';
   $('foot-credit').textContent = (D.meta.credit||'').split('|')[0].trim();
   $('t-total').innerHTML = skills.length + '<small>개</small>';
-  $('t-cats').innerHTML = cats.length + '<small>분야</small>';
+  $('t-recipes').innerHTML = recipes.length + '<small>개</small>';
+  $('st-recipes').textContent = recipes.length + '개 레시피';
   const lvCount = Object.fromEntries(LV.map(l=>[l, skills.filter(s=>s.level===l).length]));
   $('mixbar').innerHTML = LV.map(l=>`<span style="flex:${lvCount[l]};background:${LVC[l]}" title="${l} ${lvCount[l]}"></span>`).join('');
   $('mixleg').innerHTML = LV.map(l=>`<span><i class="dot" style="background:${LVC[l]}"></i>${l} ${lvCount[l]}개</span>`).join('');
 
-  // 카테고리 내비
+  // 목차
   function renderNav(){
-    const all = `<button data-cat="0" aria-pressed="${state.cat===0}"><span>전체</span><span class="n">${skills.length}</span></button>`;
-    $('nav').innerHTML = all + cats.map(c=>`<button data-cat="${c.id}" aria-pressed="${state.cat===c.id}"><span>${esc(c.emoji)} ${esc(c.name)}</span><span class="n">${skills.filter(s=>s.cat===c.id).length}</span></button>`).join('');
+    const on = (v,c) => state.view===v && (v!=='skills' || state.cat===c);
+    let h = `<button data-view="recipes" aria-pressed="${state.view==='recipes'}"><span>🧩 레시피</span><span class="n">${recipes.length}</span></button>`;
+    h += `<button data-view="skills" data-cat="0" aria-pressed="${on('skills',0)}"><span>전체 스킬</span><span class="n">${skills.length}</span></button>`;
+    h += cats.map(c=>`<button data-view="skills" data-cat="${c.id}" aria-pressed="${on('skills',c.id)}" class="${c.order===0?'entry':''}"><span>${esc(c.emoji)} ${esc(c.name)}</span><span class="n">${skills.filter(s=>s.cat===c.id).length}</span></button>`).join('');
+    $('nav').innerHTML = h;
   }
-  $('nav').addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return; state.cat = +b.dataset.cat; renderNav(); render(); });
+  $('nav').addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return;
+    if (b.dataset.view==='recipes') showRecipes(); else showCat(+b.dataset.cat); });
+  function showCat(id, scroll){ state.view='skills'; state.cat=id; renderNav(); render(); setHash(id ? 'cat-'+id : ''); if (scroll) $('view-skills').scrollIntoView({behavior:'smooth',block:'start'}); }
+  function showRecipes(scroll){ state.view='recipes'; renderNav(); render(); setHash('recipes'); if (scroll) $('view-recipes').scrollIntoView({behavior:'smooth',block:'start'}); }
+  function setHash(h){ try { history.replaceState(null,'', h ? '#'+h : location.pathname+location.search); } catch(e){} }
 
-  // 차트 (SVG 누적 가로막대)
+  // 시작 지도
+  $('stages').addEventListener('click', e => { const b = e.target.closest('.stage'); if(!b) return;
+    const g = b.dataset.go;
+    if (g==='basics') showCat(basicsCat.id, true);
+    else if (g==='roles') { $('roles').scrollIntoView({behavior:'smooth',block:'center'}); $('roles').querySelector('button')?.focus(); }
+    else if (g==='recipes') showRecipes(true);
+    else showCat(0, true); });
+  function renderRoles(){
+    $('roles').innerHTML = `<span class="lbl">내 역할:</span>` + roles.map(r=>`<button class="chip" data-role="${r.id}" aria-pressed="${state.role===r.id}" title="${esc(r.desc)}">${esc(r.name)}</button>`).join('');
+    const r = roles.find(x=>x.id===state.role);
+    $('rolepick').hidden = !r;
+    if (!r) return;
+    $('rolepick').innerHTML = `
+      <div class="rp"><h3>먼저 써볼 스킬 3개</h3><ol>${r.starters.map(id=>{const s=byId[id];return `<li><button data-open="${id}"><span class="no">${pad(id)}</span><span class="t">${esc(s.name)}</span><span class="pill lv-${s.level}">${s.level}</span></button></li>`}).join('')}</ol></div>
+      <div class="rp"><h3>추천 레시피</h3><ol>${r.recipes.map(id=>{const rc=recById[id];return `<li><button data-recipe="${id}"><span class="no">${id}</span><span class="t">${esc(rc.title)}</span><span class="pill lv-${rc.level}">${rc.level}</span></button></li>`}).join('')}</ol></div>
+      <div class="rp"><h3>${esc(r.name)}에게</h3><p style="margin:0;font-size:13.5px;color:var(--muted)">${esc(r.desc)}. 기본기 레시피를 먼저 끝내고 두 번째 레시피로 넘어가면 1주일 안에 업무 하나가 바뀝니다.</p></div>`;
+  }
+  $('roles').addEventListener('click', e => { const b = e.target.closest('[data-role]'); if(!b) return;
+    state.role = state.role===b.dataset.role ? null : b.dataset.role; save('skill-role', state.role||''); renderRoles(); if (state.role) setHash('role-'+state.role); });
+  $('rolepick').addEventListener('click', e => {
+    const o = e.target.closest('[data-open]'); if (o) { open(+o.dataset.open); return; }
+    const r = e.target.closest('[data-recipe]'); if (r) { state.openRecipe = r.dataset.recipe; showRecipes(true); } });
+
+  // 차트
   function renderChart(){
     const rows = cats.map(c=>({c, n: LV.map(l=>skills.filter(s=>s.cat===c.id && s.level===l).length)}));
-    const W=720, labW=150, rowH=30, pad=8, top=22, H=top+rows.length*rowH+8, barW=W-labW-44;
+    const W=720, labW=150, rowH=30, pad_=8, top=22, H=top+rows.length*rowH+8, barW=W-labW-44;
     const max = Math.max(...rows.map(r=>r.n.reduce((a,b)=>a+b,0)));
     let g = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="카테고리별 난이도 분포 누적 막대 차트">`;
     g += LV.map((l,i)=>`<g><rect x="${labW+i*70}" y="4" width="10" height="10" rx="2" fill="${LVC[l]}"/><text x="${labW+i*70+15}" y="13" class="tot">${l}</text></g>`).join('');
     rows.forEach((r,ri)=>{
-      const y = top + ri*rowH + 4, h = rowH-pad; let x = labW; const total = r.n.reduce((a,b)=>a+b,0);
+      const y = top + ri*rowH + 4, h = rowH-pad_; let x = labW; const total = r.n.reduce((a,b)=>a+b,0);
       g += `<g class="row" data-cat="${r.c.id}" tabindex="0" role="button" aria-label="${esc(r.c.name)} 기초 ${r.n[0]} 중급 ${r.n[1]} 고급 ${r.n[2]}">`;
-      g += `<text x="${labW-10}" y="${y+h/2+4}" text-anchor="end" class="lab">${esc(r.c.emoji)} ${esc(r.c.name)}</text>`;
+      g += `<text x="${labW-10}" y="${y+h/2+4}" text-anchor="end">${esc(r.c.emoji)} ${esc(r.c.name)}</text>`;
       r.n.forEach((v,i)=>{ if(!v) return; const w = v/max*barW - 2; const last = r.n.slice(i+1).every(z=>!z);
         g += `<rect x="${x}" y="${y}" width="${Math.max(w,0)}" height="${h}" fill="${LVC[LV[i]]}" ${last?`rx="4"`:''} data-lv="${LV[i]}" data-v="${v}"/>`;
         if (w > 18) g += `<text x="${x+w/2}" y="${y+h/2+4}" text-anchor="middle" class="cnt">${v}</text>`;
@@ -376,7 +488,7 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
     $('chart').innerHTML = g;
     $('ctable').querySelector('tbody').innerHTML = rows.map(r=>`<tr><td>${esc(r.c.emoji)} ${esc(r.c.name)}</td>${r.n.map(v=>`<td>${v}</td>`).join('')}<td>${r.n.reduce((a,b)=>a+b,0)}</td></tr>`).join('');
   }
-  $('chart').addEventListener('click', e => { const r = e.target.closest('.row'); if(!r) return; state.cat = +r.dataset.cat; renderNav(); render(); $('grid').scrollIntoView({behavior:'smooth',block:'start'}); });
+  $('chart').addEventListener('click', e => { const r = e.target.closest('.row'); if(!r) return; showCat(+r.dataset.cat, true); });
   $('chart').addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ const r = e.target.closest('.row'); if(r){ e.preventDefault(); r.click(); } } });
   const tip = document.createElement('div'); tip.className='tip'; tip.hidden=true; document.body.appendChild(tip);
   $('chart').addEventListener('mousemove', e => { const r = e.target.closest('rect[data-lv]'); if(!r){ tip.hidden=true; return; } const row = r.closest('.row'); tip.textContent = `${catOf[+row.dataset.cat].name} · ${r.dataset.lv} ${r.dataset.v}개`; tip.hidden=false; tip.style.left=e.clientX+'px'; tip.style.top=e.clientY+'px'; });
@@ -387,25 +499,32 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
   $('q').addEventListener('input', e => { state.q = e.target.value.trim().toLowerCase(); render(); });
   $('lv-chips').addEventListener('click', e => { const b = e.target.closest('button'); if(!b) return;
     if (b.id==='fav-chip'){ state.fav = !state.fav; b.setAttribute('aria-pressed', state.fav); }
+    else if (b.id==='noinput-chip'){ state.noinput = !state.noinput; b.setAttribute('aria-pressed', state.noinput); }
     else { const l = b.dataset.lv; state.lv.has(l) ? state.lv.delete(l) : state.lv.add(l); b.setAttribute('aria-pressed', state.lv.has(l)); }
     render(); });
   $('sort').addEventListener('change', e => { state.sort = e.target.value; render(); });
 
   function filtered(){
-    let list = skills.filter(s => (!state.cat || s.cat===state.cat) && (!state.lv.size || state.lv.has(s.level)) && (!state.fav || favs.has(s.id))
+    let list = skills.filter(s => (!state.cat || s.cat===state.cat) && (!state.lv.size || state.lv.has(s.level)) && (!state.fav || favs.has(s.id)) && (!state.noinput || s.input!=='자료')
       && (!state.q || (s.name+' '+s.explain+' '+s.prompt+' '+catOf[s.cat].name).toLowerCase().includes(state.q)));
     if (state.sort==='level') list = [...list].sort((a,b)=> LV.indexOf(a.level)-LV.indexOf(b.level) || a.id-b.id);
     if (state.sort==='name') list = [...list].sort((a,b)=> a.name.localeCompare(b.name,'ko'));
     return list;
   }
+  const tags = s => (s.input==='자료' ? `<span class="tag">자료 필요</span>` : '') + (s.lang==='ko' ? `<span class="tag ko">한국어</span>` : '');
   function render(){
-    const list = filtered();
-    $('count').textContent = `${list.length}개 표시` + (state.cat ? ` · ${catOf[state.cat].name}` : '') + (state.q ? ` · "${state.q}"` : '');
+    $('view-recipes').hidden = state.view!=='recipes';
+    $('view-skills').hidden = state.view!=='skills';
     $('t-fav').innerHTML = favs.size + '<small>개</small>';
+    if (state.view==='recipes') { renderRecipes(); return; }
+    const c = state.cat ? catOf[state.cat] : null;
+    $('catintro').hidden = !(c && c.intro); if (c && c.intro) $('catintro').textContent = c.emoji+' '+c.name+' · '+c.intro;
+    const list = filtered();
+    $('count').textContent = `${list.length}개 표시` + (c ? ` · ${c.name}` : '') + (state.q ? ` · "${state.q}"` : '');
     $('grid').innerHTML = list.length ? list.map(s => `
       <article class="card lv-${s.level}" data-id="${s.id}">
         <button class="star" data-fav="${s.id}" aria-pressed="${favs.has(s.id)}" aria-label="즐겨찾기 ${favs.has(s.id)?'해제':'추가'}"><svg width="18" height="18" viewBox="0 0 24 24" fill="${favs.has(s.id)?'currentColor':'none'}" stroke="currentColor" stroke-width="1.8"><path d="m12 3 2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.4 6.3 20.5l1.2-6.4L2.8 9.7l6.4-.8z"/></svg></button>
-        <div class="meta"><span class="no">#${String(s.id).padStart(3,'0')}</span><span class="pill">${esc(s.level)}</span></div>
+        <div class="meta"><span class="no">${pad(s.id)}</span><span class="pill">${esc(s.level)}</span>${tags(s)}</div>
         <h3>${esc(s.name)}</h3>
         <p>${esc(s.explain)}</p>
         <div class="foot"><span>${esc(catOf[s.cat].emoji)} ${esc(catOf[s.cat].name)}</span><span>열기 ›</span></div>
@@ -415,40 +534,66 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
     const st = e.target.closest('[data-fav]'); if (st){ toggleFav(+st.dataset.fav); return; }
     const c = e.target.closest('.card'); if (c) open(+c.dataset.id);
   });
-  function toggleFav(id){ favs.has(id) ? favs.delete(id) : favs.add(id); saveFavs(); render(); if (cur===id) syncFavBtn(); toast(favs.has(id) ? '즐겨찾기에 추가했습니다' : '즐겨찾기에서 뺐습니다'); }
+  function toggleFav(id){ favs.has(id) ? favs.delete(id) : favs.add(id); save('skill-favs', JSON.stringify([...favs])); render(); if (cur===id) syncFavBtn(); toast(favs.has(id) ? '즐겨찾기에 추가했습니다' : '즐겨찾기에서 뺐습니다'); }
+
+  // 레시피
+  function renderRecipes(){
+    $('rlist').innerHTML = recipes.map(r => { const openR = state.openRecipe===r.id; return `
+      <article class="rcard lv-${r.level}" data-recipe="${r.id}" aria-expanded="${openR}">
+        <div class="meta"><span class="no" style="font-family:var(--f-mono);color:var(--faint)">${r.id}</span><span class="pill">${r.level}</span><span>${r.steps.length}단계 · ${esc(r.time)}</span></div>
+        <h3>${esc(r.title)}</h3>
+        <p>${esc(r.goal)}</p>
+        ${openR ? `<div class="steps">${r.steps.map((st,i)=>{const s=byId[st.skill];return `<div class="step"><span class="num">${i+1}</span><button data-open="${s.id}"><span class="sn"><span class="no" style="font-family:var(--f-mono);color:var(--faint);font-weight:400">${pad(s.id)}</span>${esc(s.name)}<span class="pill lv-${s.level}">${s.level}</span>${s.input==='자료'?'<span class="tag">자료 필요</span>':''}</span><span class="carry">${esc(st.carry)}</span></button></div>`}).join('')}</div>` : ''}
+        <div class="foot"><span>${r.steps.map(st=>pad(st.skill)).join(' → ')}</span><span>${openR ? '접기' : '단계 보기 ›'}</span></div>
+      </article>`}).join('');
+    if (state.openRecipe) { const el = $('rlist').querySelector(`[data-recipe="${state.openRecipe}"]`); if (el && el.getBoundingClientRect().top < 0) el.scrollIntoView({behavior:'smooth',block:'start'}); }
+  }
+  $('rlist').addEventListener('click', e => {
+    const o = e.target.closest('[data-open]'); if (o) { open(+o.dataset.open); return; }
+    const c = e.target.closest('.rcard'); if (!c) return;
+    state.openRecipe = state.openRecipe===c.dataset.recipe ? null : c.dataset.recipe; renderRecipes(); setHash(state.openRecipe ? 'recipe-'+state.openRecipe : 'recipes'); });
 
   // 상세
   const dlg = $('dlg'); let cur = null;
-  const KR = {ROLE:'역할', CONTEXT:'상황', TASK:'할 일', STEPS:'작업 순서', 'OUTPUT FORMAT':'결과 형식'};
+  const KR = {ROLE:'역할', CONTEXT:'상황', TASK:'할 일', STEPS:'작업 순서', 'OUTPUT FORMAT':'결과 형식', CONSTRAINTS:'제약', EXAMPLE:'예시', 'QUALITY CHECK':'자가 점검', INPUT:'내 입력 자리'};
   function open(id, push=true){
     const s = byId[id]; if(!s) return; cur = id;
-    $('m-meta').innerHTML = `<span class="no" style="font-family:var(--f-mono)">#${String(s.id).padStart(3,'0')}</span><span class="pill lv-${s.level}">${esc(s.level)}</span><span>${esc(catOf[s.cat].emoji)} ${esc(catOf[s.cat].name)}</span>`;
+    $('m-meta').innerHTML = `<span class="no" style="font-family:var(--f-mono)">${pad(s.id)}</span><span class="pill lv-${s.level}">${esc(s.level)}</span><span>${esc(catOf[s.cat].emoji)} ${esc(catOf[s.cat].name)}</span>${tags(s)}`;
     $('m-title').textContent = s.name;
     $('m-explain').innerHTML = `<b>이 스킬은</b>${esc(s.explain)}`;
     const keys = Object.keys(s.sections);
-    $('m-secs').innerHTML = keys.length ? keys.map(k=>`<div class="sec"><div class="sh">${esc(k)}<span>${esc(KR[k]||'')}</span></div><pre>${esc(s.sections[k])}</pre></div>`).join('') : `<div class="sec"><pre>${esc(s.prompt)}</pre></div>`;
+    $('m-secs').innerHTML = keys.length ? keys.map(k=>`<div class="sec ${s.lang==='ko'?'ko':''}"><div class="sh">${esc(k)}<span>${esc(KR[k]||'')}</span></div><pre>${esc(s.sections[k])}</pre></div>`).join('') : `<div class="sec"><pre>${esc(s.prompt)}</pre></div>`;
     $('m-input').value = '';
+    $('m-input').placeholder = s.sections.INPUT ? s.sections.INPUT : '예) 주제: 소상공인을 위한 인스타그램 마케팅 입문 / 대상: 40~50대 자영업자 / 분량: 2시간';
+    $('m-inputhelp').textContent = s.input==='자료' ? '이 스킬은 붙여넣을 자료가 있어야 제대로 됩니다. 자료를 여기에 붙여두면 복사할 때 INPUT 자리에 들어갑니다.' : '주제, 대상, 자료 등을 적어두면 복사할 때 프롬프트의 INPUT 자리에 함께 들어갑니다.';
+    const inRec = recipes.filter(r=>r.steps.some(st=>st.skill===id));
+    $('m-inrec').innerHTML = inRec.length ? `<span>이 스킬이 쓰이는 레시피:</span>` + inRec.map(r=>`<button data-recipe="${r.id}">${esc(r.title)}</button>`).join('') : '';
     syncFavBtn();
-    const list = filtered(); const i = list.findIndex(x=>x.id===id);
+    const list = state.view==='skills' ? filtered() : skills; const i = list.findIndex(x=>x.id===id);
     const prev = i>0 ? list[i-1] : null, next = i>=0 && i<list.length-1 ? list[i+1] : null;
     $('m-prev').disabled = !prev; $('m-prev').textContent = prev ? `‹ ${prev.name}` : '‹ 이전'; $('m-prev').dataset.id = prev ? prev.id : '';
     $('m-next').disabled = !next; $('m-next').textContent = next ? `${next.name} ›` : '다음 ›'; $('m-next').dataset.id = next ? next.id : '';
     if (!dlg.open) dlg.showModal();
     $('m-close').focus();
-    if (push) { try { history.replaceState(null,'','#skill-'+id); } catch(e){} }
+    if (push) setHash('skill-'+id);
   }
   function syncFavBtn(){ const on = favs.has(cur); $('m-fav').setAttribute('aria-pressed', on); $('m-fav').textContent = on ? '★ 즐겨찾기 해제' : '☆ 즐겨찾기'; }
   function close(){ dlg.close(); }
-  dlg.addEventListener('close', ()=>{ cur=null; try { if (location.hash.startsWith('#skill-')) history.replaceState(null,'',location.pathname+location.search); } catch(e){} });
+  dlg.addEventListener('close', ()=>{ cur=null; if (location.hash.startsWith('#skill-')) setHash(state.view==='recipes' ? (state.openRecipe ? 'recipe-'+state.openRecipe : 'recipes') : (state.cat ? 'cat-'+state.cat : '')); });
   dlg.addEventListener('click', e => { if (e.target===dlg) close(); });
   $('m-close').addEventListener('click', close);
   $('m-prev').addEventListener('click', e => { if (e.currentTarget.dataset.id) open(+e.currentTarget.dataset.id); });
   $('m-next').addEventListener('click', e => { if (e.currentTarget.dataset.id) open(+e.currentTarget.dataset.id); });
   $('m-fav').addEventListener('click', ()=> toggleFav(cur));
+  $('m-inrec').addEventListener('click', e => { const b = e.target.closest('[data-recipe]'); if(!b) return; close(); state.openRecipe = b.dataset.recipe; showRecipes(true); });
   document.addEventListener('keydown', e => { if(!dlg.open) return; if (e.key==='ArrowLeft' && $('m-prev').dataset.id) open(+$('m-prev').dataset.id); if (e.key==='ArrowRight' && $('m-next').dataset.id) open(+$('m-next').dataset.id); });
 
   // 복사
-  function useText(s){ const inp = $('m-input').value.trim(); return s.core + '\n\nINPUT\n' + (inp || '[여기에 주제·대상·자료를 적어주세요]') + '\n\nAnswer in Korean.'; }
+  function useText(s){
+    const inp = $('m-input').value.trim();
+    if (s.sections.INPUT) return inp ? s.core.replace(s.sections.INPUT, inp) : s.core;
+    return s.core + '\n\nINPUT\n' + (inp || '[여기에 주제·대상·자료를 적어주세요]') + '\n\nAnswer in Korean.';
+  }
   async function copy(text, msg){
     try { await navigator.clipboard.writeText(text); toast(msg); }
     catch(e){ const p = $('m-preview'); p.className=''; p.textContent = text; const r = document.createRange(); r.selectNodeContents(p); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); toast('자동 복사가 막혔습니다. 선택된 텍스트를 Ctrl+C로 복사하세요'); }
@@ -457,16 +602,19 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-si
   $('copy-raw').addEventListener('click', ()=> copy(byId[cur].prompt, '스킬 원문을 복사했습니다'));
   let tt; function toast(m){ const t=$('toast'); t.textContent=m; t.classList.add('on'); clearTimeout(tt); tt=setTimeout(()=>t.classList.remove('on'), 2200); }
 
-  // 해시 라우팅: #skill-N, #cat-N, #guide
+  // 해시 라우팅: #skill-N, #cat-N, #recipes, #recipe-R1, #role-xxx, #guide
   function route(){
     const h = location.hash.slice(1); let m;
     if ((m = h.match(/^skill-(\d+)$/))) open(+m[1], false);
-    else if ((m = h.match(/^cat-(\d+)$/))) { state.cat = +m[1]; renderNav(); render(); }
+    else if ((m = h.match(/^cat-(\d+)$/))) { state.view='skills'; state.cat = +m[1]; renderNav(); render(); }
+    else if (h==='recipes') { state.view='recipes'; renderNav(); render(); }
+    else if ((m = h.match(/^recipe-(R\d+)$/)) && recById[m[1]]) { state.view='recipes'; state.openRecipe=m[1]; renderNav(); render(); }
+    else if ((m = h.match(/^role-(\w+)$/)) && roles.some(r=>r.id===m[1])) { state.role=m[1]; renderRoles(); }
     else if (h==='guide') { $('guide').open = true; $('guide').scrollIntoView(); }
   }
   window.addEventListener('hashchange', route);
 
-  renderNav(); renderChart(); render(); route();
+  renderNav(); renderRoles(); renderChart(); render(); route();
 })();
 </script>
 </body>
