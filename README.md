@@ -1,6 +1,6 @@
 # AI 스킬 라이브러리 — 대시보드
 
-업무 분야별 AI 프롬프트 스킬 158개(17개 분야)와 업무 1건을 끝내는 레시피 11개를 검색·필터·복사할 수 있는 정적 웹사이트입니다.
+업무 분야별 AI 프롬프트 스킬 170개(17개 분야)와 업무 1건을 끝내는 레시피 11개를 검색·필터·복사할 수 있는 정적 웹사이트입니다.
 서버 없이 `index.html` 하나로 동작하므로 GitHub Pages 등 무료 호스팅에 그대로 올릴 수 있습니다.
 
 공개: 닥터J커브·다모아드림 · 원본 자료: `source/ai_skill_library_100.xlsx`
@@ -18,7 +18,7 @@
 | `scripts/build.py` | 엑셀 → JSON → index.html 생성 스크립트 |
 | `scripts/feedback_apps_script.gs` | 👍/👎 집계용 Google Apps Script (구글 시트에 붙여 배포) |
 | `source/*.xlsx` | 원본 엑셀 (스킬 1~100) |
-| `data/extra/skills_*.json` | 엑셀 밖에서 추가한 카테고리와 스킬. `skills_basics.json`(101~110 AI 기본기), `skills_11_docs.json`~`skills_16_learning.json`(111~158: 문서·보고, 영업·고객관리, 데이터·엑셀, HR·조직, 재무·계약, 학습·자기계발). 같은 형식의 파일을 더 두면 카테고리가 늘어남 |
+| `data/extra/skills_*.json` | 엑셀 밖에서 추가한 카테고리와 스킬. `skills_basics.json`(101~110 AI 기본기), `skills_11_docs.json`~`skills_16_learning.json`(111~170: 문서·보고, 영업·고객관리, 데이터·엑셀, HR·조직, 재무·계약, 학습·자기계발). 같은 형식의 파일을 더 두면 카테고리가 늘어남 |
 | `data/extra/recipes.json` | 레시피(스킬 체인)와 역할별 시작점 |
 | `data/extra/tags.json` | '자료 필요' 태그를 붙일 스킬 번호 |
 | `data/extra/prompt_patches.json` | 공문서·국회 답변자료·사업계획서 3종에 덧붙이는 한글 서식 예시·제약·자가 점검·입력 |
